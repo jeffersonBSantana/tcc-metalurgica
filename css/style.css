@@ -1,0 +1,308 @@
+html, body {
+  height: 100%;
+}
+
+.bg-red, .bg-red td {
+    background-color: #FF0000 !important;
+    color: #FFFFFF;
+}
+.bg-green, .bg-green td {
+    background-color: #008000 !important;
+    color: #FFFFFF;
+}
+.bg-black, .bg-black td {
+    background-color: #000000 !important;
+    color: #FFFFFF;
+}
+.bg-user, .bg-user td {
+    background-color: #F2F1F1 !important;
+    color: #000000;
+}
+.bg-winner, .bg-winner td {
+    background-color: #9D9CFF !important;
+    color: #000000;
+}
+
+/* =Form =Validate */
+.input-group-addon:first-child {
+	border-right: 1px solid #CCCCCC;
+}
+input.form-control {
+	border-left: 0 none;
+}
+form.validForm label.error, label.error {
+    border: 0 none;
+    color: #FF0000;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    width: 100%;	
+    margin-left: 5px;
+}
+form.validForm input.error, form.validForm textarea.error { 
+	border: 1px dotted #FF0000; 
+}
+
+/* =Css =Principal =Btns =Novo */ 
+#form-login .btn-primary,
+#form-login .btn-primary:hover,
+#form-login .btn-primary:focus {
+    background-color: #08812F;
+    border-color: #878B0D;
+    color: #FFFFFF;	
+}
+
+/* =Css =Principal =Background */ 
+.ef-head {
+    background-attachment: fixed;
+    bottom: 0;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+.ef-head {
+    background-color: #00521A;
+    background-image: linear-gradient(to bottom, #009F33, #00521A);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+}
+.ef-container {
+	margin-left: 18%;
+    margin-right: 5%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 80%;
+}
+
+/* =Menu =Left */
+.navbar-default {
+	background-color: rgba(0, 0, 0, 0);
+	border-color: rgba(0, 0, 0, 0);
+}
+.navbar-default .navbar-nav > li > a {
+	color: #FFFFFF;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    border: medium none;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #000000;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+/* =Menu =Left =Logout */
+.logout {
+	text-align: center;
+	color: #FFFFFF;
+	/*margin-top: 20px;*/
+}
+
+/* =Login =Google */
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    /* margin-bottom: 10px; */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    /*font-size: 18px;*/
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    /*-moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;*/
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+/* =Main */
+.sidebar-nav .navbar .navbar-collapse {
+	padding: 0;
+	max-height: none;
+}
+.sidebar-nav .navbar ul {
+	float: none;
+	display: block;
+}
+.sidebar-nav .navbar li {
+	float: none;
+	display: block;
+}
+.sidebar-nav .navbar li a {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.ef-head .sidebar-nav {
+	margin: 2%;
+}	
+.ef-head .nav > li > a {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.ef-head .nav {
+	font-size: 14px;
+}
+
+@media (max-width: 768px) {
+	.ef-head {
+	    background-attachment: fixed;
+	    bottom: auto;
+	    position: relative;
+	    top: 0;
+	    z-index: 5;
+	}	
+	.ef-head .menu-logo {
+		padding-top: 1em;
+		text-align: center;
+		margin-top: 0;
+	}
+	.ef-head .img-responsive {
+		display: table-row;
+		width: 12em;
+	}
+	.ef-container {
+	    margin-left: 0;
+	    margin-right: 0;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    width: 100%;
+	}	
+	.ef-head .sidebar-nav {
+		margin: 2%;
+	}
+	.ef-head .navbar-nav {
+	    margin-left: 0;
+	    margin-right: 0;		
+	}
+	.ef-head {
+		font-size: 12px;
+	}	
+	
+}
+
+@media ( max-width: 1024px ) {
+	.sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	}
+	.sidebar-nav .navbar ul {
+		float: none;
+		display: block;
+	}
+	.sidebar-nav .navbar li {
+		float: none;
+		display: block;
+	}
+	.sidebar-nav .navbar li a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.ef-head .sidebar-nav {
+		margin: 2%;
+	}	
+	.ef-head .nav > li > a {
+		padding-left: 5px;
+   		padding-right: 5px;
+	}
+	.ef-head .nav {
+		font-size: 12px;
+	}
+}
+
+/* =Main =Menu =Logo */
+.img-responsive {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 75%;
+}
+.menu-logo {
+    padding: 10px; 
+}
+/* =Main =Menu =Sidebar-nav */
+.sidebar-nav {
+	margin: 9%;
+}
+.nav .glyphicon {
+	margin-right: 2px;
+}
+
+/* =Table */
+/* all table cursor pointer */
+table {
+	cursor: pointer;
+}
+/* all table columns center */
+table thead tr th,
+table tbody tr td {
+	text-align: center;
+}
+
+/* =Operadores */
+#div-operadores {
+	padding: 5px;
+}
