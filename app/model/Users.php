@@ -16,28 +16,27 @@ class Users
     public function all( $params ) {
     	$sql  = "";
         $sql .= " SELECT * ";
-        $sql .= " FROM USERS ";
-        $sql .= " WHERE ACTIVE = " . $params['active'];
-        $sql .= " ORDER BY USERS.NAME ";
+        $sql .= " FROM usuarios ";
+        $sql .= " WHERE ativo = " . $params['active'];
         
 		$retorno = $this->database->select_sql( $sql );
-		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
-		}
+		//foreach ($retorno as $key => $value) {
+		//	$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
+		//}
 		return $retorno;
     }  
 	
-	public function edit( $params ) {
-		$code = utf8_decode($params['code']);
+	public function editar( $params ) {
+		$code = utf8_decode($params['codigo']);
 		
     	$sql  = "";
-        $sql .= " SELECT * FROM USERS ";
-        $sql .= " WHERE ID_USER = " . $code;
+        $sql .= " SELECT * FROM usuarios ";
+        $sql .= " WHERE ID_usuarios = " . $code;
 			 
 		$retorno = $this->database->select_sql( $sql );
-		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
-		}
+		// foreach ($retorno as $key => $value) {
+		//	$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
+		//}
 		return $retorno[0];
     }		
 
@@ -78,20 +77,24 @@ class Users
 		return true;
 	}				
        
-    public function save( $params ) {
-    	if ( is_string($r = $this->validate( $params )) ) {
-    		return $r;
-    	}
-     	
-    	$id_user 		= utf8_decode( $params['id_user'] );
-    	$name  			= utf8_decode( $params['name'] );		
- 		$email 	 		= utf8_decode( $params['email'] );		
-		$username 		= strtoupper(utf8_decode( $params['username'] ));
-    	$password 		= strtoupper(utf8_decode( $params['password'] ));
-    	$active 		= utf8_decode( $params['active'] );
-    	$access_level	= utf8_decode( $params['access_level'] );
+    public function salvar( $params ) {
     	
-    	$params = array(
+    	$ID_USUARIOS 	= utf8_decode( ($params['ID_USUARIOS'] == '') ? 0 : $params['ID_USUARIOS'] );
+    	$LOGIN 			= strtoupper(utf8_decode( $params['LOGIN'] ));
+    	$SENHA 			= strtoupper(utf8_decode( $params['SENHA'] ));
+    	$ATIVO 			= utf8_decode( $params['ATIVO'] );
+    	
+		if (  $params['ID_USUARIOS'] > 0 ) {
+			// fazer o update aqui
+			return (int) $this->database->execute_sql(" INSERT INTO usuarios(ID_usuarios, Login, Senha, Ativo) VALUES($ID_USUARIOS, '$LOGIN', '$SENHA', 1) ");
+		} else {
+			return (int) $this->database->execute_sql(" INSERT INTO usuarios(ID_usuarios, Login, Senha, Ativo) VALUES($ID_USUARIOS, '$LOGIN', '$SENHA', 1) ");
+		}
+		
+		
+		
+    	/*
+		$params = array(
     		'ID_USER' 		=> $id_user,
     		'NAME' 			=> "'$name'",
     		'EMAIL' 		=> "'$email'",
@@ -102,10 +105,11 @@ class Users
     	);
     	
     	return (int) $this->database->execute_sp('SX_USERS', $params);
+		*/
     }
 
-	public function remove( $params ) {
-		$code = utf8_decode($params['code']);
-		return $this->database->execute_sql("UPDATE USERS SET ACTIVE = 0 WHERE ID_USER = $code ");
+	public function remover( $params ) {
+		$codigo = utf8_decode($params['codigo']);
+		return $this->database->execute_sql("DELETE FROM usuarios WHERE ID_usuarios = $codigo ");
 	}	
 }

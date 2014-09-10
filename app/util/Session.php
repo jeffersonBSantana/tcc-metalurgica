@@ -12,11 +12,12 @@ class Session {
 	}
 	
 	public static function create( $retorno ) {
-		$_SESSION['ID_USER'] 		= $retorno['ID_USER'];
-		$_SESSION['NAME'] 			= $retorno['NAME'];
-		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
-		$_SESSION['USERNAME'] 	  	= $retorno['USERNAME'];
-		$_SESSION['ACCESS_LEVEL'] 	= $retorno['ACCESS_LEVEL'];
+		$_SESSION['ID_usuarios'] 		= $retorno['ID_usuarios'];
+		$_SESSION['Login'] 				= $retorno['Login'];
+		$_SESSION['Senha'] 				= $retorno['Senha'];
+		$_SESSION['Nivel_Acesso'] 	  	= $retorno['Nivel_Acesso'];
+		$_SESSION['Ativo'] 				= $retorno['Ativo'];
+		$_SESSION['ID_Funcionario'] 	= $retorno['ID_Funcionario'];
 	}
 	
 	public static function get( $param ) {
@@ -26,7 +27,7 @@ class Session {
 	public static function validate() {
 		if ( empty($_SESSION) ) {
 			echo "<div style='color:#FF0000; font-style:italic; margin:10px auto 0; text-align:center; width:300px;' >";
-			echo utf8_decode("<p>". L::session_msg ."</p>");	
+			echo utf8_decode("<p>Voce nao esta logado! Realize o login!</p>");	
 			echo "</div>";			
 			echo "<script>";
 			echo "window.setTimeout(function() {"; 
