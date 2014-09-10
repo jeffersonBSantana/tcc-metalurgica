@@ -3,6 +3,7 @@
 
 	if ( !Session::validate() )
 		exit;
+		
 ?>
 <!DOCTYPE html>
 <html lang="en">

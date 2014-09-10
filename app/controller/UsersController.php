@@ -14,17 +14,17 @@ class UsersController
         return $this->model->all( $params );
     }
 	
-    public function edit( $params ) {
-		return $this->model->edit( $params );
+    public function editar( $params ) {
+		return $this->model->editar( $params );
     }	
 	
-    public function save( $params ) {
-    	parse_str( $params['form'], $params );
-		return $this->model->save( $params );
+    public function salvar( $params ) {
+    	parse_str( $params['formulario'], $params );
+		return $this->model->salvar( $params );
     }
 
-    public function remove( $params ) {
-		return $this->model->remove( $params );
+    public function remover( $params ) {
+		return $this->model->remover( $params );
     }
 }
   

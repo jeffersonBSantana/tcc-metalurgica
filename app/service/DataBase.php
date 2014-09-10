@@ -4,8 +4,8 @@ class DataBase
 {
 	private static $myServer = "localhost";
 	private static $myUser = "root";
-	private static $myPass = "root";
-	private static $myDB = "BOLAO";
+	private static $myPass = "";
+	private static $myDB = "db_metalurgica";
 	private static $dbhandle;
 
 	private function connect() {
