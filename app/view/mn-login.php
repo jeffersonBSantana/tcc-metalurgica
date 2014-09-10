@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<?php include_once('include-css.php'); ?>	
+	<?php include_once('include-css.php'); ?>
 </head>
 <body>
 	<div class="container">
@@ -17,15 +17,15 @@
 	            <div class="account-wall">
 	                <img class="profile-img" src="img/logo.png" alt="" >
 	                <form id="form-login" name="form-login" class="form-signin" >
-						<div class="input-group margin-bottom-sm">
-						  	<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-			                <input id="username" name="username" type="text" class="form-control" placeholder="Usuario" required autofocus >
-						</div>							
-						<div class="input-group margin-bottom-sm">
-						  	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-			                <input id="password" name="password" type="password" class="form-control" placeholder="Senha" required >
-						</div>
-						<br />
+        						<div class="input-group margin-bottom-sm">
+        						  	<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+        			          <input id="username" name="username" type="text" class="form-control" placeholder="Usuário" required autofocus >
+        						</div>
+        						<div class="input-group margin-bottom-sm">
+        						  	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+        			          <input id="password" name="password" type="password" class="form-control" placeholder="Senha" required >
+        						</div>
+        						<br />
 		                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 		                <label class="checkbox pull-left"></label>
 	                </form>
@@ -34,6 +34,6 @@
 	    </div>
 	</div>
 
-	<?php include_once('include-js.php'); ?>	
+	<?php include_once('include-js.php'); ?>
 </body>
 </html>

@@ -4,7 +4,7 @@
 </div>
 <div class="logout" >
 	<span><?= Session::get('NAME'); ?></span>, <a href="?">Sair</a>
-</div>	
+</div>
 <div class="sidebar-nav" >
 	<div class="navbar navbar-default" role="navigation">
 		<div class="navbar-header" >
@@ -20,15 +20,21 @@
 			<ul class="nav navbar-nav">
 				<li><hr/></li>
 				<li class="active"><a id="menu-start" href="javascript:void(0)" >Inicio</a></li>
-				<?php if ( Session::get('ACCESS_LEVEL') == '2' || Session::get('ACCESS_LEVEL') == '1' ) { ?>
 				<li><hr/></li>
-				<?php if ( Session::get('ACCESS_LEVEL') == '2' ) { ?>
 				<li><a id="menu-users" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuarios</a></li>
-				<?php } ?>	
-				<li><a id="menu-games" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Games</a></li>
-				<?php } ?>	
-				<li><hr/></li>
-				<li><a id="menu-bets" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Apostas</a></li>
+	
+<!--
+<?php if ( Session::get('ACCESS_LEVEL') == '2' || Session::get('ACCESS_LEVEL') == '1' ) { ?>
+<li><hr/></li>
+<?php if ( Session::get('ACCESS_LEVEL') == '2' ) { ?>
+<li><a id="menu-users" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuarios</a></li>
+<?php } ?>
+<li><a id="menu-games" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Games</a></li>
+<?php } ?>
+<li><hr/></li>
+<li><a id="menu-bets" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Apostas</a></li>
+-->
+
 			</ul>
 		</div>
 	</div>

@@ -27,11 +27,11 @@ set_include_path(get_include_path() . PS . U);
 set_include_path(get_include_path() . PS . V);
 set_include_path(get_include_path() . PS . VI);
 
-// ******************** // 
+// ******************** //
 // **  TRACE ROUTER	 ** //
-// ******************** // 
+// ******************** //
 require_once("Session.php");
-Session::start();	
+Session::start();
 
 if ( isset($_GET) ) {
 	$m = isset($_GET['m']) ? $_GET['m'] : null;  // - pasta
@@ -42,11 +42,10 @@ if (isset($m) && !empty($m)) {
 	if (!isset($c) && empty($c)) {
 		$c = 'main';
 	}
-	
-	include_once(A . DS . $m . DS . $c . ".php"); 
+
+	include_once(A . DS . $m . DS . $c . ".php");
 	exit;
 }
 
 Session::finish();
-
 include_once(V . DS . "mn-login.php");
