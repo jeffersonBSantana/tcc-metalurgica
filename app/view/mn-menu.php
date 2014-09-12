@@ -3,7 +3,7 @@
 	<img src="img/logo2.png" class="img-responsive" alt="Responsive image" >
 </div>
 <div class="logout" >
-	<span><?= Session::get('NAME'); ?></span>, <a href="?">Sair</a>
+	<span><?= Session::get('NAME'); ?></span> <a href="?">Sair</a>
 </div>
 <div class="sidebar-nav" >
 	<div class="navbar navbar-default" role="navigation">
@@ -22,6 +22,7 @@
 				<li class="active"><a id="menu-start" href="javascript:void(0)" >Inicio</a></li>
 				<li><hr/></li>
 				<li><a id="menu-users" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuarios</a></li>
+				<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionários</a></li>
 	
 <!--
 <?php if ( Session::get('ACCESS_LEVEL') == '2' || Session::get('ACCESS_LEVEL') == '1' ) { ?>
@@ -29,7 +30,7 @@
 <?php if ( Session::get('ACCESS_LEVEL') == '2' ) { ?>
 <li><a id="menu-users" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuarios</a></li>
 <?php } ?>
-<li><a id="menu-games" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Games</a></li>
+<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionarios</a></li>
 <?php } ?>
 <li><hr/></li>
 <li><a id="menu-bets" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Apostas</a></li>

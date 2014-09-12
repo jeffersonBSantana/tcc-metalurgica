@@ -9,9 +9,9 @@ var NivelAcesso = {
 	},
 	valor : function(descricao) {
 		if ( descricao.toLowerCase() == 'Bronze'.toLowerCase() ) 
-			return 0
+			return 0;
 		else if ( descricao.toLowerCase() == 'Prata'.toLowerCase()  ) 
-			return 1
+			return 1;
 		else
 			return 2;
 	}
