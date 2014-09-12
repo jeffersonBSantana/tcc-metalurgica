@@ -1,12 +1,11 @@
 <?php
-	require_once("Session.php");
+require_once("Session.php");
 
-	if ( !Session::validate() )
-		exit;
-		
+if ( !Session::validate() )
+	exit;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 	<meta charset="utf-8">
 	<title>Main</title>
@@ -26,16 +25,8 @@
 
 			<div class="col-sm-10 ef-container">
 				<?php
-				include_once('mn-start.php');
-
-				// if ( Session::get('ACCESS_LEVEL') == '2' || Session::get('ACCESS_LEVEL') == '1' ) {
-					// if ( Session::get('ACCESS_LEVEL') == '2' ) {
-						include_once('main-users.php');
-					// }
-						include_once('main-funcionario.php');
-					// include_once('main-games.php');
-				// }
-				// include_once('main-bets.php');
+				include_once('mn-inicio.php');
+				include_once('main-usuarios.php');
 				?>
 			</div>
 		</div>

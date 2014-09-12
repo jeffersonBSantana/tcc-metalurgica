@@ -10,8 +10,7 @@
 <script type="text/javascript" src="js/others/ejs-bootalert.js"></script>
 <script type="text/javascript" src="js/others/ejs-utils.js"></script>
 <!-- JS -->
-<script type="text/javascript" src="js/emm-nivelacesso.js"></script>
-<script type="text/javascript" src="js/emm-login.js"></script>
-<script type="text/javascript" src="js/emm-users.js"></script>
-<script type="text/javascript" src="js/emm-funcionario.js"></script>
-<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/nivelacesso.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/usuarios.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
