@@ -1,14 +1,14 @@
-/* 
+/*
  * Version : 0.0.1
  * Development : Eduardo Malherbi Martins
- * 
- * CONTROLLER FOR MENU 
- * 
+ *
+ * CONTROLLER FOR MENU
+ *
  * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
- * 
+ *
  * vs 0.0.1
- * - CREATE MENU CONTROL 
- * 
+ * - CREATE MENU CONTROL
+ *
  * */
 var Menu =
 {
@@ -16,8 +16,8 @@ var Menu =
 		$('#menu ul li').removeClass(); /* remove all .active */
         $('div[id^="div-"]').hide();
     },
-    show: function(id) {	
-		$('#menu ul li a#menu-'+id).parent().addClass('active'); /* set class .active */
+    show: function(id) {
+        $('#menu ul li a#menu-'+id).parent().addClass('active'); /* set class .active */
         $('#div-'+id).show('slow');
     },
     init: function(id) {

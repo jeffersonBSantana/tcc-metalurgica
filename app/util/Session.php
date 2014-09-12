@@ -12,11 +12,11 @@ class Session {
 	}
 
 	public static function create( $retorno ) {
-		$_SESSION['ID_USUARIOS'] 		= $retorno['ID_USUARIOS'];
-		$_SESSION['LOGIN'] 					= $retorno['LOGIN'];
-		$_SESSION['SENHA'] 					= $retorno['SENHA'];
+		$_SESSION['ID_USUARIOS'] 	= $retorno['ID_USUARIOS'];
+		$_SESSION['LOGIN'] 			= $retorno['LOGIN'];
+		$_SESSION['SENHA'] 			= $retorno['SENHA'];
 		$_SESSION['NIVEL_ACESSO'] 	= $retorno['NIVEL_ACESSO'];
-		$_SESSION['ATIVO'] 					= $retorno['ATIVO'];
+		$_SESSION['ATIVO'] 			= $retorno['ATIVO'];
 		$_SESSION['ID_FUNCIONARIO'] = $retorno['ID_FUNCIONARIO'];
 	}
 

@@ -12,23 +12,23 @@ class Login
     }
 
     public function logar( $params=null ) {
-    	$user = strtoupper(utf8_decode($params["username"]));
-    	$password = strtoupper(utf8_decode($params["password"]));
+        $usuario = strtoupper(utf8_decode($params["usuario"]));
+        $senha = strtoupper(utf8_decode($params["senha"]));
 
-		  $sql  = "";
-      $sql .= " SELECT *
-      	FROM usuarios
-      	WHERE LOGIN = '$user'
-      	AND SENHA = '$password'
-      	AND ATIVO = 1 ";
+        $sql  = "";
+        $sql .= " SELECT *
+            FROM USUARIOS
+            WHERE LOGIN = '$usuario'
+            AND SENHA = '$senha'
+            AND ATIVO = 1 ";
 
-		  $retorno = $this->database->select_sql( $sql );
+        $retorno = $this->database->select_sql( $sql );
 
-		  if ( $retorno != false ) {
-			  Session::create( $retorno[0] );
-			  return true;
-		  }
+        if ( $retorno != false ) {
+            Session::create( $retorno[0] );
+            return true;
+        }
 
-		  return false;
+        return false;
     }
 }
