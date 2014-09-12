@@ -9,11 +9,11 @@ USE `db_metalurgica` ;
 -- Table `db_metalurgica`.`localidade`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `db_metalurgica`.`localidade` (
-  `ID_localidade` INT(11) NOT NULL AUTO_INCREMENT ,
-  `Cidade` VARCHAR(30) NOT NULL ,
-  `Estado` VARCHAR(30) NOT NULL ,
-  `Sigla` VARCHAR(4) NOT NULL ,
-  PRIMARY KEY (`ID_localidade`) )
+  `ID_LOCALIDADE` INT(11) NOT NULL AUTO_INCREMENT ,
+  `CIDADE` VARCHAR(30) NOT NULL ,
+  `ESTADO` VARCHAR(30) NOT NULL ,
+  `SIGLA` VARCHAR(4) NOT NULL ,
+  PRIMARY KEY (`ID_LOCALIDADE`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -22,22 +22,22 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `db_metalurgica`.`cliente`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `db_metalurgica`.`cliente` (
-  `ID_cliente` INT(11) NOT NULL AUTO_INCREMENT ,
-  `Nome` VARCHAR(60) NOT NULL ,
+  `ID_CLIENTE` INT(11) NOT NULL AUTO_INCREMENT ,
+  `NOME` VARCHAR(60) NOT NULL ,
   `CPF_CNPJ` VARCHAR(16) NOT NULL ,
-  `Email` VARCHAR(50) NULL DEFAULT NULL ,
-  `Telefone` VARCHAR(16) NULL DEFAULT NULL ,
-  `Celular` VARCHAR(16) NOT NULL ,
-  `Rua` VARCHAR(60) NOT NULL ,
-  `Numero` INT(6) NULL DEFAULT NULL ,
-  `Bairro` VARCHAR(60) NOT NULL ,
+  `EMAIL` VARCHAR(50) NULL DEFAULT NULL ,
+  `TELEFONE` VARCHAR(16) NULL DEFAULT NULL ,
+  `CELULAR` VARCHAR(16) NOT NULL ,
+  `RUA` VARCHAR(60) NOT NULL ,
+  `NUMERO` INT(6) NULL DEFAULT NULL ,
+  `BAIRRO` VARCHAR(60) NOT NULL ,
   `CEP` VARCHAR(12) NOT NULL ,
-  `ID_localidade` INT(11) NULL DEFAULT NULL ,
-  PRIMARY KEY (`ID_cliente`) ,
-  INDEX `ID_localidade` (`ID_localidade` ASC) ,
-  CONSTRAINT `fk_cliente_localidade`
-    FOREIGN KEY (`ID_localidade` )
-    REFERENCES `db_metalurgica`.`localidade` (`ID_localidade` )
+  `ID_LOCALIDADE` INT(11) NULL DEFAULT NULL ,
+  PRIMARY KEY (`ID_CLIENTE`) ,
+  INDEX `ID_LOCALIDADE` (`ID_LOCALIDADE` ASC) ,
+  CONSTRAINT `FK_CLIENTE_LOCALIDADE`
+    FOREIGN KEY (`ID_LOCALIDADE` )
+    REFERENCES `db_metalurgica`.`localidade` (`ID_LOCALIDADE` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -48,10 +48,10 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `db_metalurgica`.`esquadria`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `db_metalurgica`.`esquadria` (
-  `ID_esquadria` INT(11) NOT NULL AUTO_INCREMENT ,
-  `descricao` VARCHAR(80) NULL DEFAULT NULL ,
-  `colocacao` VARCHAR(10) NULL DEFAULT NULL ,
-  PRIMARY KEY (`ID_esquadria`) )
+  `ID_ESQUADRIA` INT(11) NOT NULL AUTO_INCREMENT ,
+  `DESCRICAO` VARCHAR(80) NULL DEFAULT NULL ,
+  `COLOCACAO` VARCHAR(10) NULL DEFAULT NULL ,
+  PRIMARY KEY (`ID_ESQUADRIA`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -60,10 +60,10 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `db_metalurgica`.`Perfil`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `db_metalurgica`.`Perfil` (
-  `ID_perfil` INT(11) NOT NULL AUTO_INCREMENT ,
-  `descricao` FLOAT NULL ,
-  `peso` INT(10) NULL DEFAULT NULL ,
-  PRIMARY KEY (`ID_perfil`) )
+  `ID_PERFIL` INT(11) NOT NULL AUTO_INCREMENT ,
+  `DESCRICAO` FLOAT NULL ,
+  `PESO` INT(10) NULL DEFAULT NULL ,
+  PRIMARY KEY (`ID_PERFIL`) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -72,25 +72,25 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `db_metalurgica`.`medida`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `db_metalurgica`.`medida` (
-  `ID_medida` INT(11) NOT NULL AUTO_INCREMENT ,
-  `Quantidade` INT(10) NULL DEFAULT NULL ,
-  `Diminuir` FLOAT NULL DEFAULT NULL ,
-  `Aumentar` FLOAT NULL DEFAULT NULL ,
-  `Dividir` FLOAT NULL DEFAULT NULL ,
-  `Medida_Referencia` VARCHAR(10) NOT NULL ,
-  `Perfil_ID_perfil` INT(11) NOT NULL ,
-  `esquadria_ID_esquadria` INT(11) NOT NULL ,
-  PRIMARY KEY (`ID_medida`) ,
-  INDEX `fk_medida_Perfil1_idx` (`Perfil_ID_perfil` ASC) ,
-  INDEX `fk_medida_esquadria1_idx` (`esquadria_ID_esquadria` ASC) ,
-  CONSTRAINT `fk_medida_Perfil1`
-    FOREIGN KEY (`Perfil_ID_perfil` )
-    REFERENCES `db_metalurgica`.`Perfil` (`ID_perfil` )
+  `ID_MEDIDA` INT(11) NOT NULL AUTO_INCREMENT ,
+  `QUANTIDADE` INT(10) NULL DEFAULT NULL ,
+  `DIMINUIR` FLOAT NULL DEFAULT NULL ,
+  `AUMENTAR` FLOAT NULL DEFAULT NULL ,
+  `DIVIDIR` FLOAT NULL DEFAULT NULL ,
+  `MEDIDA_REFERENCIA` VARCHAR(10) NOT NULL ,
+  `PERFIL_ID_PERFIL` INT(11) NOT NULL ,
+  `ESQUADRIA_ID_ESQUADRIA` INT(11) NOT NULL ,
+  PRIMARY KEY (`ID_MEDIDA`) ,
+  INDEX `FK_MEDIDA_PERFIL1_IDX` (`PERFIL_ID_PERFIL` ASC) ,
+  INDEX `FK_MEDIDA_ESQUADRIA1_IDX` (`ESQUADRIA_ID_ESQUADRIA` ASC) ,
+  CONSTRAINT `FK_MEDIDA_PERFIL1`
+    FOREIGN KEY (`PERFIL_ID_PERFIL` )
+    REFERENCES `db_metalurgica`.`Perfil` (`ID_PERFIL` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_medida_esquadria1`
-    FOREIGN KEY (`esquadria_ID_esquadria` )
-    REFERENCES `db_metalurgica`.`esquadria` (`ID_esquadria` )
+  CONSTRAINT `FK_MEDIDA_ESQUADRIA1`
+    FOREIGN KEY (`ESQUADRIA_ID_ESQUADRIA` )
+    REFERENCES `db_metalurgica`.`esquadria` (`ID_ESQUADRIA` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
