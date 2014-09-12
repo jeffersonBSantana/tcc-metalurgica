@@ -13,4 +13,5 @@
 <script type="text/javascript" src="js/emm-nivelacesso.js"></script>
 <script type="text/javascript" src="js/emm-login.js"></script>
 <script type="text/javascript" src="js/emm-users.js"></script>
+<script type="text/javascript" src="js/emm-funcionario.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>

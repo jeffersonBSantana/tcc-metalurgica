@@ -32,6 +32,7 @@
 					// if ( Session::get('ACCESS_LEVEL') == '2' ) {
 						include_once('main-users.php');
 					// }
+						include_once('main-funcionario.php');
 					// include_once('main-games.php');
 				// }
 				// include_once('main-bets.php');

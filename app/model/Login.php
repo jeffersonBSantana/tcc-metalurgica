@@ -18,9 +18,9 @@ class Login
 		$sql  = "";
         $sql .= " SELECT * 
         	FROM usuarios
-        	WHERE login = '$user'
-        	AND senha = '$password' 
-        	AND ativo = 1 ";
+        	WHERE LOGIN = '$user'
+        	AND SENHA = '$password' 
+        	AND ATIVO = 1 ";
 		
 		$retorno = $this->database->select_sql( $sql );
         

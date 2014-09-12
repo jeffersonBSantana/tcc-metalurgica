@@ -16,8 +16,8 @@ class Users
     public function all( $params ) {
     	$sql  = "";
         $sql .= " SELECT * ";
-        $sql .= " FROM usuarios ";
-        $sql .= " WHERE ATIVO = " . $params['active'];
+        $sql .= " FROM funcionario ";
+        $sql .= " WHERE ID_FUNCIONARIO = " . $code;
         
 		$retorno = $this->database->select_sql( $sql );
 		//foreach ($retorno as $key => $value) {
@@ -30,8 +30,8 @@ class Users
 		$code = utf8_decode($params['codigo']);
 		
     	$sql  = "";
-        $sql .= " SELECT * FROM usuarios ";
-        $sql .= " WHERE ID_USUARIOS = " . $code;
+        $sql .= " SELECT * FROM funcionario ";
+        $sql .= " WHERE ID_FUNCIONARIO = " . $code;
 			 
 		$retorno = $this->database->select_sql( $sql );
 		// foreach ($retorno as $key => $value) {
@@ -79,16 +79,25 @@ class Users
        
     public function salvar( $params ) {
     	
-    	$ID_USUARIOS 	= utf8_decode( ($params['ID_USUARIOS'] == '') ? 0 : $params['ID_USUARIOS'] );
-    	$LOGIN 			= strtoupper(utf8_decode( $params['LOGIN'] ));
-    	$SENHA 			= strtoupper(utf8_decode( $params['SENHA'] ));
-    	$ATIVO 			= utf8_decode( $params['ATIVO'] );
+    	$ID_FUNCIONARIO = utf8_decode( ($params['ID_FUNCIONARIO'] == '') ? 0 : $params['ID_FUNCIONARIO'] );
+    	$NOME 			= strtoupper(utf8_decode( $params['NOME'] ));
+    	$CPF 			= strtoupper(utf8_decode( $params['CPF'] ));
+		$EMAIL 			= strtoupper(utf8_decode( $params['EMAIL'] ));
+		$CELULAR 		= strtoupper(utf8_decode( $params['CELULAR'] ));
+		$RUA 			= strtoupper(utf8_decode( $params['RUA'] ));
+		$NUMERO 		= strtoupper(utf8_decode( $params['NUMERO'] ));
+		$BAIRRO 		= strtoupper(utf8_decode( $params['BAIRRO'] ));
+		$CEP 			= strtoupper(utf8_decode( $params['CEP'] ));
+		$ID_LOCAL 		= strtoupper(utf8_decode( $params['ID_LOCAL'] ));
     	
-		if (  $params['ID_USUARIOS'] > 0 ) {
+    	
+		if (  $params['ID_FUNCIONARIO'] > 0 ) {
 			// fazer o update aqui
-			return (int) $this->database->execute_sql(" UPDATE usuarios set LOGIN='$LOGIN',SENHA='SENHA',ATIVO='$ATIVO' WHERE ID_usuarios='ID_USUARIOS' ");
+			return (int) $this->database->execute_sql(" UPDATE funcionario set NOME='$NOME',CPF='$CPF',EMAIL='$EMAIL',CELULAR='$CELULAR',RUA='$RUA',
+			NUMERO='$NUMERO',BAIRRO='$BAIRRO',CEP='$CEP', ID_LOCAL='$ID_LOCAL' WHERE ID_FUNCIONARIO='$ID_FUNCIONARIO' ");
 		} else {
-			return (int) $this->database->execute_sql(" INSERT INTO usuarios(ID_usuarios, LOGIN, SENHA, ATIVO) VALUES($ID_USUARIOS, '$LOGIN', '$SENHA', 1) ");
+			return (int) $this->database->execute_sql(" INSERT INTO funcionario(ID_FUNCIONARIO, NOME, CPF, EMAIL, CELULAR, RUA, NUMERO, BAIRRO, CEP, ID_LOCAL)
+			VALUES($ID_FUNCIONARIO, '$NOME', '$CPF', '$EMAIL', '$CELULAR', '$RUA', '$NUMERO', '$BAIRRO', '$CEP', '$ID_LOCAL') ");
 		}
 		
 		
@@ -110,6 +119,6 @@ class Users
 
 	public function remover( $params ) {
 		$codigo = utf8_decode($params['codigo']);
-		return $this->database->execute_sql("DELETE FROM usuarios WHERE ID_USUARIOS = $codigo ");
+		return $this->database->execute_sql("DELETE FROM funcionario WHERE ID_FUNCIONARIO = $codigo ");
 	}	
 }
