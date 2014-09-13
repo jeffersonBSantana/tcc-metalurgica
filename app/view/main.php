@@ -27,6 +27,7 @@ if ( !Session::validate() )
 				<?php
 				include_once('mn-inicio.php');
 				include_once('main-usuarios.php');
+				include_once('main-funcionario.php');
 				?>
 			</div>
 		</div>
