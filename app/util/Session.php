@@ -19,6 +19,18 @@ class Session {
 		$_SESSION['ATIVO'] 			= $retorno['ATIVO'];
 		$_SESSION['ID_FUNCIONARIO'] = $retorno['ID_FUNCIONARIO'];
 	}
+	public static function createFunc( $retorno ) {
+		$_SESSION['ID_FUNCIONARIO'] = $retorno['ID_FUNCIONARIO'];
+		$_SESSION['NOME'] 			= $retorno['NOME'];
+		$_SESSION['CPF'] 			= $retorno['CPF'];
+		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
+		$_SESSION['CELULAR'] 		= $retorno['CELULAR'];
+		$_SESSION['RUA'] 			= $retorno['RUA'];
+		$_SESSION['NUMERO']   		= $retorno['NUMERO'];
+		$_SESSION['BAIRRO']   		= $retorno['BAIRRO'];
+		$_SESSION['CEP'] 	  		= $retorno['CEP'];
+		$_SESSION['ID_LOCAL'] 		= $retorno['ID_LOCAL'];
+	}
 
 	public static function get( $param ) {
 		return $_SESSION[ $param ];

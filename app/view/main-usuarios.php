@@ -24,11 +24,7 @@
 								<input type="password" class="form-control" id="SENHA" name="SENHA" required minlength="2" >
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="ID_FUNCIONARIOS">Senha</label>
-							<select class="form-control" id="ID_FUNCIONARIO" name="ID_FUNCIONARIO" required >
-							</select>
-						</div>
+						
 						<div class="checkbox">
 							<label for="active" ><input id="ATIVO" name="ATIVO" type="checkbox" value="1" checked > Ativo</label>
 						</div>

@@ -22,6 +22,7 @@
 				<li class="active"><a id="menu-inicio" href="javascript:void(0)" >Inicio</a></li>
 				<li><hr/></li>
 				<li><a id="menu-usuarios" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>
+				<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionários</a></li>
 			</ul>
 		</div>
 	</div>
