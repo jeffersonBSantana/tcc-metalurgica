@@ -1,7 +1,7 @@
 var Funcionarios = {
 	iniciar : function() {
 		Funcionarios.buscar();
-		Funcionarios.buscarFuncionarios();
+		Funcionarios.buscarFuncionarios(); // nao seria buscar localidades?
 
 		Funcionarios.salvar();
 	},
@@ -45,7 +45,7 @@ var Funcionarios = {
 		var parametros = {
 			'metodo' : 'buscarFuncionarios'
 		};
-		
+
 		Select.remove_all_option('form-funcionario #ID_FUNCIONARIO');
 		$.post('?m=controller&c=FuncionariosController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
@@ -56,6 +56,7 @@ var Funcionarios = {
 			$('#form-funcionario #ID_FUNCIONARIO').html( options );
 		}, 'json');
 	},
+	// Nao tem ativo na tabela funcionario, logo este item nao precisa...
 	ativo : function() {
 		$('#table-funcionario #ativo').val( ( $('#table-funcionario #ativo').is(':checked') ) ? 1 : 0 );
 		Funcionarios.buscar();
@@ -95,7 +96,7 @@ var Funcionarios = {
 			$('#form-funcionario #NUMERO').val( data.NUMERO );
 			$('#form-funcionario #BAIRRO').val( data.BAIRRO );
 			$('#form-funcionario #CEP').val( data.CEP );
-			
+
 			var checked = ( data.ATIVO == 0 ) ? false : true;
 			$('#form-funcionario #ATIVO').attr('checked', checked);
 			$('#form-funcionario #ATIVO').val( data.ATIVO );
@@ -108,11 +109,12 @@ var Funcionarios = {
 	salvar : function() {
 		$('#form-funcionario').validate({
 			submitHandler: function( form ) {
-				var uc = [];
-				$(':checkbox:not(:checked)', form).each(function() {
-					uc.push(encodeURIComponent(this.name) + '=0');
-				});
-				var formulario = $( form ).serialize() + (uc.length ? '&'+uc.join('&').replace(/%20/g, "+") : '');
+				//*** so usamos isso para checkbox, nao temos o ativo na tabela funcionarios
+				// var uc = [];
+				// $(':checkbox:not(:checked)', form).each(function() {
+				//	uc.push(encodeURIComponent(this.name) + '=0');
+				// });
+				var formulario = $( form ).serialize(); // + (uc.length ? '&'+uc.join('&').replace(/%20/g, "+") : '');
 
 				var params = {
 					'metodo' : 'salvar',

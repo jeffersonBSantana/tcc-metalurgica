@@ -14,6 +14,8 @@ class FuncionariosController
         return $this->model->buscar( $params );
     }
 
+    // Nao entendi esse item, buscar funcionarios?
+    // Nao seria buscar localidades?
     public function buscarFuncionarios( $params ) {
         return $this->model->buscarFuncionarios( $params );
     }
