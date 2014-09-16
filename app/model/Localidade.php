@@ -11,6 +11,13 @@ class Localidade
         Utils::setFullLimit();
         $this->database = new DataBase();
     }
+	public function buscar( $params ) {
+    	$sql  = "";
+        $sql .= " SELECT * ";
+        $sql .= " FROM LOCALIDADE ";
+	    return $this->database->select_sql( $sql );
+    }
+
 
     public function buscarLocalidade( $params ) {
     	$sql  = "";
