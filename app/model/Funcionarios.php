@@ -25,7 +25,7 @@ class Funcionarios
     public function buscarFuncionarios( $params ) {
         $sql  = "";
         $sql .= " SELECT * ";
-        $sql .= " FROM funcionario ";
+        $sql .= " FROM FUNCIONARIO ";
 
         return $this->database->select_sql( $sql );
     }
@@ -34,7 +34,7 @@ class Funcionarios
 		$code = utf8_decode($params['codigo']);
 
         $sql  = "";
-        $sql .= " SELECT * FROM funcionario ";
+        $sql .= " SELECT * FROM FUNCIONARIO ";
         $sql .= " WHERE ID_FUNCIONARIO = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
@@ -65,6 +65,6 @@ class Funcionarios
 
 	public function remover( $params ) {
 		$codigo = utf8_decode($params['codigo']);
-		return $this->database->execute_sql("DELETE FROM funcionario WHERE ID_FUNCIONARIO = $codigo ");
+		return $this->database->execute_sql("DELETE FROM FUNCIONARIO WHERE ID_FUNCIONARIO = $codigo ");
 	}
 }

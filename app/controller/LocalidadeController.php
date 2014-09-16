@@ -1,21 +1,17 @@
 <?php
 
-require_once("Funcionarios.php");
+require_once("Localidade.php");
 
-class FuncionariosController
+class LocalidadeController
 {
     private $model;
 
     public function __construct() {
-        $this->model = new Funcionarios();
+        $this->model = new Localidade();
     }
 
     public function buscar( $params ) {
         return $this->model->buscar( $params );
-    }
-
-    public function buscarFuncionarios( $params ) {
-        return $this->model->buscarFuncionarios( $params );
     }
 
     public function editar( $params ) {
@@ -32,7 +28,7 @@ class FuncionariosController
     }
 }
 
-$controller = new FuncionariosController();
+$controller = new LocalidadeController();
 
 $method = $_POST['metodo'];
 $params = $_POST;
