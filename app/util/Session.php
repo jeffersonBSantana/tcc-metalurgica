@@ -34,9 +34,9 @@ class Session {
 	
 	public static function createLocal( $retorno ) {
 		$_SESSION['ID_LOCALIDADE'] = $retorno['ID_LOCALIDADE'];
-		$_SESSION['CIDADE'] 			= $retorno['CIDADE'];
-		$_SESSION['ESTADO'] 			= $retorno['ESTADO'];
-		$_SESSION['SIGLA'] 			= $retorno['SIGLA'];
+		$_SESSION['CIDADE'] 	   = $retorno['CIDADE'];
+		$_SESSION['ESTADO'] 	   = $retorno['ESTADO'];
+		$_SESSION['SIGLA'] 		   = $retorno['SIGLA'];
 	}
 
 	public static function get( $param ) {

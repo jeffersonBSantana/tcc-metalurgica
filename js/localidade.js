@@ -34,9 +34,9 @@ var Localidade = {
 		    });
 		}, 'json');
 	},
-	buscar : function( id ) {
+	buscarLocalidade : function( id ) {
 		var parametros = {
-			'metodo' : 'buscar'
+			'metodo' : 'buscarLocalidade'
 		};
 
 		Select.remove_all_option('form-localidade #ID_LOCALIDADE');
