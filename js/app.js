@@ -14,4 +14,8 @@ $(document).ready(function() {
 		Menu.init('funcionario');
 		Funcionarios.iniciar();
 	});
+	$('#menu-localidade').click(function() {
+		Menu.init('localidade');
+		Localidade.iniciar();
+	});
 });
