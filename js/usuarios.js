@@ -22,6 +22,7 @@ var Usuarios = {
 		        	"CODE"  	: values.ID_USUARIOS,
 			        "LOGIN" 	: values.LOGIN,
 		          	"SENHA" 	: values.SENHA,
+			        "NOME"	 	: values.NOME,
 			        "ATIVO"	 	: ( values.ATIVO == '1' ) ? 'Sim' : 'Não',
 		          	"EDIT"  	: '<div onclick="Usuarios.editar('+values.ID_USUARIOS+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"	: '<div onclick="Usuarios.remover('+values.ID_USUARIOS+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'

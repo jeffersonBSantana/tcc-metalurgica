@@ -14,10 +14,6 @@ class LocalidadeController
         return $this->model->buscar( $params );
     }
 
-    public function buscarLocalidade( $params ) {
-        return $this->model->buscarLocalidade( $params );
-    }
-
     public function editar( $params ) {
 	    return $this->model->editar( $params );
     }

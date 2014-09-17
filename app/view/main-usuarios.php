@@ -24,7 +24,11 @@
 								<input type="password" class="form-control" id="SENHA" name="SENHA" required minlength="2" >
 							</div>
 						</div>
-						
+						<div class="form-group">
+							<label for="ID_FUNCIONARIOS">Funcionários</label>
+							<select class="form-control" id="ID_FUNCIONARIO" name="ID_FUNCIONARIO" required >
+							</select>
+						</div>
 						<div class="checkbox">
 							<label for="active" ><input id="ATIVO" name="ATIVO" type="checkbox" value="1" checked > Ativo</label>
 						</div>
@@ -51,6 +55,7 @@
 					<th width='4%' ><div onclick="Usuarios.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Login</label></th>
 					<th><label>Senha</label></th>
+					<th><label>Nome Funcionário</label></th>
 					<th width='6%' ><label><input id="ativo" name="ativo" type="checkbox" value="1" onclick="Usuarios.ativo()" checked > Ativo</label></th>
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>

@@ -16,6 +16,8 @@ class Usuarios
     	$sql  = "";
         $sql .= " SELECT * ";
         $sql .= " FROM USUARIOS ";
+        $sql .= " INNER JOIN FUNCIONARIO ";
+        $sql .= " ON USUARIOS.ID_FUNCIONARIO = FUNCIONARIO.ID_FUNCIONARIO ";
         $sql .= " WHERE ATIVO = " . $params['ativo'];
 
 	    return $this->database->select_sql( $sql );
@@ -46,12 +48,13 @@ class Usuarios
         $SENHA 		        = strtoupper(utf8_decode( $params['SENHA'] ));
         $NIVEL_ACESSO       = utf8_decode( $params['NIVEL_ACESSO'] );
         $ATIVO 		        = utf8_decode( $params['ATIVO'] );
-        $ID_FUNCIONARIO     = utf8_decode( $params['ID_FUNCIONARIO'] );
+        $ID_FUNCIONARIO     = 5;//utf8_decode( $params['ID_FUNCIONARIO'] );
 
 		if (  $params['ID_USUARIOS'] > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE USUARIOS SET LOGIN='$LOGIN', SENHA='$SENHA', NIVEL_ACESSO='$NIVEL_ACESSO', ATIVO='$ATIVO', ID_FUNCIONARIO='$ID_FUNCIONARIO' WHERE ID_USUARIOS='$ID_USUARIOS' ");
 		}
         else {
+		
 			return (int) $this->database->execute_sql(" INSERT INTO USUARIOS(ID_USUARIOS, LOGIN, SENHA, NIVEL_ACESSO, ATIVO, ID_FUNCIONARIO) VALUES($ID_USUARIOS, '$LOGIN', '$SENHA', '$NIVEL_ACESSO', '$ATIVO', '$ID_FUNCIONARIO') ");
 		}
     }
@@ -59,5 +62,10 @@ class Usuarios
 	public function remover( $params ) {
 		$codigo = utf8_decode($params['codigo']);
 		return $this->database->execute_sql("DELETE FROM USUARIOS WHERE ID_USUARIOS = $codigo ");
+		
+		//método para debugar
+		
+		//$a = $this->database->execute_sql("DELETE FROM USUARIOS WHERE ID_USUARIOS = $codigo ",true);
+		//var_dump($a);
 	}
 }

@@ -1,8 +1,6 @@
 var Localidade = {
 	iniciar : function() {
 		Localidade.buscar();
-		Localidade.buscarLocalidade(); // nao seria buscar localidades?
-
 		Localidade.salvar();
 	},
 	buscar : function() {
@@ -10,8 +8,7 @@ var Localidade = {
 		bootTable.clear( id );
 
 		var params = {
-			'metodo' : 'buscar',
-			//'ativo'  : $(id + ' #ativo').val()
+			'metodo' : 'buscar'
 		};
 		$.post('?m=controller&c=LocalidadeController', params, function( data ) {
 			$.each( data, function( key, values ) {
@@ -34,26 +31,6 @@ var Localidade = {
 		    });
 		}, 'json');
 	},
-	buscarLocalidade : function( id ) {
-		var parametros = {
-			'metodo' : 'buscarLocalidade'
-		};
-
-		Select.remove_all_option('form-localidade #ID_LOCALIDADE');
-		$.post('?m=controller&c=LocalidadeController', parametros, function( data ) {
-			var options = '<option value="" ></option>';
-			$.each(data, function (key, value) {
-		 		options += '<option value="'+value.ID_LOCALIDADE+'" >'+value.CIDADE+'</option>';
-		 	});
-
-			$('#form-localidade #ID_LOCALIDADE').html( options );
-		}, 'json');
-	},
-	// Nao tem ativo na tabela funcionario, logo este item nao precisa...
-	//ativo : function() {
-		//$('#table-funcionario #ativo').val( ( $('#table-funcionario #ativo').is(':checked') ) ? 1 : 0 );
-		//Funcionarios.buscar();
-	//},
 	limpar : function() {
 		$('#panel-localidade').show('slow');
 
@@ -89,13 +66,7 @@ var Localidade = {
 	salvar : function() {
 		$('#form-localidade').validate({
 			submitHandler: function( form ) {
-				//*** so usamos isso para checkbox, nao temos o ativo na tabela funcionarios
-				// var uc = [];
-				// $(':checkbox:not(:checked)', form).each(function() {
-				//	uc.push(encodeURIComponent(this.name) + '=0');
-				// });
-				var formulario = $( form ).serialize(); // + (uc.length ? '&'+uc.join('&').replace(/%20/g, "+") : '');
-
+				var formulario = $( form ).serialize();
 				var params = {
 					'metodo' : 'salvar',
 					'formulario' : formulario

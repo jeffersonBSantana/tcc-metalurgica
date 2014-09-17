@@ -1,7 +1,7 @@
 var Funcionarios = {
 	iniciar : function() {
 		Funcionarios.buscar();
-		Funcionarios.buscarFuncionarios(); // nao seria buscar localidades?
+		Funcionarios.buscarLocalidade();
 
 		Funcionarios.salvar();
 	},
@@ -28,9 +28,8 @@ var Funcionarios = {
 		          	"NUMERO" 	: values.NUMERO,
 					"BAIRRO" 	: values.BAIRRO,
 		          	"CEP" 		: values.CEP,
-					"ID_LOCAL" 	: values.ID_LOCAL,
-			        "ATIVO"	 	: ( values.ATIVO == '1' ) ? 'Sim' : 'Não',
-		          	"EDIT"  	: '<div onclick="Funcionarios.editar('+values.ID_FUNCIONARIO+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
+					"ID_LOCAL" 	: values.CIDADE + ' - ' + values.SIGLA,
+			        "EDIT"  	: '<div onclick="Funcionarios.editar('+values.ID_FUNCIONARIO+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"	: '<div onclick="Funcionarios.remover('+values.ID_FUNCIONARIO+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
 		        bootTable.addItem(
@@ -41,19 +40,19 @@ var Funcionarios = {
 		    });
 		}, 'json');
 	},
-	buscarFuncionarios : function( id ) {
+	buscarLocalidade : function( id ) {
 		var parametros = {
-			'metodo' : 'buscarFuncionarios'
+			'metodo' : 'buscarLocalidade'
 		};
 
-		Select.remove_all_option('form-funcionario #ID_FUNCIONARIO');
+		Select.remove_all_option('form-funcionario #ID_LOCAL');
 		$.post('?m=controller&c=FuncionariosController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {
-		 		options += '<option value="'+value.ID_FUNCIONARIO+'" >'+value.NOME+'</option>';
+		 		options += '<option value="'+value.ID_LOCALIDADE+'" >'+value.CIDADE+' - '+value.SIGLA+'</option>';
 		 	});
 
-			$('#form-funcionario #ID_FUNCIONARIO').html( options );
+			$('#form-funcionario #ID_LOCAL').html( options );
 		}, 'json');
 	},
 	// Nao tem ativo na tabela funcionario, logo este item nao precisa...
@@ -109,13 +108,7 @@ var Funcionarios = {
 	salvar : function() {
 		$('#form-funcionario').validate({
 			submitHandler: function( form ) {
-				//*** so usamos isso para checkbox, nao temos o ativo na tabela funcionarios
-				// var uc = [];
-				// $(':checkbox:not(:checked)', form).each(function() {
-				//	uc.push(encodeURIComponent(this.name) + '=0');
-				// });
-				var formulario = $( form ).serialize(); // + (uc.length ? '&'+uc.join('&').replace(/%20/g, "+") : '');
-
+				var formulario = $( form ).serialize();
 				var params = {
 					'metodo' : 'salvar',
 					'formulario' : formulario

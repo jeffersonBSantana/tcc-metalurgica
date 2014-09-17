@@ -14,8 +14,8 @@ class FuncionariosController
         return $this->model->buscar( $params );
     }
 
-    public function buscarFuncionarios( $params ) {
-        return $this->model->buscarFuncionarios( $params );
+    public function buscarLocalidade( $params ) {
+        return $this->model->buscarLocalidade( $params );
     }
 
     public function editar( $params ) {

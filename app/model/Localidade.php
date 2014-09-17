@@ -11,29 +11,19 @@ class Localidade
         Utils::setFullLimit();
         $this->database = new DataBase();
     }
-	public function buscar( $params ) {
-    	$sql  = "";
-        $sql .= " SELECT * ";
-        $sql .= " FROM LOCALIDADE ";
-	    return $this->database->select_sql( $sql );
-    }
 
-
-    public function buscarLocalidade( $params ) {
+    public function buscar( $params ) {
     	$sql  = "";
         $sql .= " SELECT * ";
         $sql .= " FROM LOCALIDADE ";
 
-	    return $this->database->select_sql( $sql );
+	    $retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
+			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+		}
+		return $retorno;		
     }
-
-    /*public function buscarFuncionarios( $params ) {
-        $sql  = "";
-        $sql .= " SELECT * ";
-        $sql .= " FROM FUNCIONARIO ";
-
-        return $this->database->select_sql( $sql );
-    }*/
 
 	public function editar( $params ) {
 		$code = utf8_decode($params['codigo']);
@@ -43,20 +33,26 @@ class Localidade
         $sql .= " WHERE ID_LOCALIDADE = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
+		// quando acentuacao deve colocar essa parte do codigo, 
+		// com os campos referentes a tabela que sera utilizada.
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
+			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+		}
 		return $retorno[0];
     }
 
     public function salvar( $params ) {
         $ID_LOCALIDADE     = utf8_decode( ($params['ID_LOCALIDADE'] == '') ? 0 : $params['ID_LOCALIDADE'] );
-        $CIDADE 		   = strtoupper(utf8_decode( $params['CIDADE'] ));
-        $ESTADO 		   = strtoupper(utf8_decode( $params['ESTADO'] ));
-        $SIGLA 		       = strtoupper(utf8_decode( $params['SIGLA'] ));
+        $CIDADE 		   = utf8_decode(strtoupper( $params['CIDADE'] ));
+        $ESTADO 		   = utf8_decode(strtoupper( $params['ESTADO'] ));
+        $SIGLA 		       = utf8_decode(strtoupper( $params['SIGLA' ] ));
 
-		if (  $params['ID_LOCALIDADE'] > 0 ) {
-			return (int) $this->database->execute_sql(" UPDATE LOCALIDADE SET CIDADE='$CIDADE', ESTADO='$ESTADO', SIGLA='$SIGLA', WHERE ID_LOCALIDADE='$ID_LOCALIDADE' ");
+		if ( $ID_LOCALIDADE > 0 ) {
+			return (int) $this->database->execute_sql(" UPDATE LOCALIDADE SET CIDADE='$CIDADE', ESTADO='$ESTADO', SIGLA='$SIGLA' WHERE ID_LOCALIDADE=$ID_LOCALIDADE ");
 		}
         else {
-			return (int) $this->database->execute_sql(" INSERT INTO LOCALIDADE(ID_LOCALIDADE, CIDADE, ESTADO, SIGLA) VALUES('$ID_LOCALIDADE', '$CIDADE', '$ESTADO', '$SIGLA') ");
+			return (int) $this->database->execute_sql(" INSERT INTO LOCALIDADE(ID_LOCALIDADE, CIDADE, ESTADO, SIGLA) VALUES ($ID_LOCALIDADE, '$CIDADE', '$ESTADO', '$SIGLA') ");
 		}
     }
 
