@@ -20,4 +20,9 @@ $(document).ready(function() {
 		Menu.init('localidade');
 		Localidade.iniciar();
 	});
+	
+	$('#menu-perfil').click(function() {
+		Menu.init('perfil');
+		Perfil.iniciar();
+	});	
 });

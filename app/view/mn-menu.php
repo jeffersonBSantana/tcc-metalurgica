@@ -24,6 +24,7 @@
 				<li><a id="menu-usuarios" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>
 				<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionários</a></li>
 				<li><a id="menu-localidade" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Localidade</a></li>
+				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
 			</ul>
 		</div>
 	</div>

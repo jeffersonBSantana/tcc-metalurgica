@@ -15,4 +15,5 @@
 <script type="text/javascript" src="js/usuarios.js"></script>
 <script type="text/javascript" src="js/funcionarios.js"></script>
 <script type="text/javascript" src="js/localidade.js"></script>
+<script type="text/javascript" src="js/perfil.js"></script>
 <script type="text/javascript" src="js/app.js"></script>

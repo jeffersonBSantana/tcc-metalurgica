@@ -29,6 +29,7 @@ if ( !Session::validate() )
 				include_once('main-usuarios.php');
 				include_once('main-funcionario.php');
 				include_once('main-localidade.php');
+				include_once('main-perfil.php');
 				?>
 			</div>
 		</div>
