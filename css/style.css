@@ -193,8 +193,8 @@ form.validForm input.error, form.validForm textarea.error {
 	display: block;
 }
 .sidebar-nav .navbar li a {
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 .ef-head .sidebar-nav {
 	margin: 2%;
