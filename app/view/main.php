@@ -28,8 +28,10 @@ if ( !Session::validate() )
 				include_once('mn-inicio.php');
 				include_once('main-usuarios.php');
 				include_once('main-funcionario.php');
+				include_once('main-cliente.php');
 				include_once('main-localidade.php');
 				include_once('main-perfil.php');
+				include_once('main-esquadria.php');
 				?>
 			</div>
 		</div>

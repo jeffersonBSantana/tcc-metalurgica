@@ -15,6 +15,11 @@ $(document).ready(function() {
 		Menu.init('funcionario');
 		Funcionarios.iniciar();
 	});
+	
+	$('#menu-cliente').click(function() {
+		Menu.init('cliente');
+		Clientes.iniciar();
+	});	
 
 	$('#menu-localidade').click(function() {
 		Menu.init('localidade');
@@ -24,5 +29,9 @@ $(document).ready(function() {
 	$('#menu-perfil').click(function() {
 		Menu.init('perfil');
 		Perfil.iniciar();
+	});	
+	$('#menu-esquadria').click(function() {
+		Menu.init('esquadria');
+		Esquadria.iniciar();
 	});	
 });
