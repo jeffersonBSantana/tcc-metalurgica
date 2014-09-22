@@ -25,8 +25,7 @@ class Clientes
 			$retorno[ $key ][ 'NOME' ]   = utf8_encode( $value['NOME'] );
 			$retorno[ $key ][ 'RUA' ]    = utf8_encode( $value['RUA'] );
 			$retorno[ $key ][ 'BAIRRO' ] = utf8_encode( $value['BAIRRO'] );
-			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
-			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+			
 		}
 		return $retorno;	
     }

@@ -11,23 +11,23 @@
 					<form id="form-localidade" role="form" >
 						<input type="hidden" class="form-control" id="ID_LOCALIDADE" name="ID_LOCALIDADE" >
 						<div class="form-group">
-							<label for="CIDADE">CIDADE</label>
+							<label for="CIDADE">Cidade</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-globe fa-fw"></i></span>
 								<input type="text" class="form-control" id="CIDADE" name="CIDADE" required minlength="3" >
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="ESTADO">ESTADO</label>
+							<label for="ESTADO">Estado</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-globe fa-fw"></i></span>
 								<input type="text" class="form-control" id="ESTADO" name="ESTADO" required minlength="3" >
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="SIGLA">SIGLA</label>
+							<label for="SIGLA">Sigla</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-location-arrow fa-fw"></i></span>
 								<input type="text" class="form-control" id="SIGLA" name="SIGLA" required minlength="2" >
 							</div>
 						</div>

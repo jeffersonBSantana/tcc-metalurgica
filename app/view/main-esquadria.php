@@ -13,14 +13,14 @@
 						<div class="form-group">
 							<label for="Descricao">Descrição</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-edit fa-fw"></i></span>
 								<input type="text" class="form-control" id="DESCRICAO" name="DESCRICAO" required minlength="3" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="COLOCACAO">Colocação</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-edit fa-fw"></i></span>
 								<input type="text" class="form-control" id="COLOCACAO" name="COLOCACAO" required minlength="3" >
 							</div>
 						</div>

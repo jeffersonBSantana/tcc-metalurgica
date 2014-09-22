@@ -33,5 +33,9 @@ $(document).ready(function() {
 	$('#menu-esquadria').click(function() {
 		Menu.init('esquadria');
 		Esquadria.iniciar();
+	});
+	$('#menu-medida').click(function() {
+		Menu.init('medida');
+		Medidas.iniciar();
 	});	
 });

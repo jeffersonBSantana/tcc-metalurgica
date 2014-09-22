@@ -27,6 +27,7 @@
 				<li><a id="menu-localidade" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Localidade</a></li>
 				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
 				<li><a id="menu-esquadria" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Esquadria</a></li>
+				<li><a id="menu-medida" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Medida</a></li>
 			</ul>
 		</div>
 	</div>
