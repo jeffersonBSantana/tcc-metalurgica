@@ -19,10 +19,9 @@ class MedidaController
     }
 
     public function buscarPerfil( $params ) {
-        return $this->model->buscarPerfil( $params );
+      	return $this->model->buscarPerfil( $params );
     }
 	
-
     public function editar( $params ) {
 	    return $this->model->editar( $params );
     }

@@ -51,7 +51,7 @@ class Medidas
 		return $retorno;		
     }
 	
-		public function editar( $params ) {
+	public function editar( $params ) {
 		$code = utf8_decode($params['codigo']);
 
         $sql  = "";
@@ -59,27 +59,22 @@ class Medidas
         $sql .= " WHERE ID_MEDIDA = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
-		
 		return $retorno[0];
     }
 
     public function salvar( $params ) {
-        $ID_MEDIDA     		= utf8_decode( ($params['ID_MEDIDA'] == '') ? 0 : $params['ID_MEDIDA'] );
-        $QUANTIDADE 		= utf8_decode( ( $params['QUANTIDADE'] ));
-        $DIMINUIR 			= utf8_decode( ( $params['DIMINUIR'] ));
-		$AUMENTAR 			= utf8_decode( ( $params['AUMENTAR'] ));
-        $DIVIDIR 			= utf8_decode( ( $params['DIVIDIR'] ));
-        $MEDIDA_REFERENCIA	= utf8_decode( strtoupper( $params['MEDIDA_REFERENCIA'] ));
-		$ID_ESQUADRIA 		= utf8_decode( ( $params['ID_ESQUADRIA'] ));
-        $ID_PERFIL 			= utf8_decode( ( $params['ID_PERFIL'] ));
+        $ID_MEDIDA     		= utf8_decode(($params['ID_MEDIDA'] == '') ? 0 : $params['ID_MEDIDA']);
+        $QUANTIDADE 		= utf8_decode($params['QUANTIDADE']);
+        $DIMINUIR 			= utf8_decode($params['DIMINUIR']);
+		$AUMENTAR 			= utf8_decode($params['AUMENTAR']);
+        $DIVIDIR 			= utf8_decode($params['DIVIDIR']);
+        $MEDIDA_REFERENCIA	= utf8_decode($params['MEDIDA_REFERENCIA']);
+		$ID_ESQUADRIA 		= utf8_decode($params['ID_ESQUADRIA']);
+        $ID_PERFIL 			= utf8_decode($params['ID_PERFIL']);
 		
-		//$b = $this->database->execute_sql(" UPDATE CLIENTE SET NOME='$NOME', CPF_CNPJ='$CPF_CNPJ', EMAIL='$EMAIL', TELEFONE='$TELEFONE', CELULAR='$CELULAR',
-			//RUA='$RUA', NUMERO='$NUMERO', BAIRRO='$BAIRRO', CEP='$CEP', ID_LOCALIDADE='$ID_LOCALIDADE' WHERE ID_CLIENTE='$ID_CLIENTE' ",true);
-		//var_dump($b);
-
 		if (  $params['ID_MEDIDA'] > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE MEDIDA SET QUANTIDADE='$QUANTIDADE', DIMINUIR='$DIMINUIR', AUMENTAR='$AUMENTAR', DIVIDIR='$DIVIDIR', MEDIDA_REFERENCIA='$MEDIDA_REFERENCIA',
-			ID_ESQUADRIA='$ID_ESQUADRIA', ID_PERFIL='$ID_PERFIL' WHERE ID_ID_MEDIDA='$ID_ID_MEDIDA' ");
+				ID_ESQUADRIA='$ID_ESQUADRIA', ID_PERFIL='$ID_PERFIL' WHERE ID_MEDIDA='$ID_MEDIDA' ");
 		}
         else {
 			return (int) $this->database->execute_sql(" INSERT INTO MEDIDA(ID_MEDIDA, QUANTIDADE, DIMINUIR, AUMENTAR, DIVIDIR, MEDIDA_REFERENCIA, ID_ESQUADRIA, ID_PERFIL) 

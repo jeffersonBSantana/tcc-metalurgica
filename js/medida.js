@@ -10,9 +10,6 @@ var Medidas = {
 		var id = '#table-medida';
 		bootTable.clear( id );
 
-
-
-
 		var params = {
 			'metodo' : 'buscar',
 			'ativo'  : $(id + ' #ativo').val()
@@ -28,7 +25,7 @@ var Medidas = {
 		          	"DIMINUIR" 			: values.DIMINUIR,
 					"AUMENTAR" 			: values.AUMENTAR,
 		          	"DIVIDIR" 			: values.DIVIDIR,
-		          	"MEDIDA_REFERENCIA"	: values.MEDIDA_REFERENCIA,
+		          	"MEDIDA_REFERENCIA"	: ( values.MEDIDA_REFERENCIA == 0 ) ? 'Largura' : 'Altura',
 		          	"ID_ESQUADRIA"		: values.DESCRICAO,
 					"ID_PERFIL"			: values.DESCRICAO + ' - ' + values.PESO_POR_METRO,
 			        "EDIT"  			: '<div onclick="Medidas.editar('+values.ID_MEDIDA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
@@ -109,10 +106,7 @@ var Medidas = {
 			$('#form-medida #DIMINUIR').val( data.DIMINUIR );
 			$('#form-medida #AUMENTAR').val( data.AUMENTAR );
 			$('#form-medida #DIVIDIR').val( data.DIVIDIR );
-			$('#form-medida #MEDIDA_REFERENCIA').val( data.MEDIDA_REFERENCIA );
-			//var checked = ( data.ATIVO == 0 ) ? false : true;
-			//$('#form-medida #ATIVO').attr('checked', checked);
-			//$('#form-cliente #ATIVO').val( data.ATIVO );
+			$('#form-medida input[name=MEDIDA_REFERENCIA]').filter('[value='+data.MEDIDA_REFERENCIA+']').prop('checked', true);
 			$('#form-medida #ID_ESQUADRIA').val(data.ID_ESQUADRIA);
 			$('#form-medida #ID_PERFIL').val(data.ID_PERFIL);
 		}, 'json');
