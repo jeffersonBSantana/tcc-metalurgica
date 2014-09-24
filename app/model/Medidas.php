@@ -14,7 +14,7 @@ class Medidas
 
     public function buscar( $params ) {
     	$sql  = "";
-        $sql .= " SELECT * ";
+        $sql .= " SELECT MEDIDA.*, ESQUADRIA.DESCRICAO AS ESQUADRIA, PERFIL.* ";
         $sql .= " FROM MEDIDA ";
 		$sql .= " INNER JOIN ESQUADRIA ";
         $sql .= " ON MEDIDA.ID_ESQUADRIA = ESQUADRIA.ID_ESQUADRIA ";	
@@ -22,7 +22,9 @@ class Medidas
         $sql .= " ON MEDIDA.ID_PERFIL = PERFIL.ID_PERFIL ";	
 
 	    $retorno = $this->database->select_sql( $sql );
-		
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'DIVIDIR' ] = utf8_encode(Utils::formatCurrencyBr($value['DIVIDIR']));
+		}		
 		return $retorno;	
     }
 	
@@ -59,6 +61,7 @@ class Medidas
         $sql .= " WHERE ID_MEDIDA = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
+		$retorno[0][ 'DIVIDIR' ] = Utils::formatCurrencyBr($retorno[0][ 'DIVIDIR' ]);
 		return $retorno[0];
     }
 
@@ -67,7 +70,7 @@ class Medidas
         $QUANTIDADE 		= utf8_decode($params['QUANTIDADE']);
         $DIMINUIR 			= utf8_decode($params['DIMINUIR']);
 		$AUMENTAR 			= utf8_decode($params['AUMENTAR']);
-        $DIVIDIR 			= utf8_decode($params['DIVIDIR']);
+        $DIVIDIR 			= utf8_decode(Utils::formatCurrency($params['DIVIDIR']));
         $MEDIDA_REFERENCIA	= utf8_decode($params['MEDIDA_REFERENCIA']);
 		$ID_ESQUADRIA 		= utf8_decode($params['ID_ESQUADRIA']);
         $ID_PERFIL 			= utf8_decode($params['ID_PERFIL']);

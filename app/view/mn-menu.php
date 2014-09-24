@@ -28,6 +28,7 @@
 				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
 				<li><a id="menu-esquadria" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Esquadria</a></li>
 				<li><a id="menu-medida" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Medida</a></li>
+				<li><a id="menu-orcamento" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Orçamento</a></li>
 			</ul>
 		</div>
 	</div>

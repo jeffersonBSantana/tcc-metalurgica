@@ -19,4 +19,5 @@
 <script type="text/javascript" src="js/perfil.js"></script>
 <script type="text/javascript" src="js/esquadria.js"></script>
 <script type="text/javascript" src="js/medida.js"></script>
+<script type="text/javascript" src="js/orcamento.js"></script>
 <script type="text/javascript" src="js/app.js"></script>

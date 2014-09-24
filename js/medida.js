@@ -26,7 +26,7 @@ var Medidas = {
 					"AUMENTAR" 			: values.AUMENTAR,
 		          	"DIVIDIR" 			: values.DIVIDIR,
 		          	"MEDIDA_REFERENCIA"	: ( values.MEDIDA_REFERENCIA == 0 ) ? 'Largura' : 'Altura',
-		          	"ID_ESQUADRIA"		: values.DESCRICAO,
+		          	"ESQUADRIA"			: values.ESQUADRIA,
 					"ID_PERFIL"			: values.DESCRICAO + ' - ' + values.PESO_POR_METRO,
 			        "EDIT"  			: '<div onclick="Medidas.editar('+values.ID_MEDIDA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"			: '<div onclick="Medidas.remover('+values.ID_MEDIDA+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'

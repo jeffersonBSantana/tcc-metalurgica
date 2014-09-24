@@ -38,4 +38,8 @@ $(document).ready(function() {
 		Menu.init('medida');
 		Medidas.iniciar();
 	});	
+	$('#menu-orcamento').click(function() {
+		Menu.init('orcamento');
+		Orcamento.iniciar();
+	});	
 });

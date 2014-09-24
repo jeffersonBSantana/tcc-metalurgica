@@ -34,14 +34,14 @@
 						<div class="form-group">
 							<label for="TELEFONE">Telefone</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-fax fa-fw"></i></span>
 								<input type="text" class="form-control" id="TELEFONE" name="TELEFONE" required minlength="8" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="CELULAR">Celular</label>
 							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-fax fa-fw"></i></span>
+							  	<span class="input-group-addon"><i class="fa fa-phone-square fa-fw"></i></span>
 								<input type="text" class="form-control" id="CELULAR" name="CELULAR" required minlength="8" >
 							</div>
 						</div>

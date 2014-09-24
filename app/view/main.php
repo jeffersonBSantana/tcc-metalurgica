@@ -33,6 +33,7 @@ if ( !Session::validate() )
 				include_once('main-perfil.php');
 				include_once('main-esquadria.php');
 				include_once('main-medida.php');
+				include_once('main-orcamento.php');
 				?>
 			</div>
 		</div>
