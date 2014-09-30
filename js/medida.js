@@ -45,7 +45,7 @@ var Medidas = {
 			'metodo' : 'buscarEsquadria'
 		};
 
-		Select.remove_all_option('form-medida #ID_MEDIDA');
+		Select.remove_all_option('form-medida #ID_ESQUADRIA');
 		$.post('?m=controller&c=MedidaController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {

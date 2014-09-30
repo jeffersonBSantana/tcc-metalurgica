@@ -27,7 +27,34 @@ class Orcamento
 		}	
 		return $retorno;	
     }
-	
+	public function buscarItensOrcamento( $params ) {
+		$code = utf8_decode($params['codigo']);
+    	$sql  = "";
+        $sql .= " SELECT ITEM_ORCAMENTO.*, ESQUADRIA.DESCRICAO";
+        $sql .= " FROM ITEM_ORCAMENTO ";
+		$sql .= " INNER JOIN ESQUADRIA ";
+        $sql .= " ON ITEM_ORCAMENTO.ID_ESQUADRIA = ESQUADRIA.ID_ESQUADRIA ";
+		$sql .= " WHERE ITEM_ORCAMENTO.ID_ORCAMENTO = " . $code;		
+
+	    $retorno = $this->database->select_sql( $sql );	
+		//foreach ($retorno as $key => $value) {
+			//$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_sql($value['DATA_ORCAMENTO']));
+		//}	
+		return $retorno;	
+    }
+    
+    public function buscarEsquadria( $params ) {
+        $sql  = "";
+        $sql .= " SELECT * ";
+        $sql .= " FROM ESQUADRIA ";
+
+	    $retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
+			$retorno[ $key ][ 'COLOCACAO' ] = utf8_encode( $value['COLOCACAO'] );
+		}
+		return $retorno;		
+    }
 	public function buscarFuncionario( $params ) {
         $sql  = "";
         $sql .= " SELECT * ";
@@ -66,7 +93,7 @@ class Orcamento
         $sql .= " WHERE ID_ORCAMENTO = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
-		$retorno[0][ 'DATA_ORCAMENTO' ] = Utils::formatadata_sql($retorno[0][ 'DATA_ORCAMENTO' ]);
+		$retorno[0][ 'DATA_ORCAMENTO' ] = Utils::formatadata_br($retorno[0][ 'DATA_ORCAMENTO' ]);
 		return $retorno[0];
     }
 
@@ -82,8 +109,8 @@ class Orcamento
 				ID_FUNCIONARIO='$ID_FUNCIONARIO', ID_CLIENTE='$ID_CLIENTE' WHERE ID_ORCAMENTO='$ID_ORCAMENTO' ");
 		}
         else {
-			return (int) $this->database->execute_sql(" INSERT INTO ORCAMENTO(ID_ORCAMENTO, DATA_ORCAMENTO, CONFIRMADO, ID_FUNCIONARIO, ID_CLIENTE) 
-				VALUES($ID_ORCAMENTO, '$DATA_ORCAMENTO', $CONFIRMADO, $ID_FUNCIONARIO, $ID_CLIENTE) ");
+			return (int) $this->database->execute_sql(" INSERT INTO ORCAMENTO(DATA_ORCAMENTO, CONFIRMADO, ID_FUNCIONARIO, ID_CLIENTE) 
+				VALUES('$DATA_ORCAMENTO', $CONFIRMADO, $ID_FUNCIONARIO, $ID_CLIENTE) ");
 		}
     }
 

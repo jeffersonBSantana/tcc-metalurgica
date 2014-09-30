@@ -3,6 +3,7 @@ var Orcamento = {
 		Orcamento.buscar();
 		Orcamento.buscarFuncionario();
 		Orcamento.buscarCliente();
+		Orcamento.buscarEsquadria();
 
 		Orcamento.salvar();
 	},
@@ -20,6 +21,7 @@ var Orcamento = {
 		            "CODE" : values.ID_ORCAMENTO
 		        };
 		        var values = {
+		        	"ITENS_ORCAMENTO": '<div onclick="Orcamento.itens('+values.ID_ORCAMENTO+')" class="btn btn-primary" ><span class="glyphicon glyphicon-search"></span></div>',
 		        	"CODE"  		 : values.ID_ORCAMENTO,
 			        "DATA_ORCAMENTO" : values.DATA_ORCAMENTO,
 					"CONFIRMADO"	 : ( values.CONFIRMADO == 0 ) ? 'Nao' : 'Sim',
@@ -37,16 +39,94 @@ var Orcamento = {
 		}, 'json');
 	},
 	
+	adicionar:function() {
+		$("#myModal2").modal({ 
+			"backdrop" : "static",
+			"keyboard" : true,
+			"show" : true 
+		});
+	},
+	buscarEsquadria : function( id ) {
+		var parametros = {
+			'metodo' : 'buscarEsquadria'
+		};
+
+		Select.remove_all_option('form-orcamento #ID_ESQUADRIA');
+		$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
+			var options = '<option value="" ></option>';
+			$.each(data, function (key, value) {
+				options += '<option value="'+value.ID_ESQUADRIA+'" >'+value.DESCRICAO+'</option>';
+		 	});
+
+			$('#form-orcamento #ID_ESQUADRIA').html( options );
+		}, 'json');
+	},
+	itens: function(codigo){
+		var id = '#table-itens-orcamento';
+		bootTable.clear( id );
+
+		var params = {
+			'metodo' : 'buscarItensOrcamento',
+			'codigo'  : codigo
+		};
+		$.post('?m=controller&c=OrcamentoController', params, function( data ) {
+			$.each( data, function( key, values ) {
+				var cor ='';
+				if(values.COR == 0){
+					cor = 'fosco'; 
+				}else if(values.COR == 1){
+					cor = 'chumbo';
+				}else if (values.COR == 1){
+					cor = 'branco';
+				}else{
+					cor = 'default';
+				}
+				
+		        var header = {
+		            "CODE" : values.ID_ORCAMENTO
+		        };
+		        var values = {
+		        	"ID_ESQUADRIA" 	 : values.DESCRICAO,
+		        	"QUANTIDADE"     : values.QUANTIDADE,
+		        	"ALTURA" : values.ALTURA,
+			        "LARGURA" : values.LARGURA,
+					"VALOR_UNITARIO"    : 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
+					"COR" 	 : cor
+		        };
+		        bootTable.addItem(
+		            id,
+		            header,
+		            values
+		        );
+		    });
+		}, 'json');
+		
+		
+		
+		
+		
+		
+		
+		
+	$("#myModal").modal({ 
+		"backdrop" : "static",
+		"keyboard" : true,
+		"show" : true 
+	});
+
+		
+	},
+	
 	buscarFuncionario : function( id ) {
 		var parametros = {
 			'metodo' : 'buscarFuncionario'
 		};
 
-		Select.remove_all_option('form-orcamento #ID_ORCAMENTO');
+		Select.remove_all_option('form-orcamento #ID_FUNCIONARIO');
 		$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {
-				options += '<option value="'+value.ID_ORCAMENTO+'" >'+value.NOME+'</option>';
+				options += '<option value="'+value.ID_FUNCIONARIO+'" >'+value.NOME+'</option>';
 		 	});
 
 			$('#form-orcamento #ID_FUNCIONARIO').html( options );
@@ -58,11 +138,11 @@ var Orcamento = {
 			'metodo' : 'buscarCliente'
 		};
 
-		Select.remove_all_option('form-orcamento #ID_ORCAMENTO');
+		Select.remove_all_option('form-orcamento #ID_CLIENTE');
 		$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {
-				options += '<option value="'+value.ID_ORCAMENTO+'" >'+value.NOME+'</option>';
+				options += '<option value="'+value.ID_CLIENTE+'" >'+value.NOME+'</option>';
 		 	});
 
 			$('#form-orcamento #ID_CLIENTE').html( options );

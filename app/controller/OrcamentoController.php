@@ -13,7 +13,12 @@ class OrcamentoController
     public function buscar( $params ) {
         return $this->model->buscar( $params );
     }
-	
+	public function buscarItensOrcamento( $params ) {
+        return $this->model->buscarItensOrcamento( $params );
+    }
+	public function buscarEsquadria( $params ) {
+        return $this->model->buscarEsquadria( $params );
+    }
 	public function buscarFuncionario( $params ) {
         return $this->model->buscarFuncionario( $params );
     }
