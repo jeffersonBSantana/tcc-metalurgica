@@ -40,11 +40,75 @@ var Orcamento = {
 	},
 	
 	adicionar:function() {
-		$("#myModal2").modal({ 
-			"backdrop" : "static",
-			"keyboard" : true,
-			"show" : true 
-		});
+		var esquadria_descricao = Select.option_select_attr('form-orcamento #ID_ESQUADRIA', 'descricao');
+		var id_esquadria = $('#form-orcamento #ID_ESQUADRIA').val();
+		var qtde = $('#form-orcamento #QUANTIDADE').val();
+		var altura = $('#form-orcamento #ALTURA').val();
+		var largura = $('#form-orcamento #LARGURA').val();
+		var valor_unitario = $('#form-orcamento #VALOR_UNITARIO').val();
+		var cor = Radio.checked('COR', 'form-orcamento');
+		var cor_descricao = "";
+		if(cor == 0){
+			cor_descricao = 'fosco'; 
+		}else if(cor == 1){
+			cor_descricao = 'chumbo';
+		}else if (cor == 2){
+			cor_descricao = 'branco';
+		}else{
+			cor_descricao = 'default';
+		}
+			
+		
+		if ( trim(id_esquadria) == "" ) {
+			alert('Esquadria precisa ser informada!');
+			$('#form-orcamento #ID_ESQUADRIA').focus();
+			return;
+		}
+		if ( Number(qtde) == 0 ) {
+			alert('quantidade precisa ser informada!');
+			$('#form-orcamento #QUANTIDADE').focus();
+			return;
+		}
+		if ( Number(altura) == 0 ) {
+			alert('Altura precisa ser informada!');
+			$('#form-orcamento #ALTURA').focus();
+			return;
+		}
+		if ( Number(largura) == 0 ) {
+			alert('Largura precisa ser informada!');
+			$('#form-orcamento #LARGURA').focus();
+			return;
+		}
+		if ( Number(valor_unitario) == 0 ) {
+			alert('Valor precisa ser informado!');
+			$('#form-orcamento #VALOR_UNITARIO').focus();
+			return;
+		}
+			
+				
+		var id = '#table-orcamento-cadastro';
+		
+        var header = {
+            "id_esquadria" : id_esquadria,
+            "qtde" : qtde,
+            "altura" : altura,
+            "largura" : largura,
+            "valor_unitario" : valor_unitario,
+            "cor" : cor
+        };
+        var values = {
+        	"esquadria_descricao" : esquadria_descricao,
+            "qtde" : qtde,
+            "altura" : altura,
+            "largura" : largura,
+            "valor_unitario" : valor_unitario,
+            "cor" : cor_descricao
+        };
+        bootTable.addItem(
+            id,
+            header,
+            values
+        );
 	},
 	buscarEsquadria : function( id ) {
 		var parametros = {
@@ -53,9 +117,9 @@ var Orcamento = {
 
 		Select.remove_all_option('form-orcamento #ID_ESQUADRIA');
 		$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
-			var options = '<option value="" ></option>';
+			var options = '<option value="" descricao="" ></option>';
 			$.each(data, function (key, value) {
-				options += '<option value="'+value.ID_ESQUADRIA+'" >'+value.DESCRICAO+'</option>';
+				options += '<option value="'+value.ID_ESQUADRIA+'" descricao="'+value.DESCRICAO+'" >'+value.DESCRICAO+'</option>';
 		 	});
 
 			$('#form-orcamento #ID_ESQUADRIA').html( options );
@@ -76,7 +140,7 @@ var Orcamento = {
 					cor = 'fosco'; 
 				}else if(values.COR == 1){
 					cor = 'chumbo';
-				}else if (values.COR == 1){
+				}else if (values.COR == 2){
 					cor = 'branco';
 				}else{
 					cor = 'default';
@@ -100,13 +164,6 @@ var Orcamento = {
 		        );
 		    });
 		}, 'json');
-		
-		
-		
-		
-		
-		
-		
 		
 	$("#myModal").modal({ 
 		"backdrop" : "static",
@@ -188,10 +245,39 @@ var Orcamento = {
 	salvar : function() {
 		$('#form-orcamento').validate({
 			submitHandler: function( form ) {
+				
+				if ( $('#table-orcamento-cadastro tbody tr').length == 0 ) {
+					alert('Não pode ser salvo um orçamento sem seus Itens. Verifique!');
+					return;
+				}
+				
+				var tabela = [];
+				$('#table-orcamento-cadastro tr').each(function(i) {
+				  var cor = $(this).attr('cor');
+				  var id_esquadria = $(this).attr('id_esquadria');
+				  var qtde = $(this).attr('qtde');
+				  var altura = $(this).attr('altura');
+				  var largura = $(this).attr('largura');
+				  var valor_unitario = $(this).attr('valor_unitario');
+				  
+				  if ( typeof id_esquadria != 'undefined' ) {
+				    var obj = {};
+				    obj.cor = cor;
+				    obj.id_esquadria = id_esquadria;
+				    obj.qtde = qtde;
+				    obj.altura = altura;
+				    obj.largura = largura;
+				    obj.valor_unitario = valor_unitario;
+				   
+				    tabela.push( obj );
+				  }
+				});
+				
 				var formulario = $( form ).serialize();
 				var params = {
 					'metodo' : 'salvar',
-					'formulario' : formulario
+					'formulario' : formulario,
+					'tabela' : tabela
 				};
 				$.post('?m=controller&c=OrcamentoController', params, function( data ) {
 					Orcamento.buscar();

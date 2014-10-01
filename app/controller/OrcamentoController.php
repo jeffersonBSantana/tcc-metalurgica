@@ -32,8 +32,10 @@ class OrcamentoController
     }
 
     public function salvar( $params ) {
-        parse_str( $params['formulario'], $params );
-	    return $this->model->salvar( $params );
+    	$tabela = $params['tabela'];
+		parse_str( $params['formulario'], $formulario );
+	    
+	    return $this->model->salvar( $formulario, $tabela );
     }
 
     public function remover( $params ) {

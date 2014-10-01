@@ -97,7 +97,18 @@ class Orcamento
 		return $retorno[0];
     }
 
-    public function salvar( $params ) {
+    public function salvar( $formulario, $tabela ) {
+		$id_orcamento = $this->salvarOrcamento($formulario);
+		$id_orcamento = '2';
+		
+		foreach( $tabela as $key => $valeus ) {
+			$r = $this->salvarItensOrcamentos($valeus, $id_orcamento);
+		}
+		
+		return $r;
+    }
+	
+    public function salvarOrcamento( $params ) {
         $ID_ORCAMENTO     = utf8_decode(($params['ID_ORCAMENTO'] == '') ? 0 : $params['ID_ORCAMENTO']);
 		$DATA_ORCAMENTO   = utf8_decode(Utils::formatadata_sql($params['DATA_ORCAMENTO']));
         $CONFIRMADO 	  = utf8_decode($params['CONFIRMADO']);
@@ -112,6 +123,24 @@ class Orcamento
 			return (int) $this->database->execute_sql(" INSERT INTO ORCAMENTO(DATA_ORCAMENTO, CONFIRMADO, ID_FUNCIONARIO, ID_CLIENTE) 
 				VALUES('$DATA_ORCAMENTO', $CONFIRMADO, $ID_FUNCIONARIO, $ID_CLIENTE) ");
 		}
+    }
+
+    public function salvarItensOrcamentos( $params, $id_orcamento) {
+    	$id_esquadria     = utf8_decode(($params['id_esquadria'] == '') ? 0 : $params['id_esquadria']);
+		$qtde   = utf8_decode($params['qtde']);
+        $altura 	  = utf8_decode($params['altura']);
+		$largura 	  = utf8_decode($params['largura']);
+		$valor_unitario   = utf8_decode($params['valor_unitario']);
+        $cor 	  = utf8_decode($params['cor']);
+		
+		// if (  $params['id_esquadria'] > 0 ) {
+			//return (int) $this->database->execute_sql(" UPDATE ITEM_ORCAMENTO SET id_esquadria='$id_esquadria', qtde='$qtde', 
+				//altura='$altura', largura='$largura, valor_unitario='$valor_unitario',cor='$cor', WHERE id_esquadria='$id_esquadria' ");
+		// }
+        //else {
+			return (int) $this->database->execute_sql(" INSERT INTO ITEM_ORCAMENTO(ID_ESQUADRIA, QUANTIDADE, ALTURA, LARGURA, VALOR_UNITARIO, COR, ID_ORCAMENTO) 
+				VALUES($id_esquadria, $qtde, $altura, $largura, $valor_unitario, $cor, $id_orcamento) ");
+		//}
     }
 
 	public function remover( $params ) {

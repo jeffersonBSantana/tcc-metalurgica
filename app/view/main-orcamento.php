@@ -28,21 +28,6 @@
 	</div>
 </div>
 
-<div id="myModal2" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-body">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
-			
-			Teste
-			
-			<div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>
-		</div>
-	</div>
-</div>
-
-
 <div id="div-orcamento" style="display: none;" >
 
 	<div class="page-header" >
@@ -50,7 +35,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 			<div id="panel-orcamento" class="panel panel-default" style="display:none;" >
 				<div class="panel-body">
 					<form id="form-orcamento" role="form" >
@@ -91,19 +76,19 @@
 						
 						<div class="form-group">
 							<label for="QUANTIDADE">Quantidade</label>
-							<input type="text" class="form-control" id="QUANTIDADE" name="QUANTIDADE" />
+							<input type="text" class="form-control" id="QUANTIDADE" name="QUANTIDADE" onkeydown="Mask.mascara(this, Mask.mnumeros)" />
 						</div>	
 						<div class="form-group">
 							<label for="ALTURA">Altura (cm)</label>
-							<input type="text" class="form-control" id="ALTURA" name="ALTURA" />
+							<input type="text" class="form-control" id="ALTURA" name="ALTURA" onkeydown="Mask.mascara(this, Mask.mvalorbr)"/>
 						</div>
 						<div class="form-group">
 							<label for="LARGURA">Largura (cm)</label>
-							<input type="text" class="form-control" id="LARGURA" name="LARGURA" />
+							<input type="text" class="form-control" id="LARGURA" name="LARGURA" onkeydown="Mask.mascara(this, Mask.mvalorbr)"/>
 						</div>
 						<div class="form-group">
 							<label for="VALOR_UNITARIO"> Valor Unitário</label>
-							<input type="text" class="form-control" id="VALOR_UNITARIO" name="VALOR_UNITARIO" required minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
+							<input type="text" class="form-control" id="VALOR_UNITARIO" name="VALOR_UNITARIO" minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
 						</div>
 						<div class="form-group">
 							<label for="COR">COR</label>
@@ -114,19 +99,20 @@
 								<input type="radio" name="COR" value="3" > Default<br/>
 							</div>
 						</div>
+						<div class="form-group">
+							<button type="button" class="btn btn-success" onclick="Orcamento.adicionar()" ><span class="glyphicon glyphicon-ok" ></span>Adicionar</button>
+						</div>						
+						
 						<div class="table-responsive">
-							<table id="table-orcamento-itens" class="table table-bordered table-striped">
+							<table id="table-orcamento-cadastro" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th><label>Visualizar itens</label></th>
-										<th width='4%' ><div onclick="Orcamento.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
-										<th><label>Data do Orçamento</label></th>
-										<th><label>Confirmado</label></th>
-										<th><label>Funcionario</label></th>
-										<th><label>Cliente</label></th>
-										<!--<th width='6%' ><label><input id="ativo" name="ativo" type="checkbox" value="1" onclick="Funcionarios.ativo()" checked > Ativo</label></th>-->
-										<th width='5%' ><label>Editar</label></th>
-										<th width='5%' ><label>Deletar</label></th>
+										<th><label>Esquadria</label></th>
+										<th><label>Quantidade</label></th>
+										<th><label>Altura</label></th>
+										<th><label>Largura</label></th>
+										<th><label>Valor Unitário</label></th>
+										<th><label>Cor</label></th>
 									</tr>
 								</thead>
 								<tbody>
