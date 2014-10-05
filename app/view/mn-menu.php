@@ -21,10 +21,9 @@
 				<li><hr/></li>
 				<li class="active"><a id="menu-inicio" href="javascript:void(0)" >Inicio</a></li>
 				<li><hr/></li>
+				<li><a id="menu-localidade" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Localidade</a></li>
 				<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionários</a></li>
 				<li><a id="menu-usuarios" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>
-				<li><hr/></li>
-				<li><a id="menu-localidade" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Localidade</a></li>
 				<li><a id="menu-cliente" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Clientes</a></li>
 				<li><hr/></li>
 				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
