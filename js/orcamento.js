@@ -1,5 +1,8 @@
 var Orcamento = {
 	iniciar : function() {
+		$('#ID_ADICIONARITENS').val( 0 );
+		bootTable.hide('#table-orcamento-cadastro');
+
 		Orcamento.buscar();
 		Orcamento.buscarFuncionario();
 		Orcamento.buscarCliente();
@@ -17,11 +20,11 @@ var Orcamento = {
 		};
 		$.post('?m=controller&c=OrcamentoController', params, function( data ) {
 			$.each( data, function( key, values ) {
-		        var header = {
-		            "CODE" : values.ID_ORCAMENTO
-		        };
+		    var header = {
+		    	"CODE" : values.ID_ORCAMENTO
+		    };
 		        var values = {
-		        	"ITENS_ORCAMENTO": '<div onclick="Orcamento.itens('+values.ID_ORCAMENTO+')" class="btn btn-primary" ><span class="glyphicon glyphicon-search"></span></div>',
+		        	"ITENS_ORCAMENTO": '<div onclick="Orcamento.buscarItens('+values.ID_ORCAMENTO+')" class="btn btn-primary" ><span class="glyphicon glyphicon-search"></span></div>',
 		        	"CODE"  		 : values.ID_ORCAMENTO,
 			        "DATA_ORCAMENTO" : values.DATA_ORCAMENTO,
 					"CONFIRMADO"	 : ( values.CONFIRMADO == 0 ) ? 'Nao' : 'Sim',
@@ -38,8 +41,54 @@ var Orcamento = {
 		    });
 		}, 'json');
 	},
-	
-	adicionar:function() {
+	buscarItens: function(codigo){
+		var id = '#table-itens-orcamento';
+		bootTable.clear( id );
+
+		var params = {
+			'metodo' : 'buscarItensOrcamento',
+			'codigo'  : codigo
+		};
+		$.post('?m=controller&c=OrcamentoController', params, function( data ) {
+			$.each( data, function( key, values ) {
+				var cor ='';
+				if(values.COR == 0){
+					cor = 'fosco';
+				}else if(values.COR == 1){
+					cor = 'chumbo';
+				}else if (values.COR == 2){
+					cor = 'branco';
+				}else{
+					cor = 'default';
+				}
+
+						var header = {
+								"CODE" : values.ID_ORCAMENTO
+						};
+						var values = {
+							"ID_ESQUADRIA" 	 : values.DESCRICAO,
+							"QUANTIDADE"     : values.QUANTIDADE,
+							"ALTURA" : values.ALTURA,
+							"LARGURA" : values.LARGURA,
+					"VALOR_UNITARIO"    : 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
+					"COR" 	 : cor
+						};
+						bootTable.addItem(
+								id,
+								header,
+								values
+						);
+				});
+		}, 'json');
+
+			$("#myModal").modal({
+				"backdrop" : "static",
+				"keyboard" : true,
+				"show" : true
+			});
+	},
+
+	adicionarItens:function() {
 		var esquadria_descricao = Select.option_select_attr('form-orcamento #ID_ESQUADRIA', 'descricao');
 		var id_esquadria = $('#form-orcamento #ID_ESQUADRIA').val();
 		var qtde = $('#form-orcamento #QUANTIDADE').val();
@@ -49,7 +98,7 @@ var Orcamento = {
 		var cor = Radio.checked('COR', 'form-orcamento');
 		var cor_descricao = "";
 		if(cor == 0){
-			cor_descricao = 'fosco'; 
+			cor_descricao = 'fosco';
 		}else if(cor == 1){
 			cor_descricao = 'chumbo';
 		}else if (cor == 2){
@@ -57,9 +106,8 @@ var Orcamento = {
 		}else{
 			cor_descricao = 'default';
 		}
-			
-		
-		if ( trim(id_esquadria) == "" ) {
+
+		if ( id_esquadria == 0 ) {
 			alert('Esquadria precisa ser informada!');
 			$('#form-orcamento #ID_ESQUADRIA').focus();
 			return;
@@ -84,31 +132,64 @@ var Orcamento = {
 			$('#form-orcamento #VALOR_UNITARIO').focus();
 			return;
 		}
-			
-				
+
+		var linha = Number($('#ID_ADICIONARITENS').val()) + 1;
+		$('#ID_ADICIONARITENS').val( linha );
+
 		var id = '#table-orcamento-cadastro';
-		
-        var header = {
-            "id_esquadria" : id_esquadria,
-            "qtde" : qtde,
-            "altura" : altura,
-            "largura" : largura,
-            "valor_unitario" : valor_unitario,
-            "cor" : cor
-        };
-        var values = {
-        	"esquadria_descricao" : esquadria_descricao,
-            "qtde" : qtde,
-            "altura" : altura,
-            "largura" : largura,
-            "valor_unitario" : valor_unitario,
-            "cor" : cor_descricao
-        };
-        bootTable.addItem(
-            id,
-            header,
-            values
-        );
+    var header = {
+				"id" : linha,
+				"id_item_orcamento" : 0,
+        "id_esquadria" : id_esquadria,
+        "qtde" : qtde,
+        "altura" : altura,
+        "largura" : largura,
+        "valor_unitario" : valor_unitario,
+        "cor" : cor
+    };
+    var values = {
+    	"esquadria_descricao" : esquadria_descricao,
+      "qtde" 								: qtde,
+      "altura" 							: altura,
+      "largura" 						: largura,
+      "valor_unitario" 			: valor_unitario,
+      "cor" 								: cor_descricao,
+			"REMOVE"		 					: '<div onclick="Orcamento.removerItens('+linha+','+0+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+    };
+    bootTable.addItem(
+        id,
+        header,
+        values
+    );
+	},
+	removerItens : function( linha, id_item_orcamento) {
+		bootbox.dialog({
+				message : "Deseja deletar o item orcamento?",
+				title : "Atenção",
+				buttons : {
+				success: {
+					label: "Sim",
+					className: "btn-success",
+					callback: function() {
+						var params = {
+							'metodo' : 'removerItemOrcamento',
+							'codigo' : id_item_orcamento
+						};
+
+						$('#table-orcamento-cadastro tbody tr#'+linha).remove();
+						if ( id_item_orcamento > 0 ) {
+							$.post('?m=controller&c=OrcamentoController', params, function( data ) {
+								console.log( data );
+							}, 'json');
+						}
+					}
+				},
+				main: {
+					label: "Não",
+					className: "btn-primary"
+				}
+				}
+		});
 	},
 	buscarEsquadria : function( id ) {
 		var parametros = {
@@ -125,55 +206,6 @@ var Orcamento = {
 			$('#form-orcamento #ID_ESQUADRIA').html( options );
 		}, 'json');
 	},
-	itens: function(codigo){
-		var id = '#table-itens-orcamento';
-		bootTable.clear( id );
-
-		var params = {
-			'metodo' : 'buscarItensOrcamento',
-			'codigo'  : codigo
-		};
-		$.post('?m=controller&c=OrcamentoController', params, function( data ) {
-			$.each( data, function( key, values ) {
-				var cor ='';
-				if(values.COR == 0){
-					cor = 'fosco'; 
-				}else if(values.COR == 1){
-					cor = 'chumbo';
-				}else if (values.COR == 2){
-					cor = 'branco';
-				}else{
-					cor = 'default';
-				}
-				
-		        var header = {
-		            "CODE" : values.ID_ORCAMENTO
-		        };
-		        var values = {
-		        	"ID_ESQUADRIA" 	 : values.DESCRICAO,
-		        	"QUANTIDADE"     : values.QUANTIDADE,
-		        	"ALTURA" : values.ALTURA,
-			        "LARGURA" : values.LARGURA,
-					"VALOR_UNITARIO"    : 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
-					"COR" 	 : cor
-		        };
-		        bootTable.addItem(
-		            id,
-		            header,
-		            values
-		        );
-		    });
-		}, 'json');
-		
-	$("#myModal").modal({ 
-		"backdrop" : "static",
-		"keyboard" : true,
-		"show" : true 
-	});
-
-		
-	},
-	
 	buscarFuncionario : function( id ) {
 		var parametros = {
 			'metodo' : 'buscarFuncionario'
@@ -189,7 +221,7 @@ var Orcamento = {
 			$('#form-orcamento #ID_FUNCIONARIO').html( options );
 		}, 'json');
 	},
-	
+
 	buscarCliente : function( id ) {
 		var parametros = {
 			'metodo' : 'buscarCliente'
@@ -204,11 +236,7 @@ var Orcamento = {
 
 			$('#form-orcamento #ID_CLIENTE').html( options );
 		}, 'json');
-	},	
-	//ativo : function() {
-		//$('#table-cliente #ativo').val( ( $('#table-cliente #ativo').is(':checked') ) ? 1 : 0 );
-		//Clientes.buscar();
-	//},
+	},
 	limpar : function() {
 		$('#panel-orcamento').show('slow');
 
@@ -216,6 +244,11 @@ var Orcamento = {
 		$('#form-orcamento').each(function() { this.reset(); });
 
 		$('#form-orcamento').find('input:visible,select:visible').first().focus();
+
+		$('#ID_ADICIONARITENS').val( 0 );
+		var id = '#table-orcamento-cadastro';
+		bootTable.clear( id );
+		bootTable.hide( id );
 	},
 	inserir : function() {
 		/* abre o panel */
@@ -226,6 +259,11 @@ var Orcamento = {
 		$('#form-orcamento').each(function() { this.reset(); });
 		/* posiciona o cursor */
 		$('#form-orcamento').find('input:visible,select:visible').first().focus();
+
+		$('#ID_ADICIONARITENS').val( 0 );
+		var id = '#table-orcamento-cadastro';
+		bootTable.clear( id );
+		bootTable.hide( id );
 	},
 	editar : function( id ) {
 		var parametros = {
@@ -240,39 +278,94 @@ var Orcamento = {
 			$('#form-orcamento input[name=CONFIRMADO]').filter('[value='+data.CONFIRMADO+']').prop('checked', true);
 			$('#form-orcamento #ID_FUNCIONARIO').val(data.ID_FUNCIONARIO);
 			$('#form-orcamento #ID_CLIENTE').val(data.ID_CLIENTE);
+
+			var parametros = {
+				'metodo' : 'editarItens',
+				'codigo' : id
+			};
+			$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
+				var id = '#table-orcamento-cadastro';
+				bootTable.clear( id );
+
+				$.each( data, function( key, values ) {
+
+					var cor = values.COR;
+					var cor_descricao = "";
+					if(cor == 0){
+						cor_descricao = 'fosco';
+					}else if(cor == 1){
+						cor_descricao = 'chumbo';
+					}else if (cor == 2){
+						cor_descricao = 'branco';
+					}else{
+						cor_descricao = 'default';
+					}
+
+					var linha = Number($('#ID_ADICIONARITENS').val()) + 1;
+					$('#ID_ADICIONARITENS').val( linha );
+
+					var header = {
+							"id" : linha,
+							"id_item_orcamento" : values.ID_ITEM_ORCAMENTO,
+							"id_esquadria" : values.ID_ESQUADRIA,
+							"qtde" : values.QUANTIDADE,
+							"altura" : values.ALTURA,
+							"largura" : values.LARGURA,
+							"valor_unitario" : values.VALOR_UNITARIO,
+							"cor" : values.COR
+					};
+					var values = {
+						"esquadria_descricao" : values.ID_ESQUADRIA,
+						"qtde" 								: values.QUANTIDADE,
+						"altura" 							: values.ALTURA,
+						"largura" 						: values.LARGURA,
+						"valor_unitario" 			: values.VALOR_UNITARIO,
+						"cor" 								: cor_descricao,
+						"REMOVE"		 					: '<div onclick="Orcamento.removerItens('+linha+','+values.ID_ITEM_ORCAMENTO+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+					};
+					bootTable.addItem(
+							id,
+							header,
+							values
+					);
+
+				});
+			}, 'json');
 		}, 'json');
 	},
 	salvar : function() {
 		$('#form-orcamento').validate({
 			submitHandler: function( form ) {
-				
+
 				if ( $('#table-orcamento-cadastro tbody tr').length == 0 ) {
 					alert('Não pode ser salvo um orçamento sem seus Itens. Verifique!');
 					return;
 				}
-				
+
 				var tabela = [];
 				$('#table-orcamento-cadastro tr').each(function(i) {
+				  var id_item_orcamento = $(this).attr('id_item_orcamento');
+					var id_esquadria = $(this).attr('id_esquadria');
 				  var cor = $(this).attr('cor');
-				  var id_esquadria = $(this).attr('id_esquadria');
-				  var qtde = $(this).attr('qtde');
+					var qtde = $(this).attr('qtde');
 				  var altura = $(this).attr('altura');
 				  var largura = $(this).attr('largura');
 				  var valor_unitario = $(this).attr('valor_unitario');
-				  
+
 				  if ( typeof id_esquadria != 'undefined' ) {
 				    var obj = {};
+						obj.id_item_orcamento = id_item_orcamento;
 				    obj.cor = cor;
 				    obj.id_esquadria = id_esquadria;
 				    obj.qtde = qtde;
 				    obj.altura = altura;
 				    obj.largura = largura;
 				    obj.valor_unitario = valor_unitario;
-				   
+
 				    tabela.push( obj );
 				  }
 				});
-				
+
 				var formulario = $( form ).serialize();
 				var params = {
 					'metodo' : 'salvar',

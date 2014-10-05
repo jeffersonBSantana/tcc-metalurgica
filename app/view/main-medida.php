@@ -19,7 +19,7 @@
 							<label for="ID_PERFIL">Perfil</label>
 							<select class="form-control" id="ID_PERFIL" name="ID_PERFIL">
 							</select>
-						</div>						
+						</div>
 						<div class="form-group">
 							<label for="QUANTIDADE">Quantidade Utilizada</label>
 							<div class="input-group margin-bottom-sm">
@@ -55,7 +55,7 @@
 								<input type="radio" name="MEDIDA_REFERENCIA" value="1" > Altura<br/>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Medidas.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>

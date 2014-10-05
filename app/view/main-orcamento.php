@@ -1,28 +1,30 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-body">
+			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Itens Orcamentos</h4>
 			</div>
-			<div class="table-responsive">
-				<table id="table-itens-orcamento" class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th><label>Esquadria</label></th>
-							<th><label>Quantidade</label></th>
-							<th><label>Altura</label></th>
-							<th><label>Largura</label></th>
-							<th><label>Valor Unitário</label></th>
-							<th><label>Cor</label></th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+			<div class="modal-body">
+				<div class="table-responsive">
+					<table id="table-itens-orcamento" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th><label>Esquadria</label></th>
+								<th><label>Quantidade</label></th>
+								<th><label>Altura</label></th>
+								<th><label>Largura</label></th>
+								<th><label>Valor Unitário</label></th>
+								<th><label>Cor</label></th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" onclick="Orcamento.adicionar()" >Adicionar</button>
-				<button type="button" class="btn btn-primary">OK</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" >OK</button>
 			</div>
 		</div>
 	</div>
@@ -49,7 +51,7 @@
 							<label for="ID_CLIENTE">Cliente</label>
 							<select class="form-control" id="ID_CLIENTE" name="ID_CLIENTE">
 							</select>
-						</div>						
+						</div>
 						<div class="form-group">
 							<label for="DATA_ORCAMENTO">Data do Orçamento</label>
 							<div class="input-group margin-bottom-sm">
@@ -64,20 +66,20 @@
 								<input type="radio" name="CONFIRMADO" value="1" checked > Sim<br/>
 							</div>
 						</div>
-						
+
 						<hr />
 						<h2> Itens do Orçamento </h2>
-						
+
 						<div class="form-group">
 							<label for="ID_ESQUADRIA">Esquadria</label>
 							<select class="form-control" id="ID_ESQUADRIA" name="ID_ESQUADRIA">
 							</select>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="QUANTIDADE">Quantidade</label>
 							<input type="text" class="form-control" id="QUANTIDADE" name="QUANTIDADE" onkeydown="Mask.mascara(this, Mask.mnumeros)" />
-						</div>	
+						</div>
 						<div class="form-group">
 							<label for="ALTURA">Altura (cm)</label>
 							<input type="text" class="form-control" id="ALTURA" name="ALTURA" onkeydown="Mask.mascara(this, Mask.mvalorbr)"/>
@@ -100,9 +102,10 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-success" onclick="Orcamento.adicionar()" ><span class="glyphicon glyphicon-ok" ></span>Adicionar</button>
-						</div>						
-						
+							<input type="hidden" class="form-control" id="ID_ADICIONARITENS" name="ID_ADICIONARITENS" >
+							<button type="button" class="btn btn-success" onclick="Orcamento.adicionarItens()" ><span class="glyphicon glyphicon-ok" ></span>Adicionar</button>
+						</div>
+
 						<div class="table-responsive">
 							<table id="table-orcamento-cadastro" class="table table-bordered table-striped">
 								<thead>
@@ -113,14 +116,15 @@
 										<th><label>Largura</label></th>
 										<th><label>Valor Unitário</label></th>
 										<th><label>Cor</label></th>
+										<th><label>Remover</label></th>
 									</tr>
 								</thead>
 								<tbody>
 								</tbody>
 							</table>
-						</div>	
+						</div>
 
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Orcamento.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>
@@ -132,13 +136,12 @@
 		<table id="table-orcamento" class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th><label>Visualizar itens</label></th>
+					<th width='4%' ><div class="btn btn-default" ><span class="glyphicon glyphicon-search"></span></div></th>
 					<th width='4%' ><div onclick="Orcamento.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Data do Orçamento</label></th>
 					<th><label>Confirmado</label></th>
 					<th><label>Funcionario</label></th>
 					<th><label>Cliente</label></th>
-					<!--<th width='6%' ><label><input id="ativo" name="ativo" type="checkbox" value="1" onclick="Funcionarios.ativo()" checked > Ativo</label></th>-->
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>
 				</tr>

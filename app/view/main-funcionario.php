@@ -46,7 +46,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="NUMERO">Numero</label>
+							<label for="NUMERO">Número</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-barcode fa-fw"></i></span>
 								<input type="text" class="form-control" id="NUMERO" name="NUMERO" required minlength="1" >
@@ -71,18 +71,7 @@
 							<select class="form-control" id="ID_LOCAL" name="ID_LOCAL">
 							</select>
 						</div>
-						<!--<div class="checkbox">
-							<label for="active" ><input id="ATIVO" name="ATIVO" type="checkbox" value="1" checked > Ativo</label>
-						</div>
-						<div class="form-group">
-							<label for="NIVEL_ACESSO">Nivel de Acesso</label>
-							<div class="input-group margin-bottom-sm">
-								<input type="radio" name="NIVEL_ACESSO" value="0" checked > Ouro<br/>
-								<input type="radio" name="NIVEL_ACESSO" value="1" > Prata<br/>
-								<input type="radio" name="NIVEL_ACESSO" value="2" > Bronze<br/>
-							</div>
-						</div>-->
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Funcionarios.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>
@@ -104,7 +93,6 @@
 					<th><label>Bairro</label></th>
 					<th><label>CEP</label></th>
 					<th><label>Localidade</label></th>
-					<!--<th width='6%' ><label><input id="ativo" name="ativo" type="checkbox" value="1" onclick="Funcionarios.ativo()" checked > Ativo</label></th>-->
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>
 				</tr>
