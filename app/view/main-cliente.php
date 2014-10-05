@@ -53,7 +53,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="NUMERO">Numero</label>
+							<label for="NUMERO">Número</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-barcode fa-fw"></i></span>
 								<input type="text" class="form-control" id="NUMERO" name="NUMERO" required minlength="1" >
@@ -78,7 +78,7 @@
 							<select class="form-control" id="ID_LOCALIDADE" name="ID_LOCALIDADE">
 							</select>
 						</div>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Clientes.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>

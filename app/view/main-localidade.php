@@ -31,7 +31,7 @@
 								<input type="text" class="form-control" id="SIGLA" name="SIGLA" required minlength="2" >
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Localidade.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>

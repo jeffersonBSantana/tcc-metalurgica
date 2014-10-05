@@ -21,13 +21,16 @@
 				<li><hr/></li>
 				<li class="active"><a id="menu-inicio" href="javascript:void(0)" >Inicio</a></li>
 				<li><hr/></li>
-				<li><a id="menu-usuarios" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>
 				<li><a id="menu-funcionario" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Funcionários</a></li>
-				<li><a id="menu-cliente" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Clientes</a></li>
+				<li><a id="menu-usuarios" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>
+				<li><hr/></li>
 				<li><a id="menu-localidade" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Localidade</a></li>
+				<li><a id="menu-cliente" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Clientes</a></li>
+				<li><hr/></li>
 				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
 				<li><a id="menu-esquadria" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Esquadria</a></li>
 				<li><a id="menu-medida" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Medida</a></li>
+				<li><hr/></li>
 				<li><a id="menu-orcamento" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Orçamento</a></li>
 			</ul>
 		</div>

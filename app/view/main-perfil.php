@@ -24,8 +24,8 @@
 								<input type="text" class="form-control" id="PESO_POR_METRO" name="PESO_POR_METRO" required minlength="1" >
 							</div>
 						</div>
-						
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Perfil.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>

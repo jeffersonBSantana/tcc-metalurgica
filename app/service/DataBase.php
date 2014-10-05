@@ -4,7 +4,7 @@ class DataBase
 {
 	private static $myServer = "localhost";
 	private static $myUser = "root";
-	private static $myPass = "";
+	private static $myPass = "root";
 	private static $myDB = "db_metalurgica";
 	private static $dbhandle;
 
@@ -44,11 +44,20 @@ class DataBase
         return $this->query($sql);
     }
 
+		public function execute_sql_last_id($sql='', $debug=false) {
+			if ( $debug ) return var_dump( $sql );
+			$this->connect();
+			$result = mysql_query($sql);
+			$result = mysql_insert_id();
+			$this->disconnect();
+			return $result;
+		}
+
     public function execute_sql($sql='', $debug=false) {
-        if ( $debug ) return var_dump( $sql );
+      if ( $debug ) return var_dump( $sql );
     	$this->connect();
-        $result = mysql_query($sql);
-		$this->disconnect();
+      $result = mysql_query($sql);
+			$this->disconnect();
     	return $result;
     }
 

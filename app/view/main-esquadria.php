@@ -24,8 +24,8 @@
 								<input type="text" class="form-control" id="COLOCACAO" name="COLOCACAO" required minlength="3" >
 							</div>
 						</div>
-						
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Salvar</button>
+
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Esquadria.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
 				</div>
