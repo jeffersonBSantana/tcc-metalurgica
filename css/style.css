@@ -63,7 +63,7 @@ form.validForm input.error, form.validForm textarea.error {
 }
 .ef-head {
     background-color: #00521A;
-    background-image: linear-gradient(to bottom, #009F33, #00521A);
+    background-image: linear-gradient(to bottom, #f8f8f8, #0b7aff);
     background-repeat: repeat-x;
     color: #FFFFFF;
 }
@@ -161,8 +161,8 @@ form.validForm input.error, form.validForm textarea.error {
 }
 .profile-img
 {
-    width: 96px;
-    height: 96px;
+    width: 150px;
+    height: 90px;
     margin: 0 auto 10px;
     display: block;
     /*-moz-border-radius: 50%;

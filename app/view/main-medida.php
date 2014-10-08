@@ -16,44 +16,8 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="ID_PERFIL">Perfil</label>
-							<select class="form-control" id="ID_PERFIL" name="ID_PERFIL">
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="QUANTIDADE">Quantidade Utilizada</label>
-							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-plus-square fa-fw"></i></span>
-								<input type="text" class="form-control" id="QUANTIDADE" name="QUANTIDADE" required minlength="1" >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="DIMINUIR">Diminuir(cm)</label>
-							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-minus-square fa-fw"></i></span>
-								<input type="text" class="form-control" id="DIMINUIR" name="DIMINUIR" required minlength="1" >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="AUMENTAR">Aumentar(cm)</label>
-							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-plus-square fa-fw"></i></span>
-								<input type="text" class="form-control" id="AUMENTAR" name="AUMENTAR" required minlength="1" >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="DIVIDIR">Dividir por</label>
-							<div class="input-group margin-bottom-sm">
-							  	<span class="input-group-addon"><i class="fa fa-cut fa-fw"></i></span>
-								<input type="text" class="form-control" id="DIVIDIR" name="DIVIDIR" required minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="MEDIDA_REFERENCIA">Medida de Referência</label>
-							<div class="input-group margin-bottom-sm">
-								<input type="radio" name="MEDIDA_REFERENCIA" value="0" checked > Largura<br/>
-								<input type="radio" name="MEDIDA_REFERENCIA" value="1" > Altura<br/>
-							</div>
+							<label for="VALOR"> Valor</label>
+							<input type="text" class="form-control" id="VALOR" name="VALOR" minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
 						</div>
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Medidas.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
@@ -68,14 +32,8 @@
 			<thead>
 				<tr>
 					<th width='4%' ><div onclick="Medidas.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
-					<th><label>Qtd Utilizada</label></th>
-					<th><label>Diminuir(cm)</label></th>
-					<th><label>Aumentar(cm)</label></th>
-					<th><label>Dividir por</label></th>
-					<th><label>Medida de Referência</label></th>
 					<th><label>Esquadria</label></th>
-					<th><label>Perfil</label></th>
-					<!--<th width='6%' ><label><input id="ativo" name="ativo" type="checkbox" value="1" onclick="Funcionarios.ativo()" checked > Ativo</label></th>-->
+					<th><label>Valor</label></th>
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>
 				</tr>
@@ -84,5 +42,4 @@
 			</tbody>
 		</table>
 	</div>
-
 </div>

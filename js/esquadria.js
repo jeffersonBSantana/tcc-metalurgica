@@ -1,8 +1,10 @@
 var Esquadria = {
 	iniciar : function() {
+		Esquadria.buscarPerfil();
 		Esquadria.buscar();
 		Esquadria.salvar();
 	},
+	
 	buscar : function() {
 		var id = '#table-esquadria';
 		bootTable.clear( id );
@@ -20,7 +22,8 @@ var Esquadria = {
 		        	"CODE"  	 : values.ID_ESQUADRIA,
 			        "DESCRICAO"  : values.DESCRICAO,
 		          	"COLOCACAO"  : values.COLOCACAO,
-			        "EDIT"  	 : '<div onclick="Esquadria.editar('+values.ID_ESQUADRIA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
+			        "PERFIL"	 : values.DESCRICAO_PERFIL,
+		          	"EDIT"  	 : '<div onclick="Esquadria.editar('+values.ID_ESQUADRIA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"	 : '<div onclick="Esquadria.remover('+values.ID_ESQUADRIA+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
 		        bootTable.addItem(
@@ -29,6 +32,22 @@ var Esquadria = {
 		            values
 		        );
 		    });
+		}, 'json');
+	},
+	
+	buscarPerfil : function() {
+		var parametros = {
+			'metodo' : 'buscarPerfil'
+		};
+		
+		Select.remove_all_option('form-esquadria #ID_PERFIL');
+		$.post('?m=controller&c=EsquadriaController', parametros, function( data ) {
+			var options = '<option value="" ></option>';
+			$.each(data, function (key, value) {
+		 		options += '<option value="'+value.ID_PERFIL+'" >'+value.DESCRICAO+'</option>';
+		 	});
+
+			$('#form-esquadria #ID_PERFIL').html( options );
 		}, 'json');
 	},
 	
@@ -66,6 +85,7 @@ var Esquadria = {
 			$('#form-esquadria #ID_ESQUADRIA').val( data.ID_ESQUADRIA );
 			$('#form-esquadria #DESCRICAO').val( data.DESCRICAO );
 			$('#form-esquadria #COLOCACAO').val( data.COLOCACAO );
+			$('#form-esquadria #ID_PERFIL').val( data.ID_PERFIL );
 
 			//$('#form-funcionario input[name=NIVEL_ACESSO]').filter('[value='+data.NIVEL_ACESSO+']').prop('checked', true);
 

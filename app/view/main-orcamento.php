@@ -90,7 +90,7 @@
 						</div>
 						<div class="form-group">
 							<label for="VALOR_UNITARIO"> Valor Unitário</label>
-							<input type="text" class="form-control" id="VALOR_UNITARIO" name="VALOR_UNITARIO" minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
+							<input type="text" disabled class="form-control" id="VALOR_UNITARIO" name="VALOR_UNITARIO" minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
 						</div>
 						<div class="form-group">
 							<label for="COR">COR</label>

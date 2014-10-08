@@ -17,6 +17,10 @@ class EsquadriaController
     public function editar( $params ) {
 	    return $this->model->editar( $params );
     }
+	
+	public function buscarPerfil( $params ) {
+        return $this->model->buscarPerfil( $params );
+    }
 
     public function salvar( $params ) {
         parse_str( $params['formulario'], $params );

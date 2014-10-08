@@ -2,7 +2,7 @@ var Medidas = {
 	iniciar : function() {
 		Medidas.buscar();
 		Medidas.buscarEsquadria();
-		Medidas.buscarPerfil();
+		//Medidas.buscarPerfil();
 
 		Medidas.salvar();
 	},
@@ -21,13 +21,8 @@ var Medidas = {
 		        };
 		        var values = {
 		        	"CODE"  			: values.ID_MEDIDA,
-			        "QUANTIDADE" 		: values.QUANTIDADE,
-		          	"DIMINUIR" 			: values.DIMINUIR,
-					"AUMENTAR" 			: values.AUMENTAR,
-		          	"DIVIDIR" 			: values.DIVIDIR,
-		          	"MEDIDA_REFERENCIA"	: ( values.MEDIDA_REFERENCIA == 0 ) ? 'Largura' : 'Altura',
-		          	"ESQUADRIA"			: values.ESQUADRIA,
-					"ID_PERFIL"			: values.DESCRICAO + ' - ' + values.PESO_POR_METRO,
+		        	"ESQUADRIA"			: values.ESQUADRIA,
+			        "VALOR" 			: 'R$ ' + values.VALOR,
 			        "EDIT"  			: '<div onclick="Medidas.editar('+values.ID_MEDIDA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"			: '<div onclick="Medidas.remover('+values.ID_MEDIDA+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
@@ -56,21 +51,21 @@ var Medidas = {
 		}, 'json');
 	},
 	
-	buscarPerfil : function( id ) {
-		var parametros = {
-			'metodo' : 'buscarPerfil'
-		};
+	//buscarPerfil : function( id ) {
+		//var parametros = {
+			//'metodo' : 'buscarPerfil'
+		//};
 
-		Select.remove_all_option('form-medida #ID_MEDIDA');
-		$.post('?m=controller&c=MedidaController', parametros, function( data ) {
-			var options = '<option value="" ></option>';
-			$.each(data, function (key, value) {
-				options += '<option value="'+value.ID_PERFIL+'" >'+value.DESCRICAO+' - '+value.PESO_POR_METRO+'</option>';
-		 	});
+		//Select.remove_all_option('form-medida #ID_MEDIDA');
+		//$.post('?m=controller&c=MedidaController', parametros, function( data ) {
+			//var options = '<option value="" ></option>';
+			//$.each(data, function (key, value) {
+				//options += '<option value="'+value.ID_PERFIL+'" >'+value.DESCRICAO+' - '+value.PESO_POR_METRO+'</option>';
+		 	//});
 
-			$('#form-medida #ID_PERFIL').html( options );
-		}, 'json');
-	},	
+			//$('#form-medida #ID_PERFIL').html( options );
+		//}, 'json');
+	//},	
 	//ativo : function() {
 		//$('#table-cliente #ativo').val( ( $('#table-cliente #ativo').is(':checked') ) ? 1 : 0 );
 		//Clientes.buscar();
@@ -102,13 +97,8 @@ var Medidas = {
 			$('#panel-medida').show('slow');
 
 			$('#form-medida #ID_MEDIDA').val( data.ID_MEDIDA );
-			$('#form-medida #QUANTIDADE').val( data.QUANTIDADE );
-			$('#form-medida #DIMINUIR').val( data.DIMINUIR );
-			$('#form-medida #AUMENTAR').val( data.AUMENTAR );
-			$('#form-medida #DIVIDIR').val( data.DIVIDIR );
-			$('#form-medida input[name=MEDIDA_REFERENCIA]').filter('[value='+data.MEDIDA_REFERENCIA+']').prop('checked', true);
+			$('#form-medida #VALOR').val( data.VALOR );
 			$('#form-medida #ID_ESQUADRIA').val(data.ID_ESQUADRIA);
-			$('#form-medida #ID_PERFIL').val(data.ID_PERFIL);
 		}, 'json');
 	},
 	salvar : function() {

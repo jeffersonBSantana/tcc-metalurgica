@@ -7,9 +7,40 @@ var Orcamento = {
 		Orcamento.buscarFuncionario();
 		Orcamento.buscarCliente();
 		Orcamento.buscarEsquadria();
+		Orcamento.calcular();
 
 		Orcamento.salvar();
 	},
+	calcular : function() {
+		// Funcao Calcular
+		function calc() {
+		  var ESQUADRIA    = Number( Select.option_select_attr('form-orcamento #ID_ESQUADRIA', 'valor'));
+		  var QUANTIDADE   = Money.formatUs($('#form-orcamento #QUANTIDADE').val());
+		  var ALTURA       = Money.formatUs($('#form-orcamento #ALTURA').val());
+		  var LARGURA      = Money.formatUs($('#form-orcamento #LARGURA').val());
+
+		  var valor = ALTURA * LARGURA;
+		  valor = valor * ESQUADRIA;
+		  valor = valor * QUANTIDADE;
+
+		  $('#form-orcamento #VALOR_UNITARIO').val(Money.formatBr(valor));
+		}
+		
+		$('#form-orcamento #VALOR_UNITARIO').val('0,00');
+		$('#form-orcamento #ID_ESQUADRIA').change(function(e) {
+		  calc();
+		});
+		$('#form-orcamento #QUANTIDADE').change(function(e) {
+		  calc();
+		});
+		$('#form-orcamento #ALTURA').change(function(e) {
+		  calc();
+		});
+		$('#form-orcamento #LARGURA').change(function(e) {
+		  calc();
+		});	
+	},
+	
 	buscar : function() {
 		var id = '#table-orcamento';
 		bootTable.clear( id );
@@ -66,12 +97,12 @@ var Orcamento = {
 								"CODE" : values.ID_ORCAMENTO
 						};
 						var values = {
-							"ID_ESQUADRIA" 	 : values.DESCRICAO,
-							"QUANTIDADE"     : values.QUANTIDADE,
-							"ALTURA" : values.ALTURA,
-							"LARGURA" : values.LARGURA,
-					"VALOR_UNITARIO"    : 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
-					"COR" 	 : cor
+							"ID_ESQUADRIA" 	: values.DESCRICAO,
+							"QUANTIDADE"    : values.QUANTIDADE,
+							"ALTURA" 		: values.ALTURA,
+							"LARGURA" 		: values.LARGURA,
+							"VALOR_UNITARIO": 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
+							"COR" 	 		: cor
 						};
 						bootTable.addItem(
 								id,
@@ -138,23 +169,23 @@ var Orcamento = {
 
 		var id = '#table-orcamento-cadastro';
     var header = {
-				"id" : linha,
-				"id_item_orcamento" : 0,
-        "id_esquadria" : id_esquadria,
-        "qtde" : qtde,
-        "altura" : altura,
-        "largura" : largura,
-        "valor_unitario" : valor_unitario,
-        "cor" : cor
+		"id" 				: linha,
+		"id_item_orcamento" : 0,
+        "id_esquadria" 		: id_esquadria,
+        "qtde" 				: qtde,
+        "altura" 			: altura,
+        "largura" 			: largura,
+        "valor_unitario" 	: valor_unitario,
+        "cor" 				: cor
     };
     var values = {
-    	"esquadria_descricao" : esquadria_descricao,
-      "qtde" 								: qtde,
-      "altura" 							: altura,
-      "largura" 						: largura,
-      "valor_unitario" 			: valor_unitario,
-      "cor" 								: cor_descricao,
-			"REMOVE"		 					: '<div onclick="Orcamento.removerItens('+linha+','+0+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+      "esquadria_descricao" : esquadria_descricao,
+      "qtde" 				: qtde,
+      "altura" 				: altura,
+      "largura" 			: largura,
+      "valor_unitario" 		: valor_unitario,
+      "cor" 				: cor_descricao,
+	  "REMOVE"		 		: '<div onclick="Orcamento.removerItens('+linha+','+0+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
     };
     bootTable.addItem(
         id,
@@ -200,7 +231,7 @@ var Orcamento = {
 		$.post('?m=controller&c=OrcamentoController', parametros, function( data ) {
 			var options = '<option value="" descricao="" ></option>';
 			$.each(data, function (key, value) {
-				options += '<option value="'+value.ID_ESQUADRIA+'" descricao="'+value.DESCRICAO+'" >'+value.DESCRICAO+'</option>';
+				options += '<option value="'+value.ID_ESQUADRIA+'" descricao="'+value.DESCRICAO+'" valor="'+value.VALOR+'">'+value.DESCRICAO+'</option>';
 		 	});
 
 			$('#form-orcamento #ID_ESQUADRIA').html( options );
@@ -305,23 +336,23 @@ var Orcamento = {
 					$('#ID_ADICIONARITENS').val( linha );
 
 					var header = {
-							"id" : linha,
-							"id_item_orcamento" : values.ID_ITEM_ORCAMENTO,
-							"id_esquadria" : values.ID_ESQUADRIA,
-							"qtde" : values.QUANTIDADE,
-							"altura" : values.ALTURA,
-							"largura" : values.LARGURA,
-							"valor_unitario" : values.VALOR_UNITARIO,
-							"cor" : values.COR
+						"id" 				: linha,
+						"id_item_orcamento" : values.ID_ITEM_ORCAMENTO,
+						"id_esquadria" 		: values.ID_ESQUADRIA,
+						"qtde" 				: values.QUANTIDADE,
+						"altura" 			: values.ALTURA,
+						"largura" 			: values.LARGURA,
+						"valor_unitario" 	: values.VALOR_UNITARIO,
+						"cor" 				: values.COR
 					};
 					var values = {
 						"esquadria_descricao" : values.ID_ESQUADRIA,
-						"qtde" 								: values.QUANTIDADE,
-						"altura" 							: values.ALTURA,
-						"largura" 						: values.LARGURA,
-						"valor_unitario" 			: values.VALOR_UNITARIO,
-						"cor" 								: cor_descricao,
-						"REMOVE"		 					: '<div onclick="Orcamento.removerItens('+linha+','+values.ID_ITEM_ORCAMENTO+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+						"qtde" 				  : values.QUANTIDADE,
+						"altura" 			  : values.ALTURA,
+						"largura" 			  : values.LARGURA,
+						"valor_unitario" 	  : values.VALOR_UNITARIO,
+						"cor" 			      : cor_descricao,
+						"REMOVE"		 	  : '<div onclick="Orcamento.removerItens('+linha+','+values.ID_ITEM_ORCAMENTO+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 					};
 					bootTable.addItem(
 							id,
@@ -345,16 +376,16 @@ var Orcamento = {
 				var tabela = [];
 				$('#table-orcamento-cadastro tr').each(function(i) {
 				  var id_item_orcamento = $(this).attr('id_item_orcamento');
-					var id_esquadria = $(this).attr('id_esquadria');
+				  var id_esquadria = $(this).attr('id_esquadria');
 				  var cor = $(this).attr('cor');
-					var qtde = $(this).attr('qtde');
+				  var qtde = $(this).attr('qtde');
 				  var altura = $(this).attr('altura');
 				  var largura = $(this).attr('largura');
 				  var valor_unitario = $(this).attr('valor_unitario');
 
 				  if ( typeof id_esquadria != 'undefined' ) {
 				    var obj = {};
-						obj.id_item_orcamento = id_item_orcamento;
+					obj.id_item_orcamento = id_item_orcamento;
 				    obj.cor = cor;
 				    obj.id_esquadria = id_esquadria;
 				    obj.qtde = qtde;

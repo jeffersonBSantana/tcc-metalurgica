@@ -14,8 +14,11 @@ class Esquadria
 
     public function buscar( $params ) {
     	$sql  = "";
-        $sql .= " SELECT * ";
+        $sql .= " SELECT ESQUADRIA.*, PERFIL.DESCRICAO AS DESCRICAO_PERFIL ";
         $sql .= " FROM ESQUADRIA ";
+		$sql .= " INNER JOIN PERFIL ";
+		$sql .= " ON PERFIL.ID_PERFIL = ESQUADRIA.ID_PERFIL ";
+        
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
@@ -24,6 +27,13 @@ class Esquadria
 		return $retorno;	
     }
 
+	public function buscarPerfil( $params ) {
+        $sql  = "";
+        $sql .= " SELECT * ";
+        $sql .= " FROM PERFIL ";
+
+        return $this->database->select_sql( $sql );
+    }
     
 	public function editar( $params ) {
 		$code = utf8_decode($params['codigo']);
@@ -40,13 +50,13 @@ class Esquadria
         $ID_ESQUADRIA = utf8_decode( ($params['ID_ESQUADRIA'] == '') ? 0 : $params['ID_ESQUADRIA'] );
         $DESCRICAO 	  = utf8_decode( strtoupper( $params['DESCRICAO'] ));
         $COLOCACAO 	  = utf8_decode( $params['COLOCACAO'] );
+		$ID_PERFIL 	  = utf8_decode( $params['ID_PERFIL'] );
 
 		if (  $params['ID_ESQUADRIA'] > 0 ) {
-			return (int) $this->database->execute_sql(" UPDATE ESQUADRIA SET DESCRICAO='$DESCRICAO', COLOCACAO='$COLOCACAO' WHERE ID_ESQUADRIA=$ID_ESQUADRIA ");
+			return (int) $this->database->execute_sql(" UPDATE ESQUADRIA SET ID_PERFIL=$ID_PERFIL, DESCRICAO='$DESCRICAO', COLOCACAO='$COLOCACAO' WHERE ID_ESQUADRIA=$ID_ESQUADRIA ");
 		}
         else {
-			return (int) $this->database->execute_sql(" INSERT INTO ESQUADRIA(ID_ESQUADRIA, DESCRICAO, COLOCACAO) 
-				VALUES($ID_ESQUADRIA, '$DESCRICAO', '$COLOCACAO') ");
+			return (int) $this->database->execute_sql(" INSERT INTO ESQUADRIA(ID_ESQUADRIA, ID_PERFIL, DESCRICAO, COLOCACAO) VALUES($ID_ESQUADRIA, $ID_PERFIL, '$DESCRICAO', '$COLOCACAO') ");
 		}
     }
 

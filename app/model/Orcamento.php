@@ -20,7 +20,8 @@ class Orcamento
         $sql .= " ON ORCAMENTO.ID_FUNCIONARIO = FUNCIONARIO.ID_FUNCIONARIO ";
 		$sql .= " INNER JOIN CLIENTE ";
         $sql .= " ON ORCAMENTO.ID_CLIENTE = CLIENTE.ID_CLIENTE ";
-
+       	$sql .= " ORDER BY ORCAMENTO.ID_ORCAMENTO ";
+	   
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_sql($value['DATA_ORCAMENTO']));
@@ -47,6 +48,9 @@ class Orcamento
         $sql  = "";
         $sql .= " SELECT * ";
         $sql .= " FROM ESQUADRIA ";
+		$sql .= " INNER JOIN MEDIDA ";
+        $sql .= " ON ESQUADRIA.ID_ESQUADRIA = MEDIDA.ID_ESQUADRIA ";
+		$sql .= " ORDER BY 1";
 
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
@@ -105,7 +109,12 @@ class Orcamento
     $sql .= " WHERE ID_ORCAMENTO = " . $code;
 
     $retorno = $this->database->select_sql( $sql );
-    return $retorno;
+    foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'ALTURA' ]  = utf8_encode(Utils::formatCurrencyBr($value['ALTURA'] ));
+			$retorno[ $key ][ 'LARGURA' ] = utf8_encode(Utils::formatCurrencyBr($value['LARGURA'] ));
+			$retorno[ $key ][ 'VALOR_UNITARIO' ]   = utf8_encode(Utils::formatCurrencyBr($value['VALOR_UNITARIO'] ));
+		}
+		return $retorno;
   }
 
   public function salvar( $formulario, $tabela ) {
@@ -137,12 +146,12 @@ class Orcamento
     }
 
     public function salvarItensOrcamentos( $params, $id_orcamento) {
-    	$id_esquadria     = utf8_decode(($params['id_esquadria'] == '') ? 0 : $params['id_esquadria']);
-		  $qtde             = utf8_decode($params['qtde']);
-      $altura 	        = utf8_decode($params['altura']);
-		  $largura 	        = utf8_decode($params['largura']);
-		  $valor_unitario   = utf8_decode($params['valor_unitario']);
-      $cor 	            = utf8_decode($params['cor']);
+    	$id_esquadria     	= utf8_decode(($params['id_esquadria'] == '') ? 0 : $params['id_esquadria']);
+		$qtde           	= utf8_decode($params['qtde']);
+      	$altura 	        = utf8_decode(Utils::formatCurrency($params['altura']));
+		$largura 	        = utf8_decode(Utils::formatCurrency($params['largura']));
+		$valor_unitario   	= utf8_decode(Utils::formatCurrency($params['valor_unitario']));
+      	$cor 	            = utf8_decode($params['cor']);
 
       if ( $params['id_item_orcamento'] == 0 ) {
 			  return (int) $this->database->execute_sql(" INSERT INTO ITEM_ORCAMENTO(ID_ESQUADRIA, QUANTIDADE, ALTURA, LARGURA, VALOR_UNITARIO, COR, ID_ORCAMENTO)

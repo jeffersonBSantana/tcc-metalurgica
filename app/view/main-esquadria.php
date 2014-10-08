@@ -24,7 +24,11 @@
 								<input type="text" class="form-control" id="COLOCACAO" name="COLOCACAO" required minlength="3" >
 							</div>
 						</div>
-
+						<div class="form-group">
+							<label for="ID_PERFIL">Perfil</label>
+							<select class="form-control" id="ID_PERFIL" name="ID_PERFIL" required >
+							</select>
+						</div>
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Esquadria.limpar()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>
@@ -40,6 +44,7 @@
 					<th width='4%' ><div onclick="Esquadria.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Descrição</label></th>
 					<th><label>Colocação</i></label></th>
+					<th><label>Perfil</label></th>
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>
 				</tr>

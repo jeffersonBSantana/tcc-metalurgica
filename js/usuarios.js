@@ -35,7 +35,7 @@ var Usuarios = {
 		    });
 		}, 'json');
 	},
-	buscarFuncionarios : function( id ) {
+	buscarFuncionarios : function( ) {
 		var parametros = {
 			'metodo' : 'buscarFuncionarios'
 		};

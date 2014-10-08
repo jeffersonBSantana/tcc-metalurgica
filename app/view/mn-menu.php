@@ -1,6 +1,6 @@
 <?php require_once("Session.php"); ?>
 <div class="menu-logo" >
-	<img src="img/logo2.png" class="img-responsive" alt="Responsive image" >
+	<img src="img/logo.png" class="img-responsive" alt="Responsive image" >
 </div>
 <div class="logout" >
 	<span><?= Session::get('LOGIN'); ?></span>, <a href="?">Sair</a>
