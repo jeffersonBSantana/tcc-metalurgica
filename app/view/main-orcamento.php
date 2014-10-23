@@ -137,6 +137,7 @@
 			<thead>
 				<tr>
 					<th width='4%' ><div class="btn btn-default" ><span class="glyphicon glyphicon-search"></span></div></th>
+					<th width='4%' ><div class="btn btn-default" ><span class="glyphicon glyphicon-search"></span></div></th>
 					<th width='4%' ><div onclick="Orcamento.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Data do Orçamento</label></th>
 					<th><label>Confirmado</label></th>

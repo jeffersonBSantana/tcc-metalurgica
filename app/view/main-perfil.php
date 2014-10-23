@@ -21,7 +21,7 @@
 							<label for="PESO_POR_METRO">Peso</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-edit fa-fw"></i></span>
-								<input type="text" class="form-control" id="PESO_POR_METRO" name="PESO_POR_METRO" required minlength="1" >
+								<input type="text" class="form-control" id="PESO_POR_METRO" name="PESO_POR_METRO" required onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
 							</div>
 						</div>
 
@@ -39,7 +39,7 @@
 				<tr>
 					<th width='4%' ><div onclick="Perfil.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Descrição</label></th>
-					<th><label>Peso <i>(Por Metro)</i></label></th>
+					<th><label>Peso <i>(Kg/m)</i></label></th>
 					<th width='5%' ><label>Editar</label></th>
 					<th width='5%' ><label>Deletar</label></th>
 				</tr>

@@ -41,6 +41,13 @@ var Orcamento = {
 		});	
 	},
 	
+	relatorio : function(id) {
+		var last = document.URL.lastIndexOf('/');
+		var url = document.URL.slice(0, last);
+		
+		window.open(url + '/?m=report&c=index&t=orcamento&id=' + id, '_blank');
+	},
+	
 	buscar : function() {
 		var id = '#table-orcamento';
 		bootTable.clear( id );
@@ -54,7 +61,9 @@ var Orcamento = {
 		    var header = {
 		    	"CODE" : values.ID_ORCAMENTO
 		    };
+		    
 		        var values = {
+		        	"REL_ORCAMENTO"  : '<div onclick="Orcamento.relatorio('+values.ID_ORCAMENTO+')" class="btn btn-primary" ><span class="glyphicon glyphicon-search"></span></div>',
 		        	"ITENS_ORCAMENTO": '<div onclick="Orcamento.buscarItens('+values.ID_ORCAMENTO+')" class="btn btn-primary" ><span class="glyphicon glyphicon-search"></span></div>',
 		        	"CODE"  		 : values.ID_ORCAMENTO,
 			        "DATA_ORCAMENTO" : values.DATA_ORCAMENTO,

@@ -22,7 +22,7 @@ var Esquadria = {
 		        	"CODE"  	 : values.ID_ESQUADRIA,
 			        "DESCRICAO"  : values.DESCRICAO,
 		          	"COLOCACAO"  : values.COLOCACAO,
-			        "PERFIL"	 : values.DESCRICAO_PERFIL,
+			        "PERFIL"	 : values.DESCRICAO_PERFIL + ' - ' + values.PESO_POR_METRO + ' Kg/m ',
 		          	"EDIT"  	 : '<div onclick="Esquadria.editar('+values.ID_ESQUADRIA+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"	 : '<div onclick="Esquadria.remover('+values.ID_ESQUADRIA+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
@@ -44,7 +44,7 @@ var Esquadria = {
 		$.post('?m=controller&c=EsquadriaController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {
-		 		options += '<option value="'+value.ID_PERFIL+'" >'+value.DESCRICAO+'</option>';
+		 		options += '<option value="'+value.ID_PERFIL+'" >'+value.DESCRICAO+' - '+Money.formatBr(value.PESO_POR_METRO)+' Kg/m</option>';
 		 	});
 
 			$('#form-esquadria #ID_PERFIL').html( options );

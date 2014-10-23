@@ -21,7 +21,7 @@ var Perfil = {
 		        var values = {
 		        	"CODE"  	      : values.ID_PERFIL,
 			        "DESCRICAO" 	  : values.DESCRICAO,
-		          	"PESO_POR_METRO"  : values.PESO_POR_METRO,
+		          	"PESO_POR_METRO"  : values.PESO_POR_METRO + ' Kg/m',
 			        "EDIT"  	      : '<div onclick="Perfil.editar('+values.ID_PERFIL+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"	      : '<div onclick="Perfil.remover('+values.ID_PERFIL+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };

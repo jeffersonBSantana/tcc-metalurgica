@@ -17,9 +17,10 @@ class Perfil
         $sql .= " SELECT * ";
         $sql .= " FROM PERFIL ";
 	    $retorno = $this->database->select_sql( $sql );
+		
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
-			
+			$retorno[ $key ][ 'PESO_POR_METRO' ] = Utils::formatCurrencyBr(utf8_encode($value['PESO_POR_METRO']));
 		}
 		return $retorno;	
     }
@@ -33,13 +34,17 @@ class Perfil
         $sql .= " WHERE ID_PERFIL = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
+			$retorno[ $key ][ 'PESO_POR_METRO' ] = Utils::formatCurrencyBr(utf8_encode($value['PESO_POR_METRO']));
+		}		
 		return $retorno[0];
     }
 
     public function salvar( $params ) {
         $ID_PERFIL          = utf8_decode( ($params['ID_PERFIL'] == '') ? 0 : $params['ID_PERFIL'] );
         $DESCRICAO 		    = utf8_decode( strtoupper( $params['DESCRICAO'] ));
-        $PESO_POR_METRO 	= utf8_decode( $params['PESO_POR_METRO'] );
+        $PESO_POR_METRO 	= utf8_decode( Utils::formatCurrency($params['PESO_POR_METRO']) );
 
 		if (  $params['ID_PERFIL'] > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE PERFIL SET DESCRICAO='$DESCRICAO', PESO_POR_METRO=$PESO_POR_METRO WHERE ID_PERFIL=$ID_PERFIL ");

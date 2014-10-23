@@ -14,7 +14,7 @@ class Esquadria
 
     public function buscar( $params ) {
     	$sql  = "";
-        $sql .= " SELECT ESQUADRIA.*, PERFIL.DESCRICAO AS DESCRICAO_PERFIL ";
+        $sql .= " SELECT ESQUADRIA.*, PERFIL.DESCRICAO AS DESCRICAO_PERFIL, PERFIL.PESO_POR_METRO ";
         $sql .= " FROM ESQUADRIA ";
 		$sql .= " INNER JOIN PERFIL ";
 		$sql .= " ON PERFIL.ID_PERFIL = ESQUADRIA.ID_PERFIL ";
