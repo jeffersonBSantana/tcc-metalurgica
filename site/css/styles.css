@@ -649,6 +649,10 @@ width: -webkit-calc(100% / 4);
 	cursor: pointer;
 	-webkit-transition: 0.4s all linear;
 	        transition: 0.4s all linear;
+	
+	/* alterado */	
+	width: 300px;
+	height: 200px;	
 }
 .cbp-rfgrid li a:hover img {
 	-webkit-transform: scale(1.05,1.07);

@@ -1,6 +1,8 @@
 <?php
 
+// banco de dados
 require_once("DataBase.php");
+// funcoes uteis
 require_once("Util.php");
 
 class Clientes
@@ -8,7 +10,6 @@ class Clientes
     var $database;
 
     public function __construct() {
-        Utils::setFullLimit();
         $this->database = new DataBase();
     }
 
@@ -19,14 +20,15 @@ class Clientes
         $sql .= " INNER JOIN LOCALIDADE ";
         $sql .= " ON CLIENTE.ID_LOCALIDADE = LOCALIDADE.ID_LOCALIDADE ";		
 
-
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'NOME' ]   = utf8_encode( $value['NOME'] );
 			$retorno[ $key ][ 'RUA' ]    = utf8_encode( $value['RUA'] );
 			$retorno[ $key ][ 'BAIRRO' ] = utf8_encode( $value['BAIRRO'] );
-			
+			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
 		}
+		
 		return $retorno;	
     }
 
@@ -55,10 +57,10 @@ class Clientes
 			$retorno[ $key ][ 'NOME' ]   = utf8_encode( $value['NOME'] );
 			$retorno[ $key ][ 'RUA' ]    = utf8_encode( $value['RUA'] );
 			$retorno[ $key ][ 'BAIRRO' ] = utf8_encode( $value['BAIRRO'] );
-			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
 			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
 		}
-		return $retorno[0];
+		return $retorno[0]; // so pega 1 registro
     }
 
     public function salvar( $params ) {
@@ -74,10 +76,6 @@ class Clientes
         $CEP 		    	= utf8_decode( strtoupper( $params['CEP'] ));
         $ID_LOCALIDADE		= utf8_decode( $params['ID_LOCALIDADE'] );
 		
-		//$b = $this->database->execute_sql(" UPDATE CLIENTE SET NOME='$NOME', CPF_CNPJ='$CPF_CNPJ', EMAIL='$EMAIL', TELEFONE='$TELEFONE', CELULAR='$CELULAR',
-			//RUA='$RUA', NUMERO='$NUMERO', BAIRRO='$BAIRRO', CEP='$CEP', ID_LOCALIDADE='$ID_LOCALIDADE' WHERE ID_CLIENTE='$ID_CLIENTE' ",true);
-		//var_dump($b);
-
 		if (  $params['ID_CLIENTE'] > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE CLIENTE SET NOME='$NOME', CPF_CNPJ='$CPF_CNPJ', EMAIL='$EMAIL', TELEFONE='$TELEFONE', CELULAR='$CELULAR',
 			RUA='$RUA', NUMERO='$NUMERO', BAIRRO='$BAIRRO', CEP='$CEP', ID_LOCALIDADE='$ID_LOCALIDADE' WHERE ID_CLIENTE='$ID_CLIENTE' ");

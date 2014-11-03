@@ -24,7 +24,7 @@ class Orcamento
 	   
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_sql($value['DATA_ORCAMENTO']));
+			$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_br($value['DATA_ORCAMENTO']));
 		}
 		return $retorno;
     }
@@ -48,8 +48,8 @@ class Orcamento
         $sql  = "";
         $sql .= " SELECT * ";
         $sql .= " FROM ESQUADRIA ";
-		$sql .= " INNER JOIN MEDIDA ";
-        $sql .= " ON ESQUADRIA.ID_ESQUADRIA = MEDIDA.ID_ESQUADRIA ";
+		$sql .= " INNER JOIN PRODUTO ";
+        $sql .= " ON ESQUADRIA.ID_ESQUADRIA = PRODUTO.ID_ESQUADRIA ";
 		$sql .= " ORDER BY 1";
 
 	    $retorno = $this->database->select_sql( $sql );

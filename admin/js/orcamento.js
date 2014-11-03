@@ -99,26 +99,26 @@ var Orcamento = {
 				}else if (values.COR == 2){
 					cor = 'branco';
 				}else{
-					cor = 'default';
+					cor = 'preto';
 				}
 
-						var header = {
-								"CODE" : values.ID_ORCAMENTO
-						};
-						var values = {
-							"ID_ESQUADRIA" 	: values.DESCRICAO,
-							"QUANTIDADE"    : values.QUANTIDADE,
-							"ALTURA" 		: values.ALTURA,
-							"LARGURA" 		: values.LARGURA,
-							"VALOR_UNITARIO": 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
-							"COR" 	 		: cor
-						};
-						bootTable.addItem(
-								id,
-								header,
-								values
-						);
-				});
+				var header = {
+						"CODE" : values.ID_ORCAMENTO
+				};
+				var values = {
+					"ID_ESQUADRIA" 	: values.DESCRICAO,
+					"QUANTIDADE"    : values.QUANTIDADE,
+					"ALTURA" 		: Money.formatBr(values.ALTURA),
+					"LARGURA" 		: Money.formatBr(values.LARGURA),
+					"VALOR_UNITARIO": 'R$ ' + Money.formatBr(values.VALOR_UNITARIO),
+					"COR" 	 		: cor
+				};
+				bootTable.addItem(
+						id,
+						header,
+						values
+				);
+			});
 		}, 'json');
 
 			$("#myModal").modal({
@@ -144,7 +144,7 @@ var Orcamento = {
 		}else if (cor == 2){
 			cor_descricao = 'branco';
 		}else{
-			cor_descricao = 'default';
+			cor_descricao = 'preto';
 		}
 
 		if ( id_esquadria == 0 ) {

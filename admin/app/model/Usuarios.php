@@ -8,7 +8,6 @@ class Usuarios
     var $database;
 
     public function __construct() {
-        Utils::setFullLimit();
         $this->database = new DataBase();
     }
 
@@ -48,7 +47,7 @@ class Usuarios
         $SENHA 		        = strtoupper(utf8_decode( $params['SENHA'] ));
         $NIVEL_ACESSO       = utf8_decode( $params['NIVEL_ACESSO'] );
         $ATIVO 		        = utf8_decode( $params['ATIVO'] );
-        $ID_FUNCIONARIO     = 5;//utf8_decode( $params['ID_FUNCIONARIO'] );
+        $ID_FUNCIONARIO     = utf8_decode( $params['ID_FUNCIONARIO'] );
 
 		if (  $params['ID_USUARIOS'] > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE USUARIOS SET LOGIN='$LOGIN', SENHA='$SENHA', NIVEL_ACESSO='$NIVEL_ACESSO', ATIVO='$ATIVO', ID_FUNCIONARIO='$ID_FUNCIONARIO' WHERE ID_USUARIOS='$ID_USUARIOS' ");

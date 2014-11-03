@@ -30,8 +30,8 @@
 						<a href="project.html" class="more"><img src="images/portfolio/1.jpg"  alt="project"/>
 							<div class="project-info">
 								<div class="project-details">
-									<h5 class="white-text red-border-bottom">Project Title </h5>
-									<div class="details white-text">Web Design</div>
+									<h5 class="white-text red-border-bottom">Exposição de Arquitetura</h5>
+									<div class="details white-text">Exposição de arquitetura, Janeiro 2014, Pato Branco PR</div>
 								</div>
 							</div>
 						</a>

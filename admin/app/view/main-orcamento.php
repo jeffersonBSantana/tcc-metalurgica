@@ -136,7 +136,7 @@
 		<table id="table-orcamento" class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th width='4%' ><div class="btn btn-default" ><span class="glyphicon "></span>Relatório</div></th>
+					<th width='4%' ><label>Relatório</label></th>
 					<th width='4%' ><div class="btn btn-default" ><span class="glyphicon glyphicon-search"></span></div></th>
 					<th width='4%' ><div onclick="Orcamento.inserir()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
 					<th><label>Data do Orçamento</label></th>

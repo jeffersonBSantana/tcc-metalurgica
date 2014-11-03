@@ -6,3 +6,5 @@
 <!--[if lt IE 9]>
 <script src="js/others/html5shiv.js"></script>
 <![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css' />	

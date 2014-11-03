@@ -1,25 +1,27 @@
 <?php
 
-// recebe a chamada do js e envia para o model.
+require_once("Produto.php");
 
-require_once("Clientes.php");
-
-class ClientesController
+class ProdutoController
 {
     private $model;
 
     public function __construct() {
-        $this->model = new Clientes();
+        $this->model = new Produto();
     }
 
     public function buscar( $params ) {
         return $this->model->buscar( $params );
     }
-
-    public function buscarLocalidade( $params ) {
-        return $this->model->buscarLocalidade( $params );
+	
+	public function buscarEsquadria( $params ) {
+        return $this->model->buscarEsquadria( $params );
     }
 
+    public function buscarPerfil( $params ) {
+      	return $this->model->buscarPerfil( $params );
+    }
+	
     public function editar( $params ) {
 	    return $this->model->editar( $params );
     }
@@ -34,9 +36,9 @@ class ClientesController
     }
 }
 
-$controller = new ClientesController();
+$controller = new ProdutoController();
 
-$method = $_POST['metodo']; // o metodo vem do js
-$params = $_POST; // esses parametros vem do js
+$method = $_POST['metodo'];
+$params = $_POST;
 
 echo json_encode( $controller->$method($params) );

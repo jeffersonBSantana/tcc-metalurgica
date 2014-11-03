@@ -7,15 +7,13 @@ var Clientes = {
 	},
 	buscar : function() {
 		var id = '#table-cliente';
-		bootTable.clear( id );
-
-
-
+		bootTable.clear( id ); // limpa a tabela
 
 		var params = {
 			'metodo' : 'buscar',
 			'ativo'  : $(id + ' #ativo').val()
 		};
+		// vai para o php pra buscar os dados
 		$.post('?m=controller&c=ClientesController', params, function( data ) {
 			$.each( data, function( key, values ) {
 		        var header = {
@@ -36,6 +34,7 @@ var Clientes = {
 			        "EDIT"  		: '<div onclick="Clientes.editar('+values.ID_CLIENTE+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		          	"REMOVE"		: '<div onclick="Clientes.remover('+values.ID_CLIENTE+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
+		        // adicionando os itens na tabela
 		        bootTable.addItem(
 		            id,
 		            header,
@@ -50,6 +49,7 @@ var Clientes = {
 		};
 
 		Select.remove_all_option('form-cliente #ID_LOCALIDADE');
+		// vai adicionado os itens no SELECT
 		$.post('?m=controller&c=ClientesController', parametros, function( data ) {
 			var options = '<option value="" ></option>';
 			$.each(data, function (key, value) {
@@ -58,18 +58,14 @@ var Clientes = {
 
 			$('#form-cliente #ID_LOCALIDADE').html( options );
 		}, 'json');
-	},
-	ativo : function() {
-		$('#table-cliente #ativo').val( ( $('#table-cliente #ativo').is(':checked') ) ? 1 : 0 );
-		Clientes.buscar();
-	},
+	}, 
 	limpar : function() {
-		$('#panel-cliente').show('slow');
+		$('#panel-cliente').show('slow'); // apresenta o panel
 
-		jQuery('#form-cliente input:hidden').val('');
-		$('#form-cliente').each(function() { this.reset(); });
+		jQuery('#form-cliente input:hidden').val(''); // limpa o campo hidden
+		$('#form-cliente').each(function() { this.reset(); }); // limpa todos os outros campos do form
 
-		$('#form-cliente').find('input:visible,select:visible').first().focus();
+		$('#form-cliente').find('input:visible,select:visible').first().focus(); // seta o foco pro primeiro campo do formulario
 	},
 	inserir : function() {
 		/* abre o panel */
@@ -86,6 +82,7 @@ var Clientes = {
 			'metodo' : 'editar',
 			'codigo' : id
 		};
+		// busca no php pelo metodo de edicao
 		$.post('?m=controller&c=ClientesController', parametros, function( data ) {
 			$('#panel-cliente').show('slow');
 
@@ -107,6 +104,7 @@ var Clientes = {
 		}, 'json');
 	},
 	salvar : function() {
+		// primeiro validar o formulario
 		$('#form-cliente').validate({
 			submitHandler: function( form ) {
 				var formulario = $( form ).serialize();
@@ -114,9 +112,11 @@ var Clientes = {
 					'metodo' : 'salvar',
 					'formulario' : formulario
 				};
+				// envio os dados para salvar
 				$.post('?m=controller&c=ClientesController', params, function( data ) {
-					Clientes.buscar();
-					Clientes.inserir();
+					// apos salvar retorna aqui
+					Clientes.buscar(); // atualizo a grid novamente
+					Clientes.inserir(); // reseta o formulario
 				}, 'json');
 
 				return false;
@@ -124,6 +124,7 @@ var Clientes = {
 		});
 	},
 	remover : function( id ) {
+		// faz uma pergunta
 		bootbox.dialog({
 	    	message : "Deseja deletar o registro?",
 	    	title : "Atenção",
@@ -136,9 +137,10 @@ var Clientes = {
 							'metodo' : 'remover',
 							'codigo' : id
 						};
+						// envia para o php, o id para ser removido
 						$.post('?m=controller&c=ClientesController', params, function( data ) {
 							if ( data == true ) {
-								Clientes.buscar();
+								Clientes.buscar(); // atualizo a grid novamente
 							}
 						}, 'json');
 					}

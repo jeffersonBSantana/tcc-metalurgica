@@ -9,7 +9,7 @@
 	<title>Zerif - Responsive One Page Template</title>
 
 	<!-- =========================
-	 FAV AND TOUCH ICONS
+	 FAV AND TOUCH ICONS  
 	============================== -->
 	<link rel="shortcut icon" href="images/icons/favicon.ico">
 	<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
 
 	<!-- =========================
-			 STYLESHEETS
+			 STYLESHEETS      
 	============================== -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/owl.theme.css">
@@ -25,8 +25,8 @@
 	<link rel="stylesheet" href="css/jquery.vegas.min.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 
-	<link rel="stylesheet" href="assets/icon-fonts/styles.css">
-	<link rel="stylesheet" href="css/pixeden-icons.css">
+	<link rel="stylesheet" href="assets/icon-fonts/styles.css"> 
+	<link rel="stylesheet" href="css/pixeden-icons.css"> 
 
 	<!-- CUSTOM STYLES -->
 	<link rel="stylesheet" href="css/styles.css">
@@ -46,98 +46,98 @@
 <body>
 
 	<!-- =========================
-		 PRE LOADER
+		 PRE LOADER       
 	============================== -->
 	<div class="preloader">
 		<div class="status">&nbsp;</div>
 	</div>
 
 	<!-- =========================
-		 HOME SECTION
+		 HOME SECTION       
 	============================== -->
-
+	
 	<?php include_once('index-2.php'); ?>
-
+	
 	<!-- =========================
-		 FOCUS SECTION
+		 FOCUS SECTION      
 	============================== -->
-
+	
 	<?php include_once('index-3.php'); ?>
 
 	<!-- =========================
-		 SEPARATOR ONE
+		 SEPARATOR ONE      
 	============================== -->
 
 	<?php include_once('index-4.php'); ?>
 
 	<!-- =========================
-		 WORKS SECTION
+		 WORKS SECTION      
 	============================== -->
 
 	<?php include_once('index-5.php'); ?>
-
+	
 	<!-- =========================
-		PRODUCTS SECTION
+		 PRODUCTS SECTION   
 	============================== -->
 
 	<?php include_once('index-11.php'); ?>
 
 	<!-- =========================
-		 ABOUT US SECTION
+		 ABOUT US SECTION   
 	============================== -->
 
 	<?php include_once('index-6.php'); ?>
 
 	<!-- =========================
-		 STATS
+		 STATS              
 	============================== -->
 
 	<?php include_once('index-7.php'); ?>
 
 	<!-- =========================
-		 OUR TEAM SECTION
+		 OUR TEAM SECTION   
 	============================== -->
 
 	<?php // include_once('index-8.php'); ?>
 
 	<!-- =========================
-		PACKAGES SECTION
+		PACKAGES SECTION   
 	============================== -->
 
 	<?php // include_once('index-9.php'); ?>
 
 	<!-- =========================
-		 FEATURES SECTION
+		 FEATURES SECTION   
 	============================== -->
 
 	<?php // include_once('index-10.php'); ?>
 
 	<!-- =========================
-		 NEWSETTER
+		 NEWSETTER          
 	============================== -->
 
 	<?php // include_once('index-12.php'); ?>
 
 	<!-- =========================
-		 TESTIMONIAL
+		 TESTIMONIAL        
 	============================== -->
 
 	<?php include_once('index-13.php'); ?>
 
 	<!-- =========================
-		 PURCHASE NOW
+		 PURCHASE NOW       
 	============================== -->
 
 	<?php // include_once('index-14.php'); ?>
 
 	<!-- =========================
-		 CONTACT US
+		 CONTACT US         
 	============================== -->
 
 	<?php include_once('index-15.php'); ?>
 
 	<!-- =========================
-		 FOOTER
+		 FOOTER             
 	============================== -->
 
 	<?php include_once('index-16.php'); ?>

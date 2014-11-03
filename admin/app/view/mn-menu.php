@@ -1,6 +1,6 @@
 <?php require_once("Session.php"); ?>
 <div class="menu-logo" >
-	<img src="img/logo.png" class="img-responsive" alt="Responsive image" >
+	<img src="img/logo-white.png" class="img-responsive" alt="Responsive image" >
 </div>
 <div class="logout" >
 	<span><?= Session::get('LOGIN'); ?></span>, <a href="?">Sair</a>
@@ -28,7 +28,7 @@
 				<li><hr/></li>
 				<li><a id="menu-perfil" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Perfil</a></li>
 				<li><a id="menu-esquadria" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Esquadria</a></li>
-				<li><a id="menu-medida" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Produtos</a></li>
+				<li><a id="menu-produto" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Produtos</a></li>
 				<li><hr/></li>
 				<li><a id="menu-orcamento" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Orçamento</a></li>
 			</ul>

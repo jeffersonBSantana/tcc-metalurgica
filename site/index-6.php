@@ -23,9 +23,9 @@
 			<!-- COLUMN 2 - BRIEF ABOUT THE COMPANY-->
 			<div class="col-lg-4 col-md-4 column">
 				<p class="wow fadeInUp animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-					 Created forth two. Behold appear first, kind all i saying fowl man itself moved which every open shall moved subdue appear. Saying life wherein stars. Give dry, own, male had that us third lesser over deep. May every bring in it Whose. Female earth heaven won't behold female.<br/><br/>
-					Moved bearing give a two after. Had. Seas. Man they're. Grass above kind saying thing for that void sixth fly His after it.<br/><br/>
-					The set doesn't moved. Deep don't fruit fowl gathering heaven days moving creeping under from i air. Set it fifth Meat was darkness. every bring in it Whose. Female earth heaven won't behold female.
+					 Nosso maior objetivo é proporcionar ao cliente a excelência em esquadrias. E o nosso sucesso está baseado na satisfação em atender o cliente com produtos de qualidade e com preço justo.... 
+<br/><br/>Utilizando equipamentos de última geração além de uma equipe de profissionais comprometidos com a qualidade final de cada produto... <br/><br/>Sem deixar de lado a responsabilidade ambiental, presente na filosofia da empresa.
+JBS.<br/><br/>Nossa marca, nosso compromisso.
 				</p>
 			</div>
 			
@@ -36,11 +36,11 @@
 					<!-- SKILL ONE -->
 					<li class="skill">
 						<div class="skill-count">
-							<input type="text" value="86" data-thickness=".2" class="skill1">
+							<input type="text" value="30" data-thickness=".2" class="skill1">
 						</div>
 						<h6>Web Design</h6>
 						<p>
-							We are expert on HTML development. Clean, semantic and valid HTML codes.
+							Somos especialistas em desenvolvimento HTML. Códigos HTML limpos , semânticos e válido.
 						</p>
 					</li>
 					
@@ -49,9 +49,9 @@
 						<div class="skill-count">
 							<input type="text" value="80" data-thickness=".2" class="skill2">
 						</div>
-						<h6>development</h6>
+						<h6>Desenvolvimento</h6>
 						<p>
-							We are expert on HTML development. Clean, semantic and valid HTML codes.
+							O maior estímulo para desenvolver um projeto é o desejo de atingir um objetivo
 						</p>
 					</li>
 					
@@ -60,9 +60,10 @@
 						<div class="skill-count">
 							<input type="text" value="89" data-thickness=".2" class="skill3">
 						</div>
-						<h6>photography</h6>
+						<h6>Fotografia</h6>
 						<p>
-							We are expert on HTML development. Clean, semantic and valid HTML codes.
+							Fotografia nada mais é do que um cálculo onde as variáveis de soma são luz e criatividade.
+
 						</p>
 					</li>
 					
@@ -73,7 +74,7 @@
 						</div>
 						<h6>SEO</h6>
 						<p>
-							We are expert on HTML development. Clean, semantic and valid HTML codes.
+							Seja qual for o modelo, é importante que exista na empresa que deseja ter o seu site otimizado uma pessoa que coordene todos os esforços para otimizar o seu site.
 						</p>
 					</li>
 					
