@@ -3,10 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Beautiful Responsive Animated OnePage Template" />
-	<meta name="keywords" content="Zerif, responsive, html, template, creative"/>
-	<meta name="author" content="Mizanur Rahman" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Zerif - Responsive One Page Template</title>
+	<title>JBS - Metalurgica e Esquadria</title>
 
 	<!-- =========================
 	 FAV AND TOUCH ICONS  

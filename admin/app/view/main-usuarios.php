@@ -14,14 +14,14 @@
 							<label for="LOGIN">Login</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-								<input type="text" class="form-control" id="LOGIN" name="LOGIN" required minlength="2" >
+								<input type="text" class="form-control" id="LOGIN" name="LOGIN" required minlength="2" maxlength="30">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="SENHA">Senha</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-								<input type="password" class="form-control" id="SENHA" name="SENHA" required minlength="2" >
+								<input type="password" class="form-control" id="SENHA" name="SENHA" required minlength="2" maxlength="30">
 							</div>
 						</div>
 						<div class="form-group">

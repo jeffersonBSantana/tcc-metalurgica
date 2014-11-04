@@ -5,8 +5,8 @@
 		<div class="section-header">		
 			<!-- SECTION TITLE -->
 			<h2 class="white-text">Sobre Nós</h2>		
-			<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
-			<h6 class="white-text">Design e desenvolvimento de produtos para ajudar pequenas empresas.</h6>
+			<!-- SHORT DESCRIPTION ABOUT THE SECTION 
+			<h6 class="white-text">Design e desenvolvimento de produtos para ajudar pequenas empresas.</h6>-->
 		</div>
 		<!-- / END SECTION HEADER -->
 		

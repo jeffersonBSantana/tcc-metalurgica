@@ -7,7 +7,7 @@
 				<!-- SECTION TITLE -->
 				<h2 class="dark-text">Produtos</h2>			
 				<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
-				<h6> Nós desenhamos e desenvolvemos produtos de alta qualidade. Veja nossos produtos.</h6>
+				<h6> Desenvolvemos Esquadrias de alta qualidade. Compare nossos produtos!</h6>
 			</div>
 			
 			<!-- PRODUCTS -->
@@ -23,18 +23,18 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>One Light</h5>  <!-- PRODUCT TITLE-->
+											<h5>Janela</h5>  <!-- PRODUCT TITLE-->
 											<p class="subdescription">
-												 WordPress Theme
+												 Ebel em Alumínio 4 Folhas
 											</p> <!-- PRODUCT DESCRIPTION-->
 										</div>
 									</div>
 									<div class="item-product-price">
 										<!-- PRICE -->
-										<span class="price-num green-text">$17</span> 
-										<!-- OLD PRICE START -->
+										<span class="price-num green-text">R$ 300,00</span> 
+										<!-- OLD PRICE START 
 										<p class="subdescription">
-											 $36
+											 $280,00
 										</p>
 										<div class="old-price">
 										</div> <!-- END OLD PRICE -->
@@ -47,17 +47,12 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Creative WordPress Theme
+											...
 										</p>
 									</div>
 									<div class="section">
 										<p>
-											Bla bla bla bla bla bla
-											Bla bla bla bla bla bla
-											Bla bla bla bla bla bla
-											Bla bla bla bla bla bla
-											Bla bla bla bla bla bla
-											Bla bla bla bla bla bla
+											 Janela Ebel em Alumínio 4 Folhas sem Bandeira 1,00mx1,20m com Vidro Liso Incolor sem Grade Branca 
 										</p>
 									<!--
 										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
@@ -79,19 +74,19 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Telfez</h5>
+											<h5>Janela</h5>
 											<p  class="subdescription">
-												 WordPress Theme
+												 Maxim-Ar Ebel Quadriculada
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$17</span>
-										<p class="subdescription">
+										<span class="price-num green-text">R$ 370,50</span>
+										<!--<p class="subdescription">
 											 $36
 										</p>
 										<div class="old-price">
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -99,12 +94,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Creative WordPress Theme
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											  Janela Maxim-Ar Ebel Quadriculada em Alumínio 1,00mx0,60m Simples com Bandeira Fixa com Vidro Mini Boreal Branca  
+										</p>
 									</div>
 								</div>
 							</div>
@@ -121,19 +117,19 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Calender</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 Widget
+												 Maxim-Ar em Alumínio
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$9</span>
-										<p class="subdescription">
+										<span class="price-num green-text">R$ 109,00</span>
+										<!--<p class="subdescription">
 											 $15
 										</p>
 										<div class="old-price">
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -141,12 +137,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Beautiful Calender Widget
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											 Maxim-Ar em Alumínio 1 Seção sem Grade sem Basculante MGM Hematita 0,60mx0,60m Branco 
+										</p>
 									</div>
 								</div>
 							</div>
@@ -163,14 +160,14 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Toolbar</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 UI Element
+												 Ebel em Alumínio 2 Folhas
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$11</span>
+										<span class="price-num green-text">R$ 245,90</span>
 										
 									</div>
 								</div>
@@ -179,12 +176,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Beautiful Toolbar with Icons
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											 Janela Ebel em Alumínio 2 Folhas sem Bandeira 1,00mx1,20m Brilhante com Vidro Liso Incolor sem Grade 
+										</p>
 									</div>
 								</div>
 							</div>
@@ -203,19 +201,19 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Public Radio</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 UI Element
+												 de Correr Sasazaki Alumínio
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$15</span>
-										<p class="subdescription">
-											 $23
+										<span class="price-num green-text">R$ 991,15</span>
+										<!--<p class="subdescription">
+											 
 										</p>
 										<div class="old-price">
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -223,12 +221,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Creative Radio PSD
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											Janela de Correr Sasazaki Alumínio sem Grade sem Divisão sem Bandeira Projetante 4 Folhas 1,20mx1,50m.
+										</p>
 									</div>
 								</div>
 							</div>
@@ -245,19 +244,19 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Health Care</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 One Page Template
+												 Maxim-Ar Sasazaki
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$18</span>
-										<p class="subdescription">
-											 $30
+										<span class="price-num green-text">R$ 600,00</span>
+										<!--<p class="subdescription">
+											
 										</p>
 										<div class="old-price">
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -265,12 +264,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Responsive One Page Template
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											 Janela Maxim-Ar Sasazaki Alumínio Duplo Horizontal sem Grade 2 Folhas 0,60mx1,00m Branca. 
+										</p>
 									</div>
 								</div>
 							</div>
@@ -287,14 +287,14 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Radio Dial</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 UI Element
+												 Basculante Ebel Max
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$10</span>
+										<span class="price-num green-text">R$ 190,00</span>
 										
 									
 									</div>
@@ -304,12 +304,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Creative WordPress Theme
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											Basculante Ebel Max em Alumínio 1,00mx0,60m 1 Seção Brilhante com Vidro Canelado Incolor.
+										</p>
 									</div>
 								</div>
 							</div>
@@ -326,19 +327,19 @@
 								<div class="item-top-content-inner">
 									<div class="item-product">
 										<div class="item-top-title">
-											<h5>Pricing Page</h5>
+											<h5>Janela</h5>
 											<p class="subdescription">
-												 UI Element
+												 Maxim-Ar Ebel Quadriculada 
 											</p>
 										</div>
 									</div>
 									<div class="item-product-price">
-										<span class="price-num green-text">$17</span>
-										<p class="subdescription">
+										<span class="price-num green-text">R$ 350,00</span>
+										<!--<p class="subdescription">
 											 $36
 										</p>
 										<div class="old-price">
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -346,12 +347,13 @@
 								<div class="item-add-content-inner">
 									<div class="section">
 										<p>
-											Creative UI Element
+											...
 										</p>
 									</div>
 									<div class="section">
-										<a href="#" class="btn btn-primary custom-button red-btn">Demo</a><br/>
-										<a href="#" class="btn btn-primary custom-button green-btn">Buy</a>
+										<p>
+											Maxim-Ar Ebel Quadriculada em Alumínio 0,80mx0,80m Simples com Vidro Mini Boreal Branca
+										</p>
 									</div>
 								</div>
 							</div>

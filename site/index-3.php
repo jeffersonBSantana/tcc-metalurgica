@@ -8,7 +8,7 @@
 			<h2 class="dark-text">Nosso Foco</h2>
 			
 			<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
-			<h6>Design e desenvolvimento de produtos para ajudar pequenas empresas.</h6>
+			<h6>Design e desenvolvimento aplicados para empresas metalúrgicas de pequeno porte.</h6>
 		</div>
 		<!-- / END SECTION HEADER -->
 		

@@ -14,7 +14,7 @@
 							<label for="NOME">Nome</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
-								<input type="text" class="form-control" id="NOME" name="NOME" required minlength="3" >
+								<input type="text" class="form-control" id="NOME" name="NOME" required minlength="3" maxlength="54" >
 							</div>
 						</div>
 						<div class="form-group">
@@ -28,7 +28,7 @@
 							<label for="EMAIL">Email</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-								<input type="text" class="form-control" id="EMAIL" name="EMAIL" required minlength="3" >
+								<input type="email" class="form-control" id="EMAIL" name="EMAIL" required minlength="3" maxlength="44">
 							</div>
 						</div>
 						<div class="form-group">
@@ -42,7 +42,7 @@
 							<label for="RUA">Rua</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-road fa-fw"></i></span>
-								<input type="text" class="form-control" id="RUA" name="RUA" required minlength="3" >
+								<input type="text" class="form-control" id="RUA" name="RUA" required minlength="3" maxlength="54">
 							</div>
 						</div>
 						<div class="form-group">
@@ -56,7 +56,7 @@
 							<label for="BAIRRO">Bairro</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-road fa-fw"></i></span>
-								<input type="text" class="form-control" id="BAIRRO" name="BAIRRO" required minlength="3" >
+								<input type="text" class="form-control" id="BAIRRO" name="BAIRRO" required minlength="3" maxlength="54">
 							</div>
 						</div>
 						<div class="form-group">

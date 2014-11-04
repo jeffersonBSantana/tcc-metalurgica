@@ -14,21 +14,21 @@
 							<label for="CIDADE">Cidade</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-globe fa-fw"></i></span>
-								<input type="text" class="form-control" id="CIDADE" name="CIDADE" required minlength="3" >
+								<input type="text" class="form-control" id="CIDADE" name="CIDADE" required minlength="3" maxlength="25">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="ESTADO">Estado</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-globe fa-fw"></i></span>
-								<input type="text" class="form-control" id="ESTADO" name="ESTADO" required minlength="3" >
+								<input type="text" class="form-control" id="ESTADO" name="ESTADO" required minlength="3" maxlength="25">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="SIGLA">Sigla</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-location-arrow fa-fw"></i></span>
-								<input type="text" class="form-control" id="SIGLA" name="SIGLA" required minlength="2" >
+								<input type="text" class="form-control" id="SIGLA" name="SIGLA" required minlength="2" maxlength="3">
 							</div>
 						</div>
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>

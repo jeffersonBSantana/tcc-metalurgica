@@ -338,7 +338,7 @@ var Orcamento = {
 					}else if (cor == 2){
 						cor_descricao = 'branco';
 					}else{
-						cor_descricao = 'default';
+						cor_descricao = 'preto';
 					}
 
 					var linha = Number($('#ID_ADICIONARITENS').val()) + 1;

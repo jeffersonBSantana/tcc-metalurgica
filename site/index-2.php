@@ -16,16 +16,16 @@
 			</div>
 			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
 			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href="#home">Início</a></li>
-				<li><a href="#focus">Focus</a></li>
-				<li><a href="#works">Works</a></li>
-				<li><a href="#aboutus">About Us</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#pricingtable">Pricing</a></li>
-				<li><a href="#features">Features</a></li>
-				<li><a href="#products">Products</a></li>
-				<li><a href="#testimonials">Testimonials</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#home">INÍCIO</a></li>
+				<li><a href="#focus">FOCO</a></li>
+				<li><a href="#works">PRODUTOS</a></li>
+				<li><a href="#aboutus">SOBRE NÓS</a></li>
+				<li><a href="#team">ORÇAMENTO</a></li>
+				<!--<li><a href="#pricingtable">Pricing</a></li>
+				<li><a href="#features">Features</a></li>-->
+				<li><a href="#products">PORTFÓLIO</a></li>
+				<li><a href="#testimonials">DEPOIMENTOS</a></li>
+				<li><a href="#contact">CONTATO</a></li>
 			</ul>
 			</nav>
 		</div>
