@@ -19,40 +19,7 @@ class Session {
 		$_SESSION['ATIVO'] 			= $retorno['ATIVO'];
 		$_SESSION['ID_FUNCIONARIO'] = $retorno['ID_FUNCIONARIO'];
 	}
-	public static function createFunc( $retorno ) {
-		$_SESSION['ID_FUNCIONARIO'] = $retorno['ID_FUNCIONARIO'];
-		$_SESSION['NOME'] 			= $retorno['NOME'];
-		$_SESSION['CPF'] 			= $retorno['CPF'];
-		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
-		$_SESSION['CELULAR'] 		= $retorno['CELULAR'];
-		$_SESSION['RUA'] 			= $retorno['RUA'];
-		$_SESSION['NUMERO']   		= $retorno['NUMERO'];
-		$_SESSION['BAIRRO']   		= $retorno['BAIRRO'];
-		$_SESSION['CEP'] 	  		= $retorno['CEP'];
-		$_SESSION['ID_LOCAL'] 		= $retorno['ID_LOCAL'];
-	}
 	
-		public static function createCliente( $retorno ) {
-		$_SESSION['ID_CLIENTE'] 	= $retorno['ID_CLIENTE'];
-		$_SESSION['NOME'] 			= $retorno['NOME'];
-		$_SESSION['CPF_CNPJ'] 		= $retorno['CPF_CNPJ'];
-		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
-		$_SESSION['TELEFONE'] 		= $retorno['TELEFONE'];
-		$_SESSION['CELULAR'] 		= $retorno['CELULAR'];
-		$_SESSION['RUA'] 			= $retorno['RUA'];
-		$_SESSION['NUMERO']   		= $retorno['NUMERO'];
-		$_SESSION['BAIRRO']   		= $retorno['BAIRRO'];
-		$_SESSION['CEP'] 	  		= $retorno['CEP'];
-		$_SESSION['ID_LOCALIDADE'] 	= $retorno['ID_LOCALIDADE'];
-	}
-	
-	public static function createLocal( $retorno ) {
-		$_SESSION['ID_LOCALIDADE'] = $retorno['ID_LOCALIDADE'];
-		$_SESSION['CIDADE'] 	   = $retorno['CIDADE'];
-		$_SESSION['ESTADO'] 	   = $retorno['ESTADO'];
-		$_SESSION['SIGLA'] 		   = $retorno['SIGLA'];
-	}
-
 	public static function get( $param ) {
 		return $_SESSION[ $param ];
 	}

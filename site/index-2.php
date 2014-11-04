@@ -1,67 +1,54 @@
-<header id="home" class="header">
-	
-	<!-- MENU -->
-	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
-		<div class="container">
-			<div class="navbar-header responsive-logo">
-				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a href="./" class="navbar-brand">
-				<img src="images/logo.png" alt="Zerif">
-				</a>
-			</div>
-			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" style="height: 1px;">
-			<ul class="nav navbar-nav navbar-right responsive-nav main-nav-list">
-				<li><a href="#home">Início</a></li>
-				<li><a href="#focus">Focus</a></li>
-				<li><a href="#works">Works</a></li>
-				<li><a href="#aboutus">About Us</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#pricingtable">Pricing</a></li>
-				<li><a href="#features">Features</a></li>
-				<li><a href="#products">Products</a></li>
-				<li><a href="#testimonials">Testimonials</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-			</nav>
-		</div>
-	</div>
-	<!-- / FIM MENU -->
-	
+<section class="focus" id="foco" >
 	<div class="container">
 		
-		<!-- TITULO -->
-		<h1 class="intro">As melhores janelas voce encontra aqui!</h1>
-		
-		<!-- BOTOES, NAO SERIA IMPLEMENTADO AGORA
-		<div class="buttons">
-			<a href="#" class="btn btn-primary custom-button red-btn">Our Works</a>
-			<a href="#" class="btn btn-primary custom-button green-btn">Our Packages</a>
+		<!-- SECTION HEADER -->
+		<div class="section-header">
+			
+			<!-- SECTION TITLE -->
+			<h2 class="dark-text">Nosso Foco</h2>
+			
+			<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
+			<h6>Design e desenvolvimento aplicados para empresas metalúrgicas de pequeno porte.</h6>
 		</div>
-		-->
+		<!-- / END SECTION HEADER -->
 		
-		<!-- 3 MENSAGENS SOBRE A EMPRESA -->
-		<div class="row bottom-message-section">
-			<div class="col-lg-4 col-sm-4">
-				<div class="short-text">
-					<i class="icon icon-fontawesome-webfont-358"></i> O melhor preço pra você
+		<!-- 4 FOCUS BOXES -->
+		<div class="row">
+			
+			<!-- FIRST FOCUS BOXES -->
+			<div class="col-lg-4 col-sm-4 focus-box red wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+				<div class="service-icon">
+					<i class="pixeden pd-icon-monitor"></i> <!-- FOCUS ICON-->
 				</div>
+				<h5 class="red-border-bottom">Realize seu Orçamento On-Line</h5> <!-- FOCUS HEADING -->
+				<p> <!-- FOCUS DESCRIPTION -->
+					 Preencha todos os campos corretamente, o orçamento será gerado em seguida. Será uma honra atendê-lo! Temos o melhor preço e Atendimento.
+				</p>
 			</div>
-			<div class="col-lg-4 col-sm-4">
-				<div class="short-text">
-					<i class="icon-fontawesome-webfont-286"></i> Qualidade nos produtos
+			<!-- / END FIRST FOCUS BOX. Other boxes has same format -->
+			
+			<div class="col-lg-4 col-sm-4 focus-box blue wow animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+				<div class="service-icon">
+					<i class="pixeden pd-icon-email-marketing"></i>
 				</div>
+				<h5 class="blue-border-bottom">Entraremos em contato</h5>
+				<p>
+					 Preencha o Orçamento com todas as informações necessárias e em breve entraremos em contato com você. A Metalúrgica JBS irá atender e tirar suas dúvidas. 
+				</p>
 			</div>
-			<div class="col-lg-4 col-sm-4">
-				<div class="short-text">
-					<i class="icon-fontawesome-webfont-347"></i> Satisfação garantida
+			
+			<div class="col-lg-4 col-sm-4 focus-box yellow wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+				<div class="service-icon">
+					<i class="pixeden pd-icon-check"></i>
 				</div>
+				<h5 class="yellow-border-bottom">Entregamos pra você</h5>
+				<p>
+					 Não deixe de fazer orçamento sem compromisso, sabendo que a metalúrgica se compromete com prazo, qualidade do material e entrega do produto.
+				</p>
 			</div>
+
 		</div>
-	</div> 
-	
-</header> 
+		<!-- / END 4 FOCUS BOXES -->
+
+	</div> <!-- / END CONTAINER -->
+</section>  <!-- / END FOCUS SECTION -->

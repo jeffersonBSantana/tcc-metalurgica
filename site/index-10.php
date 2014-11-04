@@ -1,101 +1,40 @@
-<section class="features" id="features" >
+<footer id="contato" >
 	<div class="container">
-			
-			<!-- SECTION HEADER -->
-		<div class="section-header">
-			
-			<!-- SECTION TITLE -->
-			<h2 class="dark-text">Features</h2>
-			
-			<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
-			<h6>
-				We design &amp; develop qaulity products to help small &amp; medium level business.
-			</h6>
-		</div>
-		<!-- / END SECTION HEADER -->
 		
-		<!-- FEATURS -->
-		<div class="row">
-			
-			<!-- FEATURES COLUMN LEFT -->
-			<div class="col-md-6 col-sm-6 wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-heart-1"></i>
-					</div>
-					<h5>Design with Love</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-bulb"></i>
-					</div>
-					<h5>Creative Features</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-settings-1"></i>
-					</div>
-					<h5>Thousands of Options</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-			</div> <!-- / FEATURES COLUMN LEFT -->
-			
-			<!-- FEATURES COLUMN RIGHT -->
-			<div class="col-md-6 col-sm-6 wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-params"></i>
-					</div>
-					<h5>Easy to Customize</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-handle-streamline-vector"></i>
-					</div>
-					<h5>Clean Strategy</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-				
-				<!-- FEATURE -->
-				<div class="feature">
-					<div class="feature-icon">
-						<i class="icon-speech-streamline-talk-user"></i>
-					</div>
-					<h5>Awesome Support</h5>
-					<p>
-						 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</div>
-				<!-- / END FEATURE -->
-				
-			</div> <!-- / END FEATURES COLUMN RIGHT -->
-		</div> <!-- / END FEATURES -->
+		<!-- COMPANY ADDRESS-->
+		<div class="col-md-5 company-details">
+			<div class="icon-top red-text">
+				<i class="icon-fontawesome-webfont-302"></i>
+			</div>
+			Rua Avelino Giasson, 15, Parque do Som Pato Branco - PR
+		</div>
+		
+		<!-- COMPANY EMAIL-->
+		<div class="col-md-2 company-details">
+			<div class="icon-top green-text">
+			<i class="icon-fontawesome-webfont-329"></i>
+			</div>
+			 jhoga10@yahoo.com.br
+		</div>
+		
+		<!-- COMPANY PHONE NUMBER -->
+		<div class="col-md-2 company-details">
+			<div class="icon-top blue-text">
+				<i class="icon-fontawesome-webfont-101"></i>
+			</div>
+			+(46) 9914-1928
+		</div>
+		
+		<!-- SOCIAL ICON AND COPYRIGHT -->
+		<div class="col-lg-3 col-sm-3 copyright">
+			<ul class="social">
+				<li><a href="https://www.facebook.com/"><i class="icon-facebook"></i></a></li>
+				<li><a href=""><i class="icon-twitter-alt"></i></a></li>
+				<li><a href=""><i class="icon-linkedin"></i></a></li>
+				<li><a href=""><i class="icon-behance"></i></a></li>
+				<li><a href=""><i class="icon-dribbble"></i></a></li>
+			</ul>
+			 ©2014 JBS LMTD
+		</div>
 	</div> <!-- / END CONTAINER -->
-</section> <!-- / END FEATURES SECTION -->
+</footer> <!-- / END FOOOTER  -->

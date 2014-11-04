@@ -1,12 +1,22 @@
+<?php
+
+if ( isset($_GET) ) {
+	$c = isset($_GET['c']) ? $_GET['c'] : null;  // - arquivo .php
+}
+
+if (isset($c) && !empty($c)) {
+	include_once($c . ".php");
+	exit;
+}
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Beautiful Responsive Animated OnePage Template" />
-	<meta name="keywords" content="Zerif, responsive, html, template, creative"/>
-	<meta name="author" content="Mizanur Rahman" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Zerif - Responsive One Page Template</title>
+	<title>JBS - Metalurgica e Esquadria</title>
 
 	<!-- =========================
 	 FAV AND TOUCH ICONS  
@@ -56,22 +66,28 @@
 		 HOME SECTION       
 	============================== -->
 	
-	<?php include_once('index-2.php'); ?>
+	<?php include_once('index-1.php'); ?>
 	
 	<!-- =========================
 		 FOCUS SECTION      
 	============================== -->
 	
-	<?php include_once('index-3.php'); ?>
+	<?php include_once('index-2.php'); ?>
 
 	<!-- =========================
 		 SEPARATOR ONE      
 	============================== -->
 
-	<?php include_once('index-4.php'); ?>
+	<?php include_once('index-3.php'); ?>
 
 	<!-- =========================
 		 WORKS SECTION      
+	============================== -->
+
+	<?php include_once('index-4.php'); ?>
+	
+	<!-- =========================
+		 PRODUCTS SECTION   
 	============================== -->
 
 	<?php include_once('index-5.php'); ?>
@@ -89,60 +105,24 @@
 	<?php include_once('index-7.php'); ?>
 
 	<!-- =========================
-		 OUR TEAM SECTION   
+		 TESTIMONIAL        
 	============================== -->
 
 	<?php include_once('index-8.php'); ?>
 
 	<!-- =========================
-		PACKAGES SECTION   
+		 CONTACT US         
 	============================== -->
 
 	<?php include_once('index-9.php'); ?>
 
 	<!-- =========================
-		 FEATURES SECTION   
+		 FOOTER             
 	============================== -->
 
 	<?php include_once('index-10.php'); ?>
 
-	<!-- =========================
-		 PRODUCTS SECTION   
-	============================== -->
-
-	<?php include_once('index-11.php'); ?>
-
-	<!-- =========================
-		 NEWSETTER          
-	============================== -->
-
-	<?php include_once('index-12.php'); ?>
-
-	<!-- =========================
-		 TESTIMONIAL        
-	============================== -->
-
-	<?php include_once('index-13.php'); ?>
-
-	<!-- =========================
-		 PURCHASE NOW       
-	============================== -->
-
-	<?php include_once('index-14.php'); ?>
-
-	<!-- =========================
-		 CONTACT US         
-	============================== -->
-
-	<?php include_once('index-15.php'); ?>
-
-	<!-- =========================
-		 FOOTER             
-	============================== -->
-
-	<?php include_once('index-16.php'); ?>
-
-	<!-- SCRIPTS -->
+	<!-- SITE -->
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollTo.min.js"></script>
 	<script src="js/wow.min.js"></script>
@@ -151,7 +131,14 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/smoothscroll.js"></script>
 	<script src="js/jquery.vegas.min.js"></script>
-	<script src="js/zerif.js"></script>
-
+	<!-- ORCAMENTO -->
+	<script src="js/bootbox.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/messages_ptbr.js"></script>
+	<script src="js/ejs-boottable.js"></script>
+	<script src="js/ejs-utils.js"></script>
+	<script src="js/orcamento.js"></script>
+	<!-- PRINCIPAL -->
+	<script src="js/app.js"></script>
 </body>
 </html>

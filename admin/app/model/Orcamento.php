@@ -16,15 +16,15 @@ class Orcamento
     	$sql  = "";
         $sql .= " SELECT ORCAMENTO.*, FUNCIONARIO.NOME AS FUNCIONARIO, CLIENTE.* ";
         $sql .= " FROM ORCAMENTO ";
-		$sql .= " INNER JOIN FUNCIONARIO ";
+		$sql .= " LEFT JOIN FUNCIONARIO ";
         $sql .= " ON ORCAMENTO.ID_FUNCIONARIO = FUNCIONARIO.ID_FUNCIONARIO ";
-		$sql .= " INNER JOIN CLIENTE ";
+		$sql .= " LEFT JOIN CLIENTE ";
         $sql .= " ON ORCAMENTO.ID_CLIENTE = CLIENTE.ID_CLIENTE ";
        	$sql .= " ORDER BY ORCAMENTO.ID_ORCAMENTO ";
 	   
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_sql($value['DATA_ORCAMENTO']));
+			$retorno[ $key ][ 'DATA_ORCAMENTO' ] = utf8_encode(Utils::formatadata_br($value['DATA_ORCAMENTO']));
 		}
 		return $retorno;
     }
@@ -48,8 +48,8 @@ class Orcamento
         $sql  = "";
         $sql .= " SELECT * ";
         $sql .= " FROM ESQUADRIA ";
-		$sql .= " INNER JOIN MEDIDA ";
-        $sql .= " ON ESQUADRIA.ID_ESQUADRIA = MEDIDA.ID_ESQUADRIA ";
+		$sql .= " INNER JOIN PRODUTO ";
+        $sql .= " ON ESQUADRIA.ID_ESQUADRIA = PRODUTO.ID_ESQUADRIA ";
 		$sql .= " ORDER BY 1";
 
 	    $retorno = $this->database->select_sql( $sql );

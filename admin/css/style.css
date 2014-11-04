@@ -1,5 +1,13 @@
+*, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Maven Pro","Helvetica Neue",Helvetica,sans-serif;
+}
+
 html, body {
-  height: 100%;
+	height: 100%;
+}
+
+input.form-control {
+	text-transform: uppercase;
 }
 
 .bg-red, .bg-red td {
@@ -48,8 +56,8 @@ form.validForm input.error, form.validForm textarea.error {
 #form-login .btn-primary,
 #form-login .btn-primary:hover,
 #form-login .btn-primary:focus {
-    background-color: #08812F;
-    border-color: #878B0D;
+    background-color: #004ca9;
+    border-color: #0b7aff;
     color: #FFFFFF;
 }
 
@@ -62,8 +70,8 @@ form.validForm input.error, form.validForm textarea.error {
     z-index: 5;
 }
 .ef-head {
-    background-color: #00521A;
-    background-image: linear-gradient(to bottom, #f8f8f8, #0b7aff);
+    background-color: #004ca9;
+    background-image: linear-gradient(to bottom, #004ca9, #0b7aff);
     background-repeat: repeat-x;
     color: #FFFFFF;
 }
@@ -161,13 +169,12 @@ form.validForm input.error, form.validForm textarea.error {
 }
 .profile-img
 {
-    width: 150px;
-    height: 90px;
-    margin: 0 auto 10px;
-    display: block;
-    /*-moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;*/
+	display: block;
+	margin: 0 auto 10px;
+	width: 60%;
+	/*-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;*/
 }
 .need-help
 {
@@ -282,10 +289,11 @@ form.validForm input.error, form.validForm textarea.error {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 75%;
 }
 .menu-logo {
-    padding: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 10px;
 }
 /* =Main =Menu =Sidebar-nav */
 .sidebar-nav {

@@ -43,7 +43,7 @@ class Perfil
 
     public function salvar( $params ) {
         $ID_PERFIL          = utf8_decode( ($params['ID_PERFIL'] == '') ? 0 : $params['ID_PERFIL'] );
-        $DESCRICAO 		    = utf8_decode( strtoupper( $params['DESCRICAO'] ));
+        $DESCRICAO 		    = utf8_decode( mb_strtoupper( $params['DESCRICAO'], 'UTF-8' ));
         $PESO_POR_METRO 	= utf8_decode( Utils::formatCurrency($params['PESO_POR_METRO']) );
 
 		if (  $params['ID_PERFIL'] > 0 ) {

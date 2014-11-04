@@ -22,7 +22,6 @@ class Esquadria
 	    $retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
-			
 		}
 		return $retorno;	
     }
@@ -32,7 +31,11 @@ class Esquadria
         $sql .= " SELECT * ";
         $sql .= " FROM PERFIL ";
 
-        return $this->database->select_sql( $sql );
+        $retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'DESCRICAO' ] = utf8_encode( $value['DESCRICAO'] );
+		}
+		return $retorno;
     }
     
 	public function editar( $params ) {
@@ -48,8 +51,8 @@ class Esquadria
 
     public function salvar( $params ) {
         $ID_ESQUADRIA = utf8_decode( ($params['ID_ESQUADRIA'] == '') ? 0 : $params['ID_ESQUADRIA'] );
-        $DESCRICAO 	  = utf8_decode( strtoupper( $params['DESCRICAO'] ));
-        $COLOCACAO 	  = utf8_decode( $params['COLOCACAO'] );
+        $DESCRICAO 	  = utf8_decode( mb_strtoupper( $params['DESCRICAO'], 'UTF-8' ));
+        $COLOCACAO 	  = utf8_decode( mb_strtoupper( $params['COLOCACAO'], 'UTF-8' ));
 		$ID_PERFIL 	  = utf8_decode( $params['ID_PERFIL'] );
 
 		if (  $params['ID_ESQUADRIA'] > 0 ) {

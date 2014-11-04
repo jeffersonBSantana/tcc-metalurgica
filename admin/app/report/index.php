@@ -12,7 +12,7 @@ defined('FPDF')
 require_once( FPDF . DS . 'fpdf.php' );
 require_once( FPDF . DS . 'fpdftable.php' );
 
-// require_once("Session.php");
+//require_once("Session.php");
 
 //if ( !Session::validate() )
 //	exit;

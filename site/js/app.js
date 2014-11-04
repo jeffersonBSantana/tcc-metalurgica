@@ -2,7 +2,7 @@
 ===  BACKGROUND SLIDER        =====
 =================================== */
 $.vegas('slideshow', {
-  delay:7000,
+  delay:5000,
   backgrounds:[
     { src:'images/backgrounds/bg1.png', fade:1000 },
     { src:'images/backgrounds/bg2.png', fade:1000 },
@@ -60,6 +60,8 @@ $(document).ready(function() {
     }
   });
   
+  
+  Orcamento.iniciar();
 });
 
 /*=================================

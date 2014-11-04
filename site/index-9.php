@@ -1,117 +1,92 @@
-<section class="packages" id="pricingtable" >
-	<div class="container" >
+<section class="contact-us" id="orcamento">
+	<div class="container">
 		
 		<!-- SECTION HEADER -->
-		<div class="section-header">
+		<div class="section-header">			
 			
 			<!-- SECTION TITLE -->
-			<h2 class="white-text">Packages</h2>
+			<h2 class="white-text">Orçamento On-line</h2>
 			
 			<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
-			<h6 class="white-text">
-				We have 4 friendly packages for you. Check all the packages and choose the right one for you. 
-			</h6>
+			<h6 class="white-text">Faça seu orçamento on-line que entraremos em contato com você em menos de 24 horas.</h6>
 		</div>
 		<!-- / END SECTION HEADER -->
 		
-		<!-- PACKAGES -->
+		<!-- CONTACT FORM-->
 		<div class="row">
-			
-			<!-- FIRST PACKAGE -->
-			<div class="col-lg-3 col-sm-3">
-				<div class="package wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-					<div class="package-header green-bg">
-						<h5>Basic</h5>
-					</div>
-					<div class="price dark-bg">
-						<div class="price-container">
-						<h4><span class="dollar-sign">$</span>15</h4><span class="price-meta">
-								/ mo
-						</span>
-						</div>
-					</div>
-					<ul>
-						<li><i class="icon-check"></i>100GB Storage</li>
-						<li><i class="icon-check"></i>All Themes</li>
-						<li><i class="icon-cancel"></i>Access to Tutorials</li>
-						<li><i class="icon-cancel"></i>Auto Backup</li>
-						<li><i class="icon-cancel"></i>Extended Security</li>
-					</ul>
-					<a href="#" class="btn btn-primary custom-button green-btn">
-					Sign Up </a>
+			<form id="form-orcamento" role="form" class="contact-form" style="text-align: left;" >
+			<div class="wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+				<input type="hidden" class="form-control" id="ID_ORCAMENTO" name="ID_ORCAMENTO" value="0" >
+				<div class="form-group">
+					<input type="text" placeholder="Seu Nome" class="form-control input-box" id="NOME" name="NOME" required >
 				</div>
-			</div> <!-- / END FIRST PACKAGE -->
-			
-			<div class="col-lg-3 col-sm-3">
-				<div class="package wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-					<div class="package-header blue-bg">
-						<h5>Standard</h5>
-					</div>
-					<div class="price dark-bg">
-						<div class="price-container">
-						<h4><span class="dollar-sign">$</span>21 </h4>
-						<span class="price-meta">/ Mo</span>
-						</div>
-					</div>
-					<ul>
-						<li><i class="icon-check"></i>100GB Storage</li>
-						<li><i class="icon-check"></i>All Themes</li>
-						<li><i class="icon-cancel"></i>Access to Tutorials</li>
-						<li><i class="icon-cancel"></i>Auto Backup</li>
-						<li><i class="icon-cancel"></i>Extended Security</li>
-					</ul>
-					<a href="#" class="btn btn-primary custom-button blue-btn">
-					Sign Up </a>
+				<div class="form-group">
+					<input type="text" placeholder="Email de contato" class="form-control input-box" id="EMAIL" name="EMAIL" required >
 				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Telefone para contato" class="form-control input-box" id="TELEFONE" name="TELEFONE" required minlength="8" onkeydown="Mask.mascara(this, Mask.mtelefone)" maxlength="16" >
+				</div>
+
+				<div class="section-header">	
+					<h2 class="white-text" > O que você deseja? </h2>
+				</div>
+				
+				<div class="form-group">
+					<select class="form-control input-box" id="ID_ESQUADRIA" name="ID_ESQUADRIA" >						
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Quantidade" class="form-control input-box" id="QUANTIDADE" name="QUANTIDADE" onkeydown="Mask.mascara(this, Mask.mnumeros)" />
+				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Altura (cm)" class="form-control input-box" id="ALTURA" name="ALTURA" onkeydown="Mask.mascara(this, Mask.mvalorbr)"/>
+				</div>
+				<div class="form-group">
+					<input type="text" placeholder="Largura (cm)" class="form-control input-box" id="LARGURA" name="LARGURA" onkeydown="Mask.mascara(this, Mask.mvalorbr)"/>
+				</div>
+				<div class="form-group">
+					<input type="text" disabled placeholder="Valor Unitário" class="form-control input-box" id="VALOR_UNITARIO" name="VALOR_UNITARIO" minlength="1" onkeydown="Mask.mascara(this, Mask.mvalorbr)" >
+				</div>
+				<div class="form-group input-box">
+					<label for="COR" >COR</label>
+					<div class="input-group margin-bottom-sm">
+						<input type="radio" name="COR" value="0" checked > Fosco
+						<input type="radio" name="COR" value="1" > Bronze
+						<input type="radio" name="COR" value="2" > Branco
+						<input type="radio" name="COR" value="3" > Preto
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="hidden" class="form-control" id="ID_ADICIONARITENS" name="ID_ADICIONARITENS" >
+					<button type="button" class="btn btn-success" onclick="Orcamento.adicionarItens()" ><span class="glyphicon glyphicon-shopping-cart" ></span> Adicionar no carrinho de compras!</button>
+				</div>
+
+				<div class="table-responsive">
+					<table id="table-orcamento-cadastro" class="table table-bordered table-striped " style="background-color:#FFFFFF" >
+						<thead>
+							<tr>
+								<th><label>Esquadria</label></th>
+								<th><label>Quantidade</label></th>
+								<th><label>Altura</label></th>
+								<th><label>Largura</label></th>
+								<th><label>Valor Unitário</label></th>
+								<th><label>Cor</label></th>
+								<th><label>Remover</label></th>
+							</tr>
+						</thead>
+						<tbody>
+							<!--<tr>
+								<td colspan="7" >Nenhum produto adicionado no carrinho de compras!</td>
+							</tr>-->	
+						</tbody>
+					</table>
+				</div>
+
+				<button id="btn-enviar" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-send"></span> Enviar orçamento</button>
 			</div>
-			
-			<div class="col-lg-3 col-sm-3">
-				<div class="best-value">
-					<div class="package wow fadeInUp animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-						<div class="package-header red-bg">
-							<h4>Premium</h4>
-							<div class="meta-text">
-								Best Value
-							</div>
-						</div>
-						<div class="price dark-bg">
-							<h4><span class="dollar-sign">$</span>53</h4>
-							<span class="price-meta">/ mo</span>
-						</div>
-						<ul>
-							<li><i class="icon-check"></i>100GB Storage</li>
-							<li><i class="icon-check"></i>All Themes</li>
-							<li><i class="icon-cancel"></i>Access to Tutorials</li>
-							<li><i class="icon-cancel"></i>Auto Backup</li>
-							<li><i class="icon-cancel"></i>Extended Security</li>
-						</ul>
-						<a href="#" class="btn btn-primary custom-button red-btn">
-					Sign Up </a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-3 col-sm-3">
-				<div class="package wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
-					<div class="package-header yellow-bg">
-						<h5>Ultimate</h5>
-					</div>
-					<div class="price dark-bg">
-						<h4><span class="dollar-sign">$</span>99 </h4>
-						<span class="price-meta">/ mo</span>
-					</div>
-					<ul>
-						<li><i class="icon-check"></i>100GB Storage</li>
-						<li><i class="icon-check"></i>All Themes</li>
-						<li><i class="icon-cancel"></i>Access to Tutorials</li>
-						<li><i class="icon-cancel"></i>Auto Backup</li>
-						<li><i class="icon-cancel"></i>Extended Security</li>
-					</ul>
-					<a href="#" class="btn btn-primary custom-button yellow-btn">
-					Sign Up </a>
-				</div>
-			</div>
-		</div> <!-- / END PACKAGES -->
-		
-	</div> <!--END CONTAINER  -->
-</section> <!-- END PACKAGES SECTION -->
+			</form>
+
+		</div>
+		<!-- / END CONTACT FORM-->
+	</div> <!-- / END CONTAINER -->
+</section> <!-- / END CONTACT US SECTION-->

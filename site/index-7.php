@@ -10,7 +10,7 @@
 	                <i class="icon-design-graphic-tablet-streamline-tablet"></i>
 	            </div>
 	            <div class="stat-text">
-	            <h3 class="white-text red-border-bottom">20.000,00</h3>
+	            <h3 class="white-text red-border-bottom">200</h3>
 	            <h6>Projetos Completados</h6>
 	            </div>
 	        </div>
@@ -23,7 +23,7 @@
 	                <i class="icon-man-people-streamline-user"></i>
 	            </div>
 	            <div class="stat-text">
-	            <h3 class="white-text green-border-bottom">100.000,00</h3>
+	            <h3 class="white-text green-border-bottom">1000</h3>
 	            <h6>Clientes Felizes</h6>
 	            </div>
 	        </div>
@@ -36,7 +36,7 @@
 	                <i class="icon-email-mail-streamline"></i>
 	            </div>
 	            <div class="stat-text">
-	            <h3 class="white-text blue-border-bottom">560.000,00</h3>
+	            <h3 class="white-text blue-border-bottom">2600</h3>
 	            <h6>Trocas de Email</h6>
 	            </div>
 	        </div>

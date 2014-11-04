@@ -53,14 +53,14 @@ class Funcionarios
 
     public function salvar( $params ) {
         $ID_FUNCIONARIO     = utf8_decode( ($params['ID_FUNCIONARIO'] == '') ? 0 : $params['ID_FUNCIONARIO'] );
-        $NOME 		        = utf8_decode( strtoupper( $params['NOME'] ));
-        $CPF 		        = utf8_decode( strtoupper( $params['CPF'] ));
-        $EMAIL 		        = utf8_decode( strtoupper( $params['EMAIL'] ));
-        $CELULAR 		    = utf8_decode( strtoupper( $params['CELULAR'] ));
-		$RUA 		        = utf8_decode( strtoupper( $params['RUA'] ));
-        $NUMERO 		    = utf8_decode( strtoupper( $params['NUMERO'] ));
-		$BAIRRO 		    = utf8_decode( strtoupper( $params['BAIRRO'] ));
-        $CEP 		        = utf8_decode( strtoupper( $params['CEP'] ));
+        $NOME 		        = utf8_decode( mb_strtoupper( $params['NOME'], 'UTF-8' ));
+        $CPF 		        = utf8_decode( mb_strtoupper( $params['CPF'], 'UTF-8' ));
+        $EMAIL 		        = utf8_decode( mb_strtoupper( $params['EMAIL'], 'UTF-8' ));
+        $CELULAR 		    = utf8_decode( mb_strtoupper( $params['CELULAR'], 'UTF-8' ));
+		$RUA 		        = utf8_decode( mb_strtoupper( $params['RUA'], 'UTF-8' ));
+        $NUMERO 		    = utf8_decode( mb_strtoupper( $params['NUMERO'], 'UTF-8' ));
+		$BAIRRO 		    = utf8_decode( mb_strtoupper( $params['BAIRRO'], 'UTF-8' ));
+        $CEP 		        = utf8_decode( mb_strtoupper( $params['CEP'], 'UTF-8' ));
         $ID_LOCAL		    = utf8_decode( $params['ID_LOCAL'] );
 
 		if (  $params['ID_FUNCIONARIO'] > 0 ) {

@@ -649,6 +649,10 @@ width: -webkit-calc(100% / 4);
 	cursor: pointer;
 	-webkit-transition: 0.4s all linear;
 	        transition: 0.4s all linear;
+	
+	/* alterado */	
+	width: 300px;
+	height: 200px;	
 }
 .cbp-rfgrid li a:hover img {
 	-webkit-transform: scale(1.05,1.07);
@@ -1150,7 +1154,7 @@ width: -webkit-calc(100% / 2);
 	background-image: url(../images/produtos/produto-7.png);
 }
 .item-8 {
-	background-image: url(../images/produtos/produto-1.png);
+	background-image: url(../images/produtos/produto-8.png);
 }
 
 /*---ITEM STYLE ---*/

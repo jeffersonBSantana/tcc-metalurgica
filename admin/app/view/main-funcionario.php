@@ -14,56 +14,56 @@
 							<label for="NOME">Nome</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
-								<input type="text" class="form-control" id="NOME" name="NOME" required minlength="3" >
+								<input type="text" class="form-control" id="NOME" name="NOME" required minlength="3" maxlength="54" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="CPF">CPF</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-edit fa-fw"></i></span>
-								<input type="text" class="form-control" id="CPF" name="CPF" required minlength="11" >
+								<input type="text" class="form-control" id="CPF" name="CPF" required minlength="11" onkeydown="Mask.mascara(this, Mask.mcpf)" maxlength="14" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="EMAIL">Email</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-								<input type="text" class="form-control" id="EMAIL" name="EMAIL" required minlength="3" >
+								<input type="email" class="form-control" id="EMAIL" name="EMAIL" required minlength="3" maxlength="44">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="CELULAR">Celular</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-fax fa-fw"></i></span>
-								<input type="text" class="form-control" id="CELULAR" name="CELULAR" required minlength="8" >
+								<input type="text" class="form-control" id="CELULAR" name="CELULAR" required minlength="8" onkeydown="Mask.mascara(this, Mask.mtelefone)" maxlength="16" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="RUA">Rua</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-road fa-fw"></i></span>
-								<input type="text" class="form-control" id="RUA" name="RUA" required minlength="3" >
+								<input type="text" class="form-control" id="RUA" name="RUA" required minlength="3" maxlength="54">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="NUMERO">Número</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-barcode fa-fw"></i></span>
-								<input type="text" class="form-control" id="NUMERO" name="NUMERO" required minlength="1" >
+								<input type="text" class="form-control" id="NUMERO" name="NUMERO" required minlength="1" onkeydown="Mask.mascara(this, Mask.mnumeros)" maxlength="6">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="BAIRRO">Bairro</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-road fa-fw"></i></span>
-								<input type="text" class="form-control" id="BAIRRO" name="BAIRRO" required minlength="3" >
+								<input type="text" class="form-control" id="BAIRRO" name="BAIRRO" required minlength="3" maxlength="54">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="CEP">CEP</label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-								<input type="text" class="form-control" id="CEP" name="CEP" required minlength="8" >
+								<input type="text" class="form-control" id="CEP" name="CEP" required minlength="8" onkeydown="Mask.mascara(this, Mask.mcep)" maxlength="10">
 							</div>
 						</div>
 						<div class="form-group">

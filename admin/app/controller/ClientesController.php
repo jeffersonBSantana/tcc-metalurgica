@@ -1,5 +1,7 @@
 <?php
 
+// recebe a chamada do js e envia para o model.
+
 require_once("Clientes.php");
 
 class ClientesController
@@ -34,7 +36,7 @@ class ClientesController
 
 $controller = new ClientesController();
 
-$method = $_POST['metodo'];
-$params = $_POST;
+$method = $_POST['metodo']; // o metodo vem do js
+$params = $_POST; // esses parametros vem do js
 
 echo json_encode( $controller->$method($params) );
