@@ -43,8 +43,8 @@ class Usuarios
 
     public function salvar( $params ) {
         $ID_USUARIOS        = utf8_decode( ($params['ID_USUARIOS'] == '') ? 0 : $params['ID_USUARIOS'] );
-        $LOGIN 		        = strtoupper(utf8_decode( $params['LOGIN'] ));
-        $SENHA 		        = strtoupper(utf8_decode( $params['SENHA'] ));
+        $LOGIN 		        = utf8_decode( mb_strtoupper( $params['LOGIN'], 'UTF-8' ));
+        $SENHA 		        = utf8_decode( mb_strtoupper( $params['SENHA'], 'UTF-8' ));
         $NIVEL_ACESSO       = utf8_decode( $params['NIVEL_ACESSO'] );
         $ATIVO 		        = utf8_decode( $params['ATIVO'] );
         $ID_FUNCIONARIO     = utf8_decode( $params['ID_FUNCIONARIO'] );

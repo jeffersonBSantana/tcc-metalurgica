@@ -53,7 +53,7 @@ class Produto
     }
 
     public function salvar( $params ) {
-        $ID_PRODUTO     	= utf8_decode(($params['ID_PRODUTO'] == '') ? 0 : $params['ID_PRODUTO']);
+        $ID_PRODUTO     = utf8_decode(($params['ID_PRODUTO'] == '') ? 0 : $params['ID_PRODUTO']);
         $VALOR 			= utf8_decode(Utils::formatCurrency($params[ 'VALOR' ]));
 		$ID_ESQUADRIA 	= utf8_decode($params['ID_ESQUADRIA']);
 		

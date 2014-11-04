@@ -18,11 +18,11 @@ class Localidade
         $sql .= " FROM LOCALIDADE ";
 
 	    $retorno = $this->database->select_sql( $sql );
-		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
-			$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
-		}
-		return $retorno;		
+    	foreach ($retorno as $key => $value) {
+    		$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
+    		$retorno[ $key ][ 'ESTADO' ] = utf8_encode( $value['ESTADO'] );
+    	}
+		return $retorno;
     }
 
 	public function editar( $params ) {
@@ -33,7 +33,7 @@ class Localidade
         $sql .= " WHERE ID_LOCALIDADE = " . $code;
 
 		$retorno = $this->database->select_sql( $sql );
-		// quando acentuacao deve colocar essa parte do codigo, 
+		// quando acentuacao deve colocar essa parte do codigo,
 		// com os campos referentes a tabela que sera utilizada.
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'CIDADE' ] = utf8_encode( $value['CIDADE'] );
@@ -44,9 +44,9 @@ class Localidade
 
     public function salvar( $params ) {
         $ID_LOCALIDADE     = utf8_decode( ($params['ID_LOCALIDADE'] == '') ? 0 : $params['ID_LOCALIDADE'] );
-        $CIDADE 		   = utf8_decode(strtoupper( $params['CIDADE'] ));
-        $ESTADO 		   = utf8_decode(strtoupper( $params['ESTADO'] ));
-        $SIGLA 		       = utf8_decode(strtoupper( $params['SIGLA' ] ));
+        $CIDADE 		   = utf8_decode(mb_strtoupper( $params['CIDADE'], 'UTF-8' ));
+        $ESTADO 		   = utf8_decode(mb_strtoupper( $params['ESTADO'], 'UTF-8' ));
+        $SIGLA 		       = utf8_decode(mb_strtoupper( $params['SIGLA' ], 'UTF-8' ));
 
 		if ( $ID_LOCALIDADE > 0 ) {
 			return (int) $this->database->execute_sql(" UPDATE LOCALIDADE SET CIDADE='$CIDADE', ESTADO='$ESTADO', SIGLA='$SIGLA' WHERE ID_LOCALIDADE=$ID_LOCALIDADE ");

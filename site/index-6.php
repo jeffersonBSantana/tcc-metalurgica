@@ -1,4 +1,4 @@
-<section class="about-us" id="aboutus">
+<section class="about-us" id="sobrenos">
 	<div class="container">
 		
 		<!-- SECTION HEADER -->

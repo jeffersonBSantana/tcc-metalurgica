@@ -3,8 +3,8 @@
 class DataBase
 {
 	private static $myServer = "localhost";
-	private static $myUser = "root";
-	private static $myPass = "root";
+	private static $myUser = "jbs";
+	private static $myPass = "jbs";
 	private static $myDB = "JBS_METALURGICA";
 	private static $dbhandle;
 

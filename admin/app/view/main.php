@@ -25,14 +25,22 @@ if ( !Session::validate() )
 
 			<div class="col-sm-10 ef-container">
 				<?php
+				
 				include_once('mn-inicio.php');
-				include_once('main-usuarios.php');
-				include_once('main-funcionario.php');
-				include_once('main-cliente.php');
-				include_once('main-localidade.php');
-				include_once('main-perfil.php');
-				include_once('main-esquadria.php');
-				include_once('main-produto.php');
+				
+				if ( Session::get('NIVEL_ACESSO') == 0 ) { // ouro
+					include_once('main-usuarios.php');
+					include_once('main-funcionario.php');				
+				}
+				
+				if ( (Session::get('NIVEL_ACESSO') == 0) || (Session::get('NIVEL_ACESSO') == 1) ) { // prata
+					include_once('main-cliente.php');
+					include_once('main-localidade.php');
+					include_once('main-perfil.php');
+					include_once('main-esquadria.php');
+					include_once('main-produto.php');
+				}
+				
 				include_once('main-orcamento.php');
 				?>
 			</div>

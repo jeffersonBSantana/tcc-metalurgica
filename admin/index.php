@@ -5,7 +5,7 @@
 
 // ************************************************
 
-// ** DEFINO O CAMINHO DAS PASTAS DO PROJETO EM VARIAVEIS 
+// ** DEFINO O CAMINHO DAS PASTAS DO PROJETO EM VARIAVEIS
 defined("DS") || define("DS", DIRECTORY_SEPARATOR);
 defined("PS") || define("PS", PATH_SEPARATOR);
 defined("R" ) || define("R" , dirname(__FILE__));
@@ -43,7 +43,7 @@ if (isset($m) && !empty($m)) {
 	if (!isset($c) && empty($c)) {
 		$c = 'main';
 	}
-	
+
 	// chama o main - todas as requisicoes fora a logout caem aqui.
 	include_once(A . DS . $m . DS . $c . ".php");
 	exit;

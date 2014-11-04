@@ -54,31 +54,31 @@
 		 HOME SECTION       
 	============================== -->
 	
-	<?php include_once('index-2.php'); ?>
+	<?php include_once('index-1.php'); ?>
 	
 	<!-- =========================
 		 FOCUS SECTION      
 	============================== -->
 	
-	<?php include_once('index-3.php'); ?>
+	<?php include_once('index-2.php'); ?>
 
 	<!-- =========================
 		 SEPARATOR ONE      
 	============================== -->
 
-	<?php include_once('index-4.php'); ?>
+	<?php include_once('index-3.php'); ?>
 
 	<!-- =========================
 		 WORKS SECTION      
 	============================== -->
 
-	<?php include_once('index-5.php'); ?>
+	<?php include_once('index-4.php'); ?>
 	
 	<!-- =========================
 		 PRODUCTS SECTION   
 	============================== -->
 
-	<?php include_once('index-11.php'); ?>
+	<?php include_once('index-5.php'); ?>
 
 	<!-- =========================
 		 ABOUT US SECTION   
@@ -93,52 +93,22 @@
 	<?php include_once('index-7.php'); ?>
 
 	<!-- =========================
-		 OUR TEAM SECTION   
-	============================== -->
-
-	<?php // include_once('index-8.php'); ?>
-
-	<!-- =========================
-		PACKAGES SECTION   
-	============================== -->
-
-	<?php // include_once('index-9.php'); ?>
-
-	<!-- =========================
-		 FEATURES SECTION   
-	============================== -->
-
-	<?php // include_once('index-10.php'); ?>
-
-	<!-- =========================
-		 NEWSETTER          
-	============================== -->
-
-	<?php // include_once('index-12.php'); ?>
-
-	<!-- =========================
 		 TESTIMONIAL        
 	============================== -->
 
-	<?php include_once('index-13.php'); ?>
-
-	<!-- =========================
-		 PURCHASE NOW       
-	============================== -->
-
-	<?php // include_once('index-14.php'); ?>
+	<?php include_once('index-8.php'); ?>
 
 	<!-- =========================
 		 CONTACT US         
 	============================== -->
 
-	<?php include_once('index-15.php'); ?>
+	<?php include_once('index-9.php'); ?>
 
 	<!-- =========================
 		 FOOTER             
 	============================== -->
 
-	<?php include_once('index-16.php'); ?>
+	<?php include_once('index-10.php'); ?>
 
 	<!-- SCRIPTS -->
 	<script src="js/bootstrap.min.js"></script>
