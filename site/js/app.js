@@ -60,6 +60,8 @@ $(document).ready(function() {
     }
   });
   
+  
+  Orcamento.iniciar();
 });
 
 /*=================================

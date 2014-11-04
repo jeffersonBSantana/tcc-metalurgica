@@ -177,30 +177,30 @@ var Orcamento = {
 		$('#ID_ADICIONARITENS').val( linha );
 
 		var id = '#table-orcamento-cadastro';
-    var header = {
-		"id" 				: linha,
-		"id_item_orcamento" : 0,
-        "id_esquadria" 		: id_esquadria,
-        "qtde" 				: qtde,
-        "altura" 			: altura,
-        "largura" 			: largura,
-        "valor_unitario" 	: valor_unitario,
-        "cor" 				: cor
-    };
-    var values = {
-      "esquadria_descricao" : esquadria_descricao,
-      "qtde" 				: qtde,
-      "altura" 				: altura,
-      "largura" 			: largura,
-      "valor_unitario" 		: valor_unitario,
-      "cor" 				: cor_descricao,
-	  "REMOVE"		 		: '<div onclick="Orcamento.removerItens('+linha+','+0+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
-    };
-    bootTable.addItem(
-        id,
-        header,
-        values
-    );
+	    var header = {
+			"id" 				: linha,
+			"id_item_orcamento" : 0,
+	        "id_esquadria" 		: id_esquadria,
+	        "qtde" 				: qtde,
+	        "altura" 			: altura,
+	        "largura" 			: largura,
+	        "valor_unitario" 	: valor_unitario,
+	        "cor" 				: cor
+	    };
+	    var values = {
+	      "esquadria_descricao" : esquadria_descricao,
+	      "qtde" 				: qtde,
+	      "altura" 				: altura,
+	      "largura" 			: largura,
+	      "valor_unitario" 		: valor_unitario,
+	      "cor" 				: cor_descricao,
+		  "REMOVE"		 		: '<div onclick="Orcamento.removerItens('+linha+','+0+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+	    };
+	    bootTable.addItem(
+	        id,
+	        header,
+	        values
+	    );
 	},
 	removerItens : function( linha, id_item_orcamento) {
 		bootbox.dialog({

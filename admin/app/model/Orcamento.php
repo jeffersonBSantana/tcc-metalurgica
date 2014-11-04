@@ -16,9 +16,9 @@ class Orcamento
     	$sql  = "";
         $sql .= " SELECT ORCAMENTO.*, FUNCIONARIO.NOME AS FUNCIONARIO, CLIENTE.* ";
         $sql .= " FROM ORCAMENTO ";
-		$sql .= " INNER JOIN FUNCIONARIO ";
+		$sql .= " LEFT JOIN FUNCIONARIO ";
         $sql .= " ON ORCAMENTO.ID_FUNCIONARIO = FUNCIONARIO.ID_FUNCIONARIO ";
-		$sql .= " INNER JOIN CLIENTE ";
+		$sql .= " LEFT JOIN CLIENTE ";
         $sql .= " ON ORCAMENTO.ID_CLIENTE = CLIENTE.ID_CLIENTE ";
        	$sql .= " ORDER BY ORCAMENTO.ID_ORCAMENTO ";
 	   
